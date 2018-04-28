@@ -1,0 +1,11 @@
+<view>
+<view class="wrapper">
+  <input type='text' id="search" placeholder='搜索职位'></input>
+  <ul class="nav">
+    <li>全职</li>
+    <li>实习</li>
+    <li>网申</li>
+    <li>进度</li> 
+  </ul>
+</view>
+</view>

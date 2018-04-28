@@ -1,0 +1,12 @@
+<view class="contain">
+  <view wx:for="{{msgList}}" class="job">
+  <image src="{{item.logo}}" class="job-img"></image>
+  <view class='job-info'>
+   <view>{{item.name}}</view>
+    {{item.city}}
+    {{item.posttime}}发布
+    <view class="salary-color">￥{{item.salary}}/天</view>
+  </view>
+  <button class='job-apply'>申请</button>
+  </view>
+</view>

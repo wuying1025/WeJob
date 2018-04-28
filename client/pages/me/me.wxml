@@ -1,0 +1,19 @@
+<view>
+<view class="wrapper">
+<view class="person">
+  <image src="person.jpg"></image>
+</view>
+  <ul class="list">
+    <li bindtap="basic">基本信息</li>
+    <li>我的简历</li>
+    <li>我的收藏</li>
+    <li>我的投递</li>    
+  </ul>
+  <view class="info">
+    <view><text>意见反馈与帮助\n</text></view>
+    <view><text>设置\n</text></view>
+    <view><text>关于我们\n</text></view>
+    <view><text>退出登录\n</text></view> 
+  </view>
+</view>
+</view>
