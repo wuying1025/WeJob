@@ -20,6 +20,55 @@
   margin-left: 200rpx;
   
 }
-.com_name{
+.com_name,.com_postion,.com_price,.com_address{
   font-size: 30rpx;
+}
+.com_price{
+  color: red;
+}
+.company{
+  margin-top: 20rpx;
+  width: 720rpx;
+  box-shadow:10rpx 10rpx 5rpx #888888;
+}
+.hr{
+   margin-top: 60rpx;
+   font-size: 30rpx;
+    width: 720rpx;
+    box-shadow:10rpx 10rpx 5rpx #888888;    
+}
+.per_head{
+  margin-top: 10rpx;
+  width: 90rpx;
+  height: 90rpx;
+
+}
+.name{
+  position: absolute;
+  margin-top: 20rpx;
+  margin-left: 24rpx;
+}
+.job{
+   position: absolute;
+   margin-top: 70rpx;
+  margin-left: 25rpx;
+}
+.des{
+   margin-top: 60rpx;
+   font-size: 30rpx;
+    width: 720rpx;
+    box-shadow:10rpx 10rpx 5rpx #888888;    
+}
+.des ul li{
+  font-size: 22rpx;
+  width: 600rpx;
+}
+.com_des{
+    margin-top: 60rpx;
+   font-size: 30rpx;
+    width: 720rpx;
+    box-shadow:10rpx 10rpx 5rpx #888888;    
+}
+.dec{
+  font-size: 22rpx;
 }
