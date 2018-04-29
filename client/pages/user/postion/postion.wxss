@@ -1,0 +1,25 @@
+.wrapper{
+  margin:0 1.5rem;
+}
+.header{
+  height: 100rpx;
+  border-bottom: 1px solid gainsboro;
+}
+.return{
+  width: 100rpx;
+  float: left;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 18rpx;
+}
+.message{
+  font-size: 40rpx;
+  font-weight: bold;
+  width: 100%;
+  line-height: 100rpx;
+  margin-left: 200rpx;
+  
+}
+.com_name{
+  font-size: 30rpx;
+}

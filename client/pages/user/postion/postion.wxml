@@ -1,0 +1,18 @@
+
+   <view class='header'>
+      <button class='return'> 返回 </button>
+      <text class='message'>招聘信息</text>
+   </view>
+   <view class='company'>
+   
+<view class='wrapper'>
+       <text class='com_name'>公司名称</text>
+ </view>
+
+<view>
+
+</view>
+
+
+
+</view>
