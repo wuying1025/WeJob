@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/user/postion/postion",
+    "pages/user/reg/reg",
+    "pages/user/login/login",
     "pages/message/message",
     "pages/first/first",
     "pages/me/me",
