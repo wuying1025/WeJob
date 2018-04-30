@@ -1,0 +1,14 @@
+/* pages/hr/communicate.wxss */
+.container view{
+  width: 250px;
+  height: 80px;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 80px;
+}
+.container input {
+  width: 270px;
+  height: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
