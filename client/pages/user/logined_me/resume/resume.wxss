@@ -1,0 +1,21 @@
+.title{
+  margin-top: 100rpx;
+  font-size: 60rpx;
+}
+
+.btn{
+  margin-top:100rpx;
+  width:500rpx;
+  height:100rpx;
+  border-radius: 5px;
+}
+
+.button-line{
+  background: #03a9f4;
+  color:white;
+}
+
+.btn-hover{
+  background: #59c0ef;
+  border-radius: 5px;  
+}

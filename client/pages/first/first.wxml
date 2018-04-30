@@ -1,11 +1,11 @@
 <view>
 <view class="wrapper">
-  <input type='text' id="search" placeholder='搜索职位'></input>
-  <ul class="nav">
-    <li>全职</li>
-    <li>实习</li>
-    <li>网申</li>
-    <li>进度</li> 
-  </ul>
+  <input id="search" placeholder='搜索职位' auto-focus/>
+   <scroll-view class="scroll-view_H" scroll-x='true' style="white-space:nowrap;width:100%;" class="full">
+    <view><navigator url='full-time/full-time' hover-class="none">全职</navigator></view>
+    <view><navigator url='full-time/full-time' hover-class="none">实习</navigator></view>
+    <view><navigator url='full-time/full-time' hover-class="none">网申信息</navigator></view>
+    <view><navigator url='full-time/full-time' hover-class="none">笔/面试行程</navigator></view>
+  </scroll-view>
 </view>
 </view>
