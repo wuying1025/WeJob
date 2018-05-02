@@ -1,0 +1,23 @@
+<view>
+  <view class='header'>
+     <text class='collection'>我的收藏</text>
+  </view>
+  <view class='small-header'>
+      <text class='coll'>收藏的招聘信息</text>
+      <image class='star' src='coll.png'></image>
+  </view>
+   <view class="contain">
+  <view wx:for="{{msgList}}" class="job">
+  
+  <view class='job-info'>
+   <view>{{item.name}}</view>
+    {{item.city}}
+    {{item.posttime}}发布
+    <view class="salary-color">￥{{item.salary}}/天</view>
+  </view>
+  <button class='job-apply'>申请</button>
+  </view>
+</view>
+
+
+</view>

@@ -1,0 +1,40 @@
+.header{
+  margin-top: 20rpx;
+  text-align:  center;
+  font-size: 35rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid gray;
+}
+.coll{
+  font-size: 35rpx;
+  padding-left: 50rpx;
+  }
+  .star{
+    width: 50rpx;
+    height: 50rpx;
+    float: right;
+  }
+  .job-info{
+  flex: 1;
+   margin-left:20rpx; 
+}
+
+.job-apply{
+  /* width: 100rpx; */
+  height: 60rpx;
+  font-size: 30rpx;
+  float:right;
+  background-color: #03a9f4;
+  /* margin-top: 30rpx; */
+  margin: auto 0;
+  line-height: 60rpx;
+  color:white;
+}
+.job{
+  display:flex;
+  height:160rpx;  
+  border-bottom: 1px solid #ccc; 
+}
+.salary-color{
+  color:#03a9f4;
+}
