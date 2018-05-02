@@ -1,0 +1,20 @@
+/* pages/hr/forget.wxss */
+.container image {
+  margin-top: 30px;
+  height: 300rpx;
+  width: 300rpx;
+}
+.container text {
+  margin: 10rpx;
+  margin-right: 110px;
+}
+.container input{
+  border: 1rpx solid black;
+  width: 80%;
+  height: 30px;
+  margin-bottom: 20px;
+}
+.container button{
+  margin-left: 200px;
+  margin-top: -40px;
+}

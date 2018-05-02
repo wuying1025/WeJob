@@ -1,0 +1,18 @@
+<view class='container'>
+  <view class="header">
+      <text>基本信息</text>
+      <image src="../img/person.png"></image>
+  </view>
+     <textarea>
+      <text class="redact">编辑\n</text>
+      <text class="common">姓名：\n</text>
+      <input></input>
+      <text class="common">公司名称：\n</text>
+      <input></input>
+      <text class="common">接收简历邮箱：\n</text>
+      <input></input>
+      <text class="common">联系电话：\n</text>
+      <input></input>
+     </textarea>
+      
+    </view>

@@ -1,36 +1,38 @@
 /* pages/test/test.wxss */
- input::-webkit-input-placeholder{
-            color:red;
-        }
-        input::-moz-placeholder{   /* Mozilla Firefox 19+ */
-            color:red;
-        }
-        input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
-            color:red;
-        }
-        input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
-            color:red;
-        }
 #search{
+  margin:0 auto;
+  width:90%;
   border:1px solid #999;
   margin-top:10px;
   border-radius: 0.5rem;
-  color:blue;
+  text-align: center;
   /* text-indent: 30px; */
 }
 .wrapper{
   margin:0 10px;
 }
+
 .nav{
   margin-top: 20px;
   display:flex;
 }
-.nav li{
+
+.nav view{
   height:30px;
   float:left;
   flex:1;
   font-size: 16px;
   line-height:30px;
   text-align:center;
-  color:#03a9f4;
+  color:#000;
+}
+
+.full{
+  height:100rpx;
+  line-height: 100rpx;
+}
+
+.full view{
+  display:inline-block;
+  margin:20rpx 30rpx;
 }

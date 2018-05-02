@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="title">我的简历</view>
+    <view class="btn"> 
+   <navigator url="line_resume/line_resume" hover-class='btn-hover'>  
+  <button hover-class='btn-hover' class="button-line" style='background:#d62920de;'>在线简历</button></navigator></view>
+  <view class="btn"><navigator url="other_resume/other_resume" hover-class='btn-hover'><button hover-class='btn-hover' class="button-line" style='background:#f7f110de;'>附件简历</button></navigator></view>
+</view>
