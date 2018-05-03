@@ -1,0 +1,4 @@
+<view class='container'>
+      <view>主动沟通</view>
+      <input placeholder='搜索学生'></input>
+    </view>

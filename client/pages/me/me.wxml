@@ -10,10 +10,10 @@
     <li>我的投递</li>    
   </ul>
   <view class="info">
-    <view><text>意见反馈与帮助\n</text></view>
-    <view><text>设置\n</text></view>
-    <view><text>关于我们\n</text></view>
-    <view><text>退出登录\n</text></view> 
+    <view><navigator url='../advice/advice' hover-class="none">意见反馈与帮助</navigator></view>
+    <view><navigator url='../setting/setting' hover-class="none">设置</navigator></view>
+    <view><navigator url='../about/about' hover-class="none">关于我们</navigator></view>
+    <view><navigator url='' hover-class="none">退出登录</navigator></view> 
   </view>
 </view>
 </view>

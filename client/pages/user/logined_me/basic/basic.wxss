@@ -1,0 +1,45 @@
+.wrapper{
+  padding:50rpx;
+}
+
+.basic-msg{
+  margin-top:20rpx;
+  margin-left: 50rpx;
+}
+
+.basic-msg image{
+  width:250rpx;
+  height:250rpx;
+  margin-right:100rpx;
+  float:right;
+}
+
+.row{
+  position:relative; 
+  height:280rpx;
+}
+
+.word{
+  font-size:40rpx;
+  position:absolute;
+  top:40%;
+}
+
+.right{
+  /* float:right; */
+  margin-left:150rpx;
+}
+
+.bas-row{
+  height: 100rpx;
+  }
+
+  .edit{
+    font-size: 38rpx;
+    width:150rpx;
+    height:60rpx;
+    float:left;
+    text-align: center;
+    line-height:60rpx;
+    border-radius:10%;
+  }

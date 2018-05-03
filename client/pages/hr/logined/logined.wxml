@@ -1,0 +1,11 @@
+<view class="container">
+  <image src="../img/person.png"></image>
+  <button class="function">发送信息</button>
+  <button class="function">查看简历</button>
+  <navigator url="../communicate/communicate" hover-class='none'><button class="function">主动沟通</button></navigator>
+<ul class='footer'>
+  <li class="footer1">首页</li>
+  <li class="footer1">消息</li>
+  <li class="footer1"><navigator url="../message/message" hover-class='none'>我</navigator></li>
+</ul>
+</view>

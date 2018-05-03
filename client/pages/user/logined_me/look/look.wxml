@@ -1,0 +1,20 @@
+<view>
+<view class='header'>
+    <text class='record'>投递记录</text>
+</view>
+<view class='content'>
+    <ul>
+        <li><navigator>全部</navigator></li>
+         <li> <navigator>待查看</navigator> </li>
+          <li> <navigator>待沟通</navigator>  </li>
+           <li> <navigator>面试</navigator> </li>
+            <li> <navigator>不合适</navigator>  </li>
+    </ul>
+
+</view>
+<view class='context'>
+    <textarea></textarea>
+
+</view>
+
+</view>

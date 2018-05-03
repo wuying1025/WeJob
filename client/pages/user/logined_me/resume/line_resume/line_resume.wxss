@@ -1,0 +1,56 @@
+.container{
+  margin-top:20rpx;
+}
+
+.wrapper{
+  padding:20rpx;
+}
+
+.basic{
+  margin:20rpx 20rpx auto;
+}
+
+.basic-left{
+  margin-left:50rpx;
+}
+
+.basic-msg{
+  font-size:45rpx;
+  margin-bottom: 20rpx;
+}
+
+input{
+  width:85%;
+  height: 80rpx;
+  border:1rpx solid #ccc;
+  margin-left:50rpx;
+  margin-top:20rpx;
+  margin-bottom:20rpx;  
+  border-radius: 5px;
+}
+
+.star{
+  color:red;
+  align-items: center;
+}
+
+.desc{
+  height:200rpx;
+  border:1rpx solid #ccc;
+  margin-left:50rpx;
+  width: 85%;
+  margin-top: 20rpx; 
+  margin-bottom: 20rpx;
+}
+
+.save{
+  width:25%;
+  height:80rpx;
+  line-height: 80rpx;
+  background: #03a9f4;
+  color:white;
+}
+
+.btn-hover{
+  background: #59c0ef;
+}
