@@ -1,0 +1,12 @@
+<view>
+   <view class='content'>
+     <text>输入新密码:</text>
+     <input></input>
+        </view>
+         <view class='content_two'>
+
+     <text>确认新密码:</text>
+     <input></input>
+        </view>
+        <button>确认</button>
+</view>

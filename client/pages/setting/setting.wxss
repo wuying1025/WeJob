@@ -1,0 +1,32 @@
+.setting{
+  height: 40rpx;
+  margin-top: 330rpx;
+  text-align:  center;
+}
+.myid{
+  
+  font-size:30rpx; 
+}
+#myid{
+margin-left: 140rpx;
+  width: 500rpx;
+ box-shadow:10rpx 10rpx 10rpx #03a9f4;
+}
+.mypwd{
+    font-size:30rpx; 
+}
+#mypwd{
+  margin-top: 70rpx;
+  margin-left: 140rpx;
+  width: 500rpx;
+ box-shadow:10rpx 10rpx 10rpx #03a9f4;
+}
+.user{
+    font-size:30rpx; 
+}
+#user{
+  margin-top: 70rpx;
+  margin-left: 140rpx;
+  width: 500rpx;
+ box-shadow:10rpx 10rpx 10rpx #03a9f4;
+}
