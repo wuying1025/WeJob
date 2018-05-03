@@ -1,0 +1,14 @@
+<view >
+<view class='top'>
+<text>发送招聘信息</text>
+</view>
+<view class='container'>
+<view class='introduce'>
+<text>公司名称：</text> <input type='text'></input>
+<text>工资：</text><input type='text'></input>
+</view>
+<textarea value='职位描述:'></textarea>
+<textarea value='职位要求:'></textarea>
+<button>发送</button>
+</view>
+</view>

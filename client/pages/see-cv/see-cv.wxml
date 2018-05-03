@@ -1,0 +1,10 @@
+<view >
+<view class='top'>
+<text>查看简历</text>
+</view>
+<view class='container'>
+  <view class='cv'>
+  简历
+  </view>
+</view>
+</view>

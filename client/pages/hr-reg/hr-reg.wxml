@@ -1,0 +1,13 @@
+<view class='warrper'>
+<view class='img' >
+<image src="{{tempFilePaths }}" bindtap="chooseimage"  /> 
+</view>                                                                       
+<view class="info">
+<text> 用户名</text> <input type='number' placeholder='手机号/邮箱'  ></input>
+<text>密码 </text><input type='password'></input>
+<text>确认密码 </text><input type='password'></input>
+<text>公司名称 </text><input type='text'></input>
+<text>验证码 </text><input type='text'></input>
+</view>
+<button  bindtap="sure">确认</button>
+</view>

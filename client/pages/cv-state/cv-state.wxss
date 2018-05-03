@@ -1,0 +1,41 @@
+.container{
+  margin :0 1.5rem;
+}
+.top{
+  width: 100%;
+  height: 4rem;
+}
+image{
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.3rem;
+}
+.top text{
+float:right;
+  margin-top: 0.6rem;  
+ margin-right: 10rem; 
+}
+.wrapper{
+  margin-left: 1rem;
+}
+.cv-container{
+  width: 20rem;
+  height: 15rem;
+  margin:2rem;
+}
+.cv-donwload{
+  width: 14rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  font-size:0.8rem;
+  margin-left: 3rem;
+}
+.btn{
+  width: 20rem;
+  height: 4rem;
+}
+.btn button{
+  float: left;
+  font-size:0.8rem;
+  margin-left: 1.8rem;
+}

@@ -1,0 +1,11 @@
+<view class='wrapper'>
+<view class='nav'>
+<navigator url="../watch-hr/watch-hr" hover-class='none'><li class='watch-hr'>谁看过我</li>
+</navigator>
+<navigator url="../hr-watch/hr-watch" hover-class='none'><li class='hr-watch'>我看过谁</li>
+</navigator>
+</view>
+<view class='container'>
+记录招聘者所看的学生 
+</view>
+</view>
