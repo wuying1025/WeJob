@@ -1,12 +1,15 @@
 {
   "pages": [
-    "pages/user/postion/postion",
-    "pages/user/reg/reg",
-    "pages/user/login/login",
+    "pages/hr-watch/hr-watch",
+    "pages/cv-state/cv-state",
+    "pages/see-cv/see-cv",
+    "pages/post-job/post-job",
+    "pages/hr-reg/hr-reg",
     "pages/message/message",
     "pages/first/first",
     "pages/me/me",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/hr-watch"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -18,8 +21,8 @@
   "tabBar": {
     "list": [
       {
-        "iconPath": "images/first.png",      
-        "selectedIconPath":"images/first1.png",  
+        "iconPath": "images/first.png",
+        "selectedIconPath": "images/first1.png",
         "pagePath": "pages/first/first",
         "text": "首页"
       },
@@ -36,8 +39,8 @@
         "text": "我"
       }
     ],
-    "selectedColor":"#03a9f4",
-    "backgroundColor":"white",
-    "color":"#03a9f4"
+    "selectedColor": "#03a9f4",
+    "backgroundColor": "white",
+    "color": "#03a9f4"
   }
 }
