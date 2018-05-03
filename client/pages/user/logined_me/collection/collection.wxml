@@ -1,7 +1,5 @@
 <view>
-  <view class='header'>
-     <text class='collection'>我的收藏</text>
-  </view>
+  
   <view class='small-header'>
       <text class='coll'>收藏的招聘信息</text>
       <image class='star' src='coll.png'></image>

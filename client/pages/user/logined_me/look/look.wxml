@@ -1,7 +1,5 @@
 <view>
-<view class='header'>
-    <text class='record'>投递记录</text>
-</view>
+
 <view class='content'>
     <ul>
         <li><navigator>全部</navigator></li>
