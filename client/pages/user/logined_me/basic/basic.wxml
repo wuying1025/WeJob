@@ -1,6 +1,6 @@
 <view class="comtainer">
 <view class="wrapper">
-navigater<button class="edit">编辑</button>
+<navigator url="../resume/line_resume/line_resume"><button class="edit">编辑</button></navigator>
 <view class="basic-msg" wx:for="{{msgList}}">
   <view class="row">
     <view class="word">头像：</view>

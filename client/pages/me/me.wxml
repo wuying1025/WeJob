@@ -1,19 +1,9 @@
-<view>
+<view class="container">
 <view class="wrapper">
 <view class="person">
   <image src="person.jpg"></image>
 </view>
-  <ul class="list">
-    <li bindtap="basic">基本信息</li>
-    <li>我的简历</li>
-    <li>我的收藏</li>
-    <li>我的投递</li>    
-  </ul>
-  <view class="info">
-    <view><navigator url='../advice/advice' hover-class="none">意见反馈与帮助</navigator></view>
-    <view><navigator url='../setting/setting' hover-class="none">设置</navigator></view>
-    <view><navigator url='../about/about' hover-class="none">关于我们</navigator></view>
-    <view><navigator url='' hover-class="none">退出登录</navigator></view> 
-  </view>
+  <navigator url='' hover-class="btn-hover"><button class='btn1' hover-class="btn-hover">招聘者登陆</button></navigator>
+  <navigator url='../user/login/login' hover-class="btn-hover"><button class='btn2' hover-class="btn-hover">求职者登陆</button></navigator>
 </view>
 </view>

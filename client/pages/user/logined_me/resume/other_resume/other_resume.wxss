@@ -1,0 +1,38 @@
+.other-resume{
+  -ms-flex-item-align: center;
+}
+
+.other{
+  width:80rpx;
+  height:80rpx;
+  position: relative;
+  top:20rpx;
+  left:10rpx;
+}
+
+.no-other{
+  margin:150rpx auto;
+  font-size: 50rpx;
+  position: relative;
+}
+
+.error{
+  width:50rpx;
+  height:50rpx;
+  position:absolute;
+  right:-50rpx;
+  top:10rpx;
+}
+
+.btn{
+  background: #59c0ef;
+  height:120rpx;
+  width:420rpx;
+  color:white;
+  margin-left: 190rpx;
+}
+
+.btn-hover{
+  background: #03a9f4;
+  border-radius: 5px;  
+}

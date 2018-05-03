@@ -1,9 +1,4 @@
-
-   <view class='header'>
-      <button class='return'> 返回 </button>
-      <text class='message'>招聘信息</text>
-   </view>
-   <view class='company'>
+<view class='company'>
     <view class='wrapper'>
           <text class='com_name'>公司名称: 爱奇艺\n</text>
           <text class='com_postion'>职位需求: 爱奇艺web前端H5开发\n</text>

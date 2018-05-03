@@ -1,0 +1,26 @@
+<view>
+<view class="wrapper">
+<view class="person">
+  <image src="{{img}}"></image>
+</view>
+  <ul class="list">
+    <navigator url='basic/basic' hover-class="none"><li>基本信息</li></navigator>
+    <navigator url='resume/resume' hover-class="none"><li>我的简历</li></navigator>
+    <navigator url='collection/collection' hover-class="none"><li>我的收藏</li></navigator>
+    <navigator url='look/look' hover-class="none"><li>我的投递</li></navigator> 
+  </ul>
+  <view class="info">
+    <view><navigator url='../../advice/advice' hover-class="none">意见反馈与帮助</navigator></view>
+    <view><navigator url='../../setting/setting' hover-class="none">设置</navigator></view>
+    <view><navigator url='../../about/about' hover-class="none">关于我们</navigator></view>
+    <view><navigator url='' hover-class="none"  bindtap="show">退出登录</navigator></view> 
+    <view class="modal-box" hidden="{{flag}}" bindtap="hide">
+      <view class="modal-body">
+        <view class="modal-content">
+          <button class="knowBtn" bindtap="hide">确定退出？</button>
+        </view>
+      </view>
+  </view>
+  </view>
+</view>
+</view>

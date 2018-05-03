@@ -1,4 +1,5 @@
 <view class="contain">
+  <navigator url='../user/position/position'>
   <view wx:for="{{msgList}}" class="job">
   <image src="{{item.logo}}" class="job-img"></image>
   <view class='job-info'>
@@ -9,4 +10,5 @@
   </view>
   <button class='job-apply'>申请</button>
   </view>
+  </navigator>
 </view>

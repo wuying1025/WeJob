@@ -3,7 +3,12 @@
     <form action="">
       <view class="basic">
        <text class="basic-msg">基本信息：\n</text>
-        <text class="basic-left">头像：</text><text class="star">*</text><input type="text"/>
+        <text class="basic-left">头像：</text><text class="star">*</text>
+        <view class="basic-photo">
+        <image src="camero1.png" class="camero"  bindtap="chooseimage"></image>
+        <image src="{{tempFilePaths}}" class="photo-img"></image>
+        <text class='set'>点击图片添加</text>                
+        </view>
         <text class="basic-left">姓名：</text><text class="star">*</text><input type="text"/>
         <text class="basic-left">性别：</text><text class="star">*</text><input type="text"/>
         <text class="basic-left">生日：</text><text class="star">*</text><input type="text"/>
@@ -12,7 +17,7 @@
         <text class="basic-left">电话：</text><text class="star">*</text><input type="text"/>
         <text class="basic-left">邮箱：</text><text class="star">*</text><input type="text"/>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover">保存</button>
+       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>
     </form>
     <form>  
       <view class="basic">
@@ -22,7 +27,7 @@
         <text class="basic-left">毕业时间：</text><text class="star">*</text><input type="text"/>
         <text class="basic-left">最高学历：</text><text class="star">*</text><input type="text"/>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover">保存</button>      
+       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
     </form>  
     <form>        
       <view class="basic">
@@ -33,7 +38,7 @@
         <text class="basic-left">项目描述：</text><text class="star">*</text>
         <textarea class="desc"></textarea>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover">保存</button>      
+       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
       <form>    
      <view class="basic">
@@ -45,28 +50,28 @@
         <text class="basic-left">工作内容：</text>
         <textarea class="desc"></textarea>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover">保存</button>      
+       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
       <form>    
       <view class="basic">
        <text class="basic-msg">校园荣誉：\n</text>
         <textarea class="desc"></textarea>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover">保存</button>      
+       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
       <form>    
       <view class="basic">
        <text class="basic-msg">技能评价：<text class="star">*</text>\n</text>
         <textarea class="desc"></textarea>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover">保存</button>      
+       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
       <form>    
       <view class="basic">
        <text class="basic-msg">自我描述：<text class="star">*</text>\n</text>
         <textarea class="desc"></textarea>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover">保存</button>   
+       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>   
     </form>
   </view>
 </view>

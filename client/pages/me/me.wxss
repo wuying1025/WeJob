@@ -1,12 +1,14 @@
 .wrapper{
   margin:0 1.5rem;
 }
+
 .person{
   width:100%;
   position:relative;
   height:8rem;
   margin-top: 0.6rem;
 }
+
 image{
   width:8rem;
   height:8rem;
@@ -16,26 +18,26 @@ image{
   margin-left:-4rem;
   /* margin-left:40%;  */
 }
-.list{
-  margin-top:1rem;
-  display:flex;
+
+.btn1{
+  margin-top:100rpx;
+  width:500rpx;
+  height:100rpx;
+  border-radius: 5px;
+  background: #03a9f4;
+  color:white;
 }
-.list li{
-  padding:1rem;
-  height:50px;
-  float:left;
-  flex:1;
-  font-size: 16px;
-  line-height:30px;
-  text-align:center;
-  color:#999;
+
+.btn2{
+  margin-top:100rpx;
+  width:500rpx;
+  height:100rpx;
+  border-radius: 5px;
+   background: #03a9f4;
+  color:white;
 }
-.info{
-  margin:1rem 1rem;
-  text-align: center;
-}
-.info view{
-  margin-top:1.5rem;
-  font-size: 1.3rem;
-  color:#999;
+
+.btn-hover{
+  background: #59c0ef;
+  border-radius: 5px;  
 }

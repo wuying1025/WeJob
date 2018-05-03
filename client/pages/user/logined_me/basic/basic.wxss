@@ -42,4 +42,5 @@
     text-align: center;
     line-height:60rpx;
     border-radius:10%;
+    background: #2ac9e2;
   }

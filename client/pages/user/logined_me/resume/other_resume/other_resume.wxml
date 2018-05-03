@@ -1,1 +1,7 @@
-other_resume
+<view class="other-resume" class='container'>
+<view class="no-other">{{msg}}
+<image src="error.png" class="error"></image>
+</view>
+<button bindtap="upload" class="btn" hover-class='btn-hover'>点击上传<image src="other1.png" class="other"></image>
+</button>
+</view>
