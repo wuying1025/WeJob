@@ -2,14 +2,12 @@
   "pages": [
     "pages/hr-message/hr-message",
     "pages/cv-state/cv-state",
-    "pages/hr/logined/logined",
     "pages/post-job/post-job",
     "pages/hr-reg/hr-reg",
-    
     "pages/hr-watch/hr-watch",
     "pages/watch-hr/watch-hr",
     "pages/see-cv/see-cv",
-
+    "pages/hr/logined/logined",
     "pages/user/logined_me/look/look",
     "pages/user/logined_me/basic/basic",
     "pages/user/logined_me/collection/collection",
