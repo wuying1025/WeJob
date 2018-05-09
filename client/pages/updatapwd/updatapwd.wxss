@@ -1,0 +1,43 @@
+.content{
+  margin-top: 300rpx;
+   margin-left: 80rpx;
+}
+.content input{
+  border: 1rpx solid gray;
+  width: 400rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  height: 60rpx;  
+}
+
+.content text{
+  float: left;
+  margin-right: 20rpx;
+  font-size: 35rpx;
+}
+.content_two{
+   margin-top: 80rpx;
+   margin-left: 80rpx;
+}
+.content_two input{
+  border: 1rpx solid gray;
+  width: 400rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  height: 60rpx;
+}
+
+.content_two text{
+  float: left;
+  margin-right: 20rpx;
+  font-size: 35rpx;
+}
+.right-btn{
+  margin-top: 100rpx;
+  width: 350rpx;
+  height: 80rpx;
+  font-size: 40rpx;
+  line-height: 70rpx;
+  background: #03a9f4;
+  color:white;
+}

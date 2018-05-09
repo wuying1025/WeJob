@@ -1,0 +1,13 @@
+<view>
+   <form action="">
+   <view class='content'>   
+      <text>输入新密码:</text>
+      <input></input>
+   </view>
+   <view class='content_two'>
+     <text>确认新密码:</text>
+     <input confirm-type="done"></input>
+   </view>
+        <button bindtap='btn' class="right-btn">确认</button>
+   </form>
+</view>
