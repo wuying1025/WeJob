@@ -4,9 +4,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    fullHidden: "none",
+    studyHidden: "none"
   },
-
+  full_btn:function(){
+    this.setData({
+      fullHidden: "display",
+      studyHidden: "none"
+    })
+  },
+  study_btn: function () {
+    this.setData({
+      fullHidden: "none",
+      studyHidden: "display"
+    })
+  },
+  components:{
+   
+  },
   /**
    * 生命周期函数--监听页面加载
    */

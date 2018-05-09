@@ -13,7 +13,7 @@
     <view><navigator url='../../advice/advice' hover-class="none">意见反馈与帮助</navigator></view>
     <view><navigator url='../../setting/setting' hover-class="none">设置</navigator></view>
     <view><navigator url='../../about/about' hover-class="none">关于我们</navigator></view>
-    <view><navigator url='' hover-class="none"  bindtap="show">退出登录</navigator></view> 
+    <view><navigator url='../../me/me' hover-class="none"  bindtap="show">退出登录</navigator></view> 
     <view class="modal-box" hidden="{{flag}}" bindtap="hide">
       <view class="modal-body">
         <view class="modal-content">

@@ -1,0 +1,31 @@
+.wrapper{
+  padding:40rpx;
+}
+
+.return{
+  width:90%;
+  height: 400rpx;
+  border:1rpx solid #999;
+  border-radius: 15rpx;   
+  margin-top: 30rpx; 
+  margin-bottom: 30rpx;
+  margin-left: 20rpx;
+}
+
+.tel{
+  width:90%; 
+  height: 40rpx;   
+  border:1rpx solid #999;
+  border-radius: 15rpx;  
+  margin-top: 30rpx;   
+  margin-left: 20rpx;
+  
+}
+
+.sub{
+  width:200rpx;
+  height:100rpx;
+  margin-top:50rpx;
+  background: #03a9f4;
+  color:white;
+}

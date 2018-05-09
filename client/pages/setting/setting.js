@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    "name":"hahaha"
   },
 
   /**
@@ -13,7 +13,12 @@ Page({
   onLoad: function (options) {
     
   },
-
+  change:function(){
+    wx.switchTab({
+      url: '/pages/me/me',
+    
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

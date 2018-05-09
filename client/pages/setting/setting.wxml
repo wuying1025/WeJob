@@ -1,15 +1,13 @@
 <view>
     <view class='setting'>
     <view id='myid'>
-    <text class='myid'>我的账号：哈哈哈哈哈</text>
+    <text class='myid'>我的账号：{{name}}</text>
     </view>
-       <view id='mypwd'>
-       <navigator class='mypwd' url='../updatapwd/updatapwd'>修改密码</navigator>
+        <view id='mypwd'>
+       <navigator class='mypwd' url='../updatapwd/updatapwd' hover-class='none'>修改密码</navigator>
+       </view> 
+       <view id='user'>
+        <navigator url='../me/me' hover-class='none' bindtap='change'>切换身份</navigator>
+       </view>
     </view>
-   <view id='user'>
-       <navigator class='user'>切换身份</navigator>
-    </view>
-    
-    </view>
-
 </view>

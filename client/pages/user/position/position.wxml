@@ -34,6 +34,7 @@
      <text>公司介绍\n</text>
        <text class='dec'>爱奇艺，原名奇艺，于2010年4月22日正式上线 [1]  ，2011年11月26日品牌升级，启动“爱奇艺”品牌并推出全新标志。爱奇艺创始人龚宇博士担任CEO。自成立伊始，爱奇艺坚持“悦享品质”的公司理念，以“用户体验”为生命，通过持续不断的技术投入、产品创新，为用户提供清晰、流畅、界面友好的观映体验。</text>
     </view>
-      
     
     </view>
+    <button class='collect' style='width:30%; float:left; margin-top:30rpx;margin-left:30rpx;'>收藏</button>
+      <button calss="post" style='width:30%;margin-top:30rpx;margin-right:30rpx;'>投递</button>
