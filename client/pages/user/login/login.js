@@ -1,12 +1,22 @@
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    
+    tel: '',
+    pwd: ''
   },
+  bindKeyInputtel: function (e) {
+    this.setData({
+      tel: e.detail.value
+    })
+    console.log(e.detail.value);
+  },
+  bindKeyInputpwd: function (e) {
+    this.setData({
+      pwd: e.detail.value
 
+
+    })
+    console.log(e.detail.valuez);
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -24,7 +24,7 @@ $config = [
         'host' => 'localhost',
         'port' => 3306,
         'user' => 'root',
-        'db'   => 'cAuth',
+        'db'   => 'WeJob',
         'pass' => 'wx1fbe9139357525b1',
         'char' => 'utf8mb4'
     ],

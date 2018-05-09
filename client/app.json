@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/user/login/login",
     "pages/user/position/position",    
     "pages/me/me",
     "pages/user/logined_me/logined_me",
@@ -19,7 +20,7 @@
     "pages/user/logined_me/basic/basic",
     "pages/user/logined_me/collection/collection",
     "pages/user/reg/reg",
-    "pages/user/login/login",
+    
     "pages/message/message",
     "pages/first/first"
   ],
