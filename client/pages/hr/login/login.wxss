@@ -1,4 +1,4 @@
-/* pages/hr/login/login.wxss */
+ /* pages/hr/login/login.wxss */
 .wrapper{
   margin:0 1.5rem;
 }

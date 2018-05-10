@@ -1,6 +1,7 @@
 <view>
+
 <view class='header'>
-   <image src='logo.png'></image>
+   <image src='logo1.png'></image>
 </view>
 <view class='form'>
 <view class='wrapper'>
