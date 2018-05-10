@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/me/me",
     "pages/user/login/login",
     "pages/user/position/position",    
-    "pages/me/me",
+    "pages/hr/login/login",
     "pages/user/logined_me/logined_me",
     "pages/user/logined_me/resume/resume",
     "pages/user/logined_me/resume/other_resume/other_resume",
