@@ -3,7 +3,7 @@
 <view class="person">
   <image src="person.jpg"></image>
 </view>
-  <navigator url='../hr/login/login' hover-class="btn-hover"><button class='btn1' hover-class="btn-hover">招聘者登陆</button></navigator>
-  <navigator url='../user/login/login' hover-class="btn-hover"><button class='btn2' hover-class="btn-hover">求职者登陆</button></navigator>
+   <navigator url='../hr/login/login' hover-class="btn-hover"><button class='btn1' hover-class="btn-hover">招聘者登陆</button></navigator>
+   <navigator url='../user/login/login' hover-class="btn-hover"><button class='btn2' hover-class="btn-hover">求职者登陆</button></navigator>
 </view>
 </view>
