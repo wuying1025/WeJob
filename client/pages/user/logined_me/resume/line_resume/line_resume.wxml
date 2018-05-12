@@ -9,16 +9,22 @@
         <image src="{{tempFilePaths}}" class="photo-img"></image>
         <text class='set'>点击图片添加</text>                
         </view>
-        <text class="basic-left">姓名：</text><text class="star">*</text><input type="text"/>
-        <text class="basic-left">性别：</text><text class="star">*</text><input type="text"/>
-        <text class="basic-left">生日：</text><text class="star">*</text><input type="text"/>
-        <text class="basic-left">学校：</text><text class="star">*</text><input type="text"/>
-       <text class="basic-left">应聘职位：</text><text class="star">*</text><input type="text"/>
-        <text class="basic-left">电话：</text><text class="star">*</text><input type="text"/>
-        <text class="basic-left">邮箱：</text><text class="star">*</text><input type="text"/>
+        <text class="basic-left">姓名：</text><text class="star">*</text><input type="text" bindinput='nameInput'/>
+        <text class="basic-left">性别：</text><text class="star">*</text>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" class="choice"/><text class="sex">{{item.value}}</text>
+          </label>
+        </radio-group>
+        <text class="basic-left">生日：</text><text class="star">*</text><input type="text" bindinput='birthInput'/>
+        <text class="basic-left">学校：</text><text class="star">*</text><input type="text" bindinput='schoolInput'/>
+       <text class="basic-left">应聘职位：</text><text class="star">*</text><input type="text" bindinput='posInput'/>
+        <text class="basic-left">电话：</text><text class="star">*</text><input type="text" bindinput='telInput'/>
+        <text class="basic-left">邮箱：</text><text class="star">*</text><input type="text" bindinput='emailInput'/>
       </view>
        <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>
     </form>
+
     <form>  
       <view class="basic">
        <text class="basic-msg">教育经历：\n</text>
@@ -29,6 +35,7 @@
       </view>
        <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
     </form>  
+
     <form>        
       <view class="basic">
        <text class="basic-msg">项目经验：\n</text>
@@ -40,6 +47,7 @@
       </view>
        <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
+
       <form>    
      <view class="basic">
        <text class="basic-msg">实习经历：\n</text>
@@ -52,6 +60,7 @@
       </view>
        <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
+
       <form>    
       <view class="basic">
        <text class="basic-msg">校园荣誉：\n</text>
@@ -59,6 +68,7 @@
       </view>
        <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
+
       <form>    
       <view class="basic">
        <text class="basic-msg">技能评价：<text class="star">*</text>\n</text>
@@ -66,6 +76,7 @@
       </view>
        <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
+      
       <form>    
       <view class="basic">
        <text class="basic-msg">自我描述：<text class="star">*</text>\n</text>

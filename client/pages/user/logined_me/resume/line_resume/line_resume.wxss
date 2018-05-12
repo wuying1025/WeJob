@@ -90,3 +90,21 @@ input{
 .btn-hover{
   background: #59c0ef;
 }
+
+.radio-group{
+  margin-left:200rpx;
+}
+
+.sex{
+  margin-right:150rpx;
+  margin-left:10rpx;  
+}
+
+.radio{
+  margin-top:50rpx;
+  margin-bottom:50rpx;  
+}
+
+.choice{
+ transform:scale(0.9);
+}

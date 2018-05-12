@@ -1,12 +1,92 @@
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    tempFilePaths: 'default.png'  
+    items: [
+      { name: 'man', value: '男' },
+      { name: 'girl', value: '女', checked: 'true' }
+    ],
+    tempFilePaths: 'default.png',
+    name:"",
+    sex:"",
+    birth: "",
+    school: "",
+    pos: "",
+    tel: "",
+    email:""
   },
-
+  nameInput:function(e){
+    this.setData({
+      name: e.detail.value
+    })
+    console.log(this.data.value);
+  },
+  radioChange: function (e) {
+    var that = this;
+    var radioValue = e.detail.value;
+    that.setData({
+      value: radioValue
+    })
+    console.log(that.data.value);
+    // if (that.data.currentTab >= 2) {
+    //   wx.navigateTo({
+    //     url: '../page3/page3',
+    //   });
+    // } else {
+    //   that.setData({
+    //     currentTab: that.data.currentTab + 1
+    //   });
+    // }
+  },
+  birthInput: function (e) {
+    this.setData({
+      birth: e.detail.value
+    })
+    console.log(this.data.birth);
+  },
+  schoolInput: function (e) {
+    this.setData({
+      school: e.detail.value
+    })
+    console.log(this.data.school);
+  },
+  posInput: function (e) {
+    this.setData({
+      pos: e.detail.value
+    })
+    console.log(this.data.pos);
+  },
+  telInput: function (e) {
+    this.setData({
+      tel: e.detail.value
+    })
+    console.log(this.data.tel);
+  },
+  emailInput: function (e) {
+    this.setData({
+      email: e.detail.value
+    })
+    console.log(this.data.email);
+  },
+  basic: function () {
+    wx.request({
+      url: '', //仅为示例，并非真实的接口地址
+      data: {
+        name: this.data.name,
+        sex: this.data.sex,
+        birth: this.data.birth,
+        school: this.data.school,
+        pos: this.data.pos,
+        tel: this.data.tel,
+        email: this.data.email
+      },
+      success: function (res) {
+        console.log(res.data)
+      }
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,7 +106,7 @@ Page({
         })
       }
     })
-  }  ,
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
