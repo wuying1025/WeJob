@@ -33,8 +33,8 @@ class HR extends CI_Controller {
     {
         $tel = $this->input->get('tel');
         $pwd = $this->input->get('pwd');
-        $pwd2 = $this->input->get('pwd2');
-        if($pwd == $pwd2){
+        $pwd1 = $this->input->get('pwd1');
+        if($pwd == $pwd1){
             $row = $this->HR_model->hr_reg($tel,md5($pwd));
             if($row > 0){
                 echo 'success';
@@ -68,22 +68,24 @@ class HR extends CI_Controller {
     public function post_job()
     {
         $company = $this->input->get('company');
-        $p_name = $this->input->get('p_name');
-        $p_require = $this->get->get('p_require');
+        $p_name = $this->input->get('name');
+        $p_require = $this->get->get('require');
+        $p_responsibility = $this->input->get('responsibility');
         $hr_id = $this->input->get('hr_id');
         $p_type = $this->input->get('p_type');
         $p_date_start = $this->input->get('p_date_start');
         $p_date_end = $this->input->get('p_date_end');
-        $useful = $this->input->get('useful');
+        $salary = $this->input->get('salary');
         $row = $this->HR_model->post_job(array(
             "company" => $company,
             "p_name" => $p_name,
             "p_require" => $p_require,
+            "p_responsibility" => $p_responsibility,
             "hr_id" => $hr_id,
             "p_type" => $p_type,
             "p_date_start" => $p_date_start,
             "p_date_end" => $p_date_end,
-            "p_useful" => $useful
+            "p_salary" => $salary
         ));
         if($row > 0){
             echo "success";
