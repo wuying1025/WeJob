@@ -1,5 +1,5 @@
 .contain{
-  padding: 10rpx;
+  padding: 7rpx;
 }
 
 .job{
@@ -32,7 +32,7 @@
   line-height: 60rpx;
   color:white;
   position: absolute;
-  right:20rpx;
+  right:0;
   top:20rpx;
 }
 
