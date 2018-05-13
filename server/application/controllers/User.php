@@ -113,7 +113,8 @@ class User extends CI_Controller {
 				'r_school'=>$school,
 				'r_job'=>$pos,
 				'r_tel'=>$tel,
-				'r_email'=>$email
+				'r_email'=>$email,
+
 
 			),$id);
 

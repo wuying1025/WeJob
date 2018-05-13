@@ -41,7 +41,7 @@ Page({
           })
         }else{
           wx.setStorage({
-            key: "user",
+            key: "aaa",
             data: res.data
           })
           wx.switchTab({    //跳转到tabBar页面，并关闭其他所有tabBar页面

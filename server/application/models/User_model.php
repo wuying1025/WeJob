@@ -16,11 +16,11 @@ class User_model extends CI_Model{
     }
     public function add_insert($message){
         $query = DB::insert('t_resume', $message);
-        return $query;
+
    }
    public function add_updata($message,$id){
     $query  = DB::update('t_resume', $message, 'u_id = "'.$id.'"');
-    return $query;
+       return $query;
 }
 
 }
