@@ -17,13 +17,34 @@ Page({
   },
   login:function(){
     wx.request({
-      url: 'user/check_login', //仅为示例，并非真实的接口地址
+      url: 'https://zfbwoz2h.qcloud.la/HR/check_hr_login',
       data: {
         tel: this.data.tel,
         pwd: this.data.pwd
       },
       success: function (res) {
         console.log(res.data)
+        wx.showToast({
+          title: '登录成功',
+          icon: 'success',
+          duration: 2000,
+          success: function (res) {
+
+            setTimeout(function () {
+              wx.redirectTo({
+                url: "../logined/logined",
+                //接口调用成功的回调方法
+                fuccess: function () { },
+
+                fail: function () { },
+
+                complete: function () { }
+              })
+            }, 2000)
+
+          }
+        })
+
       }
     })
   },

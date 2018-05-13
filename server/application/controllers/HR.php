@@ -34,6 +34,7 @@ class HR extends CI_Controller {
         $tel = $this->input->get('tel');
         $pwd = $this->input->get('pwd');
         $pwd1 = $this->input->get('pwd1');
+        echo $pwd;
         if($pwd == $pwd1){
             $row = $this->HR_model->hr_reg($tel,md5($pwd));
             if($row > 0){
@@ -51,13 +52,13 @@ class HR extends CI_Controller {
     {
         $tel = $this->input->get('tel');
         $pwd = $this->input->get('pwd');
-        $result = $this->HR_model->check_login($tel);
+        $result = $this->HR_model->check_hr_login($tel);
         if(count($result)==0){
             echo 'tel not exist';
-        }else if($result[0]->password == md5($pwd)) {
-            $this->session->set_userdata(array(
-                'user' => $result[0]
-            ));
+        }else if($result->hr_pass == md5($pwd)) {
+//            $this->session->set_userdata(array(
+//                'user' => $result[0]
+//            ));
             echo 'success';
         }else{
             echo 'password error';
@@ -99,16 +100,18 @@ class HR extends CI_Controller {
     public function update_hr()
     {
         $tel = $this->input->get('tel');
+        $hr_name = $this->input->get('name');
         $company = $this->input->get('company');
         $email = $this->input->get('email');
         $sex = $this->input->get('sex');
         $header = $this->input->get('header');
         $row = $this->HR_model->update_hr(array(
-            "tel" => $tel,
-            "company" => $company,
-            "email" => $email,
-            "sex" => $sex,
-            "header" => $header
+            "hr_tel" => $tel,
+            "hr_name" => $hr_name,
+            "hr_company" => $company,
+            "hr_email" => $email,
+            "hr_sex" => $sex,
+            "hr_header" => $header
         ));
         if($row>0){
             echo 'success';
