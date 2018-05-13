@@ -22,13 +22,34 @@ Page({
         tel: this.data.tel,
         pwd: this.data.pwd
       },
-      success: function (res) {
-        console.log(res.data)
-        wx.setStorage({
-            key:"hr",
-            data:res.data
-        })
-      }
+        success: function (res) {
+          console.log(res.data)
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000,
+            success: function (res) {
+
+              setTimeout(function () {
+                wx.redirectTo({
+                  url: "../admin/admin",
+                  //接口调用成功的回调方法
+                  fuccess: function () { },
+
+                  fail: function () { },
+
+                  complete: function () { }
+                })
+              }, 2000)
+              wx.setStorage({
+                key: "hr",
+                data: res.data
+              })
+            }
+          })
+
+        }
+      
     })
   },
   /**
