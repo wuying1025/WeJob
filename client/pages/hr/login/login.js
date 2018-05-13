@@ -24,6 +24,10 @@ Page({
       },
       success: function (res) {
         console.log(res.data)
+        wx.setStorage({
+            key:"hr",
+            data:res.data
+        })
       }
     })
   },
