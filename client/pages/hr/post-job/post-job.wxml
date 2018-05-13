@@ -1,36 +1,49 @@
 <view >
-<view class='top'>
-<text>发送招聘信息</text>
-</view>
-<view class='container'>
-<view class='introduce'>
-<text>公司名称：</text> 
-<input type='text' bindinput="bindKeyInputcompany"></input>
+      <view class='top'>
+        <text>发送招聘信息</text>
+      </view>
+      <view class='container'>
+        <view class='introduce'>
+            <text>公司名称：</text> 
+            <input type='text' bindinput="bindKeyInputcompany"></input>
 
-<text>职位名称：</text>
-<input type='text' bindinput="bindKeyInputname"></input>
+            <text>职位名称：</text>
+            <input type='text' bindinput="bindKeyInputname"></input>
 
-<text>薪资：</text>
-<input type='number' bindinput="bindKeyInputsalary"></input>
+            <text>薪资：</text>
+            <input type='number' bindinput="bindKeyInputsalary"></input>
 
-<text>招聘类型：</text>
-<input type='text' bindinput="bindKeyInputp_type"></input>
+            <text>招聘类型：</text>
+            <input type='text' bindinput="bindKeyInputp_type"></input>
 
-<text>招聘信息开始时间</text>
-<input type='number' bindinput="bindKeyInputp_date_start"></input>
+            <text >招聘信息开始时间</text>
+            <!-- <input type='number' bindinput="bindKeyInputp_date_start"></input> -->
+            <view class="section">
+              <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange1">
+                <view class="picker">
+                  {{ p_date_start}}
+                </view>
+              </picker>
+            </view>
 
-<text>招聘信息结束时间</text>
-<input type='number' bindinput="bindKeyInputp_date_end"></input>
+            <text class='time'>招聘信息结束时间</text>
+            <!-- <input type='number' bindinput="bindKeyInputp_date_end"></input> -->
+            <view class="section">
+              <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange2">
+                <view class="picker">
+                  {{ p_date_end}}
+                </view>
+              </picker>
+            </view>
 
+            </view>
+        <view class='textarea'>
+        <textarea value='职位描述:' bindtinput="bindKeyInputrequire"></textarea>
 
-</view>
-<view class='textarea'>
-<textarea value='职位描述:' bindtinput="bindKeyInputrequire"></textarea>
+        <textarea value='工作职责:' bindtinput="bindKeyInputresponsibility"></textarea>
 
-<textarea value='工作职责:' bindtinput="bindKeyInputresponsibility"></textarea>
+        </view>
 
-</view>
-
-<navigator url='../logined/logined'><button  bindtap='send'>发送</button></navigator>
-</view>
+        <navigator url='../logined/logined'><button  bindtap='send'>发送</button></navigator>
+      </view>
 </view>

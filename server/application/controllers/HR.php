@@ -70,7 +70,7 @@ class HR extends CI_Controller {
     {
         $company = $this->input->get('company');
         $p_name = $this->input->get('name');
-        $p_require = $this->get->get('require');
+        $p_require = $this->input->get('require');
         $p_responsibility = $this->input->get('responsibility');
         $hr_id = $this->input->get('hr_id');
         $p_type = $this->input->get('p_type');

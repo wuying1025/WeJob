@@ -14,90 +14,98 @@ Page({
   p_date_end: '',
   responsibility:'', 
   salary: '',
+  p_date_start: '2016-09-01',
+  p_date_end: '2016-09-01',
   },
   bindKeyInputcompany: function (e) {
     this.setData({
       company: e.detail.value
     })
-    console.log(this.data.tel);
   },
 
   bindKeyInputname: function (e) {
     this.setData({
       name: e.detail.value
     })
-    console.log(this.data.pwd);
   },
 
   bindKeyInputrequire: function (e) {
     this.setData({
       require: e.detail.value
     })
-    console.log(this.data.pwd);
   },
 
   bindKeyInputrearesponsibility: function (e) {
     this.setData({
       responsibility: e.detail.value
     })
-    console.log(this.data.pwd);
   },
 
   bindKeyInputp_type: function (e) {
     this.setData({
       p_type: e.detail.value
     })
-    console.log(this.data.pwd);
   },
-
-  bindKeyInputp_date_start: function (e) {
+  bindDateChange1: function (e) {
     this.setData({
-      p_date_start: e.detail.value
+      p_date_start: e.detail.value,
     })
-    console.log(this.data.pwd);
   },
-
-  bindKeyInputp_date_end: function (e) {
+  bindDateChange2: function (e) {
     this.setData({
-      p_date_end: e.detail.value
+      p_date_end: e.detail.value,
     })
-    console.log(this.data.pwd);
   },
+  // bindKeyInputp_date_start: function (e) {
+  //   this.setData({
+  //     p_date_start: e.detail.value
+  //   })
+  // },
+
+  // bindKeyInputp_date_end: function (e) {
+  //   this.setData({
+  //     p_date_end: e.detail.value
+  //   })
+  //   console.log(this.data.p_date_end);
+  // },
 
   bindKeyInputsalary: function (e) {
     this.setData({
     salary: e.detail.value
     })
-    console.log(this.data.pwd);
   },
 
-  send: function () {
-    wx.request({
-      url: 'https://zfbwoz2h.qcloud.la/HR/check_hr_login',
-      data: {
-        company: this.data.ompany,
-        name: this.data.name,
-        require: this.data.require,
-        hr_id: this.data.hr_id,
-        p_type: this.data.p_type ,
-        p_date_start: this.data.p_date_start,
-        p_date_end: this.data.p_date_end,
-        responsibility: this.data.responsibility,
-        salary: this.data.salary,
-      },
+  send: function () { 
+    var that = this;
+    wx.getStorage({
+      key: 'hr',
       success: function (res) {
-        console.log(res.data)
-        wx.showToast({
-          title: '成功',
-          icon: 'success',
-          duration: 2000,
-        
+       var id = res.data.hr_id;
+        wx.request({
+          url: 'https://zfbwoz2h.qcloud.la/HR/post_job',
+          data: {
+            company: that.data.company,
+            name: that.data.name,
+            require: that.data.require,
+            hr_id: id,
+            p_type: that.data.p_type,
+            p_date_start: that.data.p_date_start,
+            p_date_end: that.data.p_date_end,
+            responsibility: that.data.responsibility,
+            salary: that.data.salary,
+          },
+          success: function (res) {
+            wx.showToast({
+              title: '成功',
+              icon: 'success',
+              duration: 2000
+            })
 
-         
+          }
         })
-
       }
-    })
+    });
+    
   },
 
   /**

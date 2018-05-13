@@ -21,8 +21,7 @@ float:right;
 }
 .introduce text{
   font-size: 0.9rem;
-  /* color:#0390D0; */
-  width: 8rem;
+   width: 8rem; 
   margin-bottom: 1.2rem;
   float: left;
 }
@@ -41,4 +40,11 @@ textarea{
 }
 .textarea{
   margin-top: 9rem;
+}
+.time{
+  margin-left: 2rem;
+    /* float:left;   */
+}
+.section{
+   float: right; 
 }
