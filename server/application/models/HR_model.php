@@ -69,6 +69,7 @@ class HR_model extends CI_Model
     {
         $rows = DB::row('resume', ['*'], "u_id = '$u_id'");
         return $rows;
+
     }
 
 }
