@@ -1,0 +1,6 @@
+hr_reg:三个参数 tel,pwd，pwd2
+返回success或fail或pwd error(两次密码输入不一致);
+
+
+check_hr_login获取两个参数tel pwd
+返回success或password error;

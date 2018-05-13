@@ -16,7 +16,7 @@ $_BODY = json_decode(file_get_contents('php://input'), TRUE);
 
 switch ("{$_SERVER['REQUEST_METHOD']} {$_SERVER['PATH_INFO']}") {
 case 'GET /':
-    send('Welcome to SDK Test Server/1.0');
+    send('HR to SDK Test Server/1.0');
     break;
 
 case 'POST /auth':
