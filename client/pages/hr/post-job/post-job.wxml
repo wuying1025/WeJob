@@ -4,12 +4,33 @@
 </view>
 <view class='container'>
 <view class='introduce'>
-<text>公司名称：</text> <input type='text'></input>
-<text>工资：</text><input type='text'></input>
-<text>职位名称：</text><input type='text'></input>
+<text>公司名称：</text> 
+<input type='text' bindinput="bindKeyInputcompany"></input>
+
+<text>职位名称：</text>
+<input type='text' bindinput="bindKeyInputname"></input>
+
+<text>薪资：</text>
+<input type='number' bindinput="bindKeyInputsalary"></input>
+
+<text>招聘类型：</text>
+<input type='text' bindinput="bindKeyInputp_type"></input>
+
+<text>招聘信息开始时间</text>
+<input type='number' bindinput="bindKeyInputp_date_start"></input>
+
+<text>招聘信息结束时间</text>
+<input type='number' bindinput="bindKeyInputp_date_end"></input>
+
+
 </view>
-<textarea value='职位描述:'></textarea>
-<textarea value='职位要求:'></textarea>
-<button>发送</button>
+<view class='textarea'>
+<textarea value='职位描述:' bindtinput="bindKeyInputrequire"></textarea>
+
+<textarea value='工作职责:' bindtinput="bindKeyInputresponsibility"></textarea>
+
+</view>
+
+<navigator url='../logined/logined'><button  bindtap='send'>发送</button></navigator>
 </view>
 </view>
