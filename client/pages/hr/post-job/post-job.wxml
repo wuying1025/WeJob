@@ -6,6 +6,7 @@
 <view class='introduce'>
 <text>公司名称：</text> <input type='text'></input>
 <text>工资：</text><input type='text'></input>
+<text>职位名称：</text><input type='text'></input>
 </view>
 <textarea value='职位描述:'></textarea>
 <textarea value='职位要求:'></textarea>

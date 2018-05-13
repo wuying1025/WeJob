@@ -1,0 +1,26 @@
+<view>
+<view class='header'>
+   <image src='logo.png'></image>
+</view>
+<view class='form'>
+<view class='wrapper'>
+<view class='com'>
+    <text class='name login' >用户名:</text>
+      <input type='text' placeholder='手机号'  bindinput="bindKeyInputtel" placeholder-style='font-size:30rpx;'></input>
+      <text class='pwd login'>密码:</text>
+      <input type='password'  bindinput="bindKeyInputpwd"></input>
+      <text class='pwd login'>确认密码:</text>
+      <input type='password'  bindinput="bindKeyInputpwd1"></input>
+      <text class='login'>验证码:</text>
+     <input class='num' type='text'></input>
+     <button class='get'>获取验证码</button>
+    
+  
+    
+</view>
+    
+</view>
+ <button class='ok' bindtap="reg">注册</button>
+</view>
+
+</view>
