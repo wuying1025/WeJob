@@ -1,32 +1,46 @@
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    tel: '',
-    pwd: ''
+    flag: true,
+    img: "../../me/person.jpg"
   },
-  bindKeyInputtel: function (e) {
-    this.setData({
-      tel: e.detail.value
-    })
-    console.log(this.data.tel);
-  },
-  bindKeyInputpwd: function (e) {
-    this.setData({
-      pwd: e.detail.value
-    })
-    console.log(this.data.pwd);
-  },
-  login: function () {
-    wx.request({
-      url: 'https://zfbwoz2h.qcloud.la/HR/check_hr_login', 
-      data: {
-        tel: this.data.tel,
-        pwd: this.data.pwd
-      },
+
+  /**
+   * 弹出层函数
+   */
+  //出现
+  show: function () {
+    wx.showModal({
+      // title: '提示',
+      content: '确定要退出？',
       success: function (res) {
-        console.log(res.data)
+        if (res.confirm) {
+          wx.switchTab({
+            url: '/pages/me/me',
+          })
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
     })
   },
+  //消失
+
+  hide: function () {
+
+    this.setData({ flag: true })
+
+  },
+  basic: function () {
+    wx.showToast({
+      title: 'hhh',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

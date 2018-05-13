@@ -33,6 +33,27 @@ Page({
       },
       success: function (res) {
         console.log(res.data)
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000,
+          success:function(res){
+
+            setTimeout(function () {
+              wx.redirectTo({
+                url: "../login/login",
+                //接口调用成功的回调方法
+                fuccess: function () { },
+
+                fail: function () { },
+
+                complete: function () { }
+              })
+            }, 2000)
+            
+          }
+        })
+        
       }
      
     })
