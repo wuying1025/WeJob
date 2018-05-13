@@ -38,6 +38,11 @@ Page({
     console.log(this.data.tel);
   },
   save: function () {
+    var id;
+    wx.getStorage({
+      key: 'hr',
+      success: function (res) {
+        id = res.data.hr_id;
     wx.request({
       url: 'https://zfbwoz2h.qcloud.la/HR/update_hr',
       data: {
@@ -45,14 +50,13 @@ Page({
         sex: this.data.sex,
         company: this.data.company,
         email: this.data.email,
-        tel: this.data.tel
+        tel: this.data.tel,
+        id:id
       },
       success: function (res) {
         console.log(res.data)
-        wx.setStorage({
-          key: "key",
-          data: res.data
-        })
+      }
+    })
       }
     })
   },
