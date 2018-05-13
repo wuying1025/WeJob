@@ -32,7 +32,7 @@ Page({
 
               setTimeout(function () {
                 wx.redirectTo({
-                  url: "../admin/admin",
+                  url: "../logined/logined",
                   //接口调用成功的回调方法
                   fuccess: function () { },
 
