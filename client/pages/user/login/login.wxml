@@ -8,7 +8,7 @@
     <text class='name login'>手机号码:</text>
       <input type='text'  bindinput="bindKeyInputtel"></input>
       <text class='pwd login'>密码:</text>
-      <input type='password' bindinput="bindKeyInputtel"></input>
+      <input type='password' bindinput="bindKeyInputpwd"></input>
       <text class='login'>验证码:</text>
      <input class='num' type='text'></input>
      <button class='get'>获取验证码</button>

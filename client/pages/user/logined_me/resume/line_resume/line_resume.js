@@ -1,92 +1,45 @@
 Page({
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    items: [
-      { name: 'man', value: '男' },
-      { name: 'girl', value: '女', checked: 'true' }
-    ],
-    tempFilePaths: 'default.png',
-    name:"",
-    sex:"",
-    birth: "",
-    school: "",
-    pos: "",
-    tel: "",
-    email:""
-  },
-  nameInput:function(e){
-    this.setData({
-      name: e.detail.value
-    })
-    console.log(this.data.value);
-  },
-  radioChange: function (e) {
-    var that = this;
-    var radioValue = e.detail.value;
-    that.setData({
-      value: radioValue
-    })
-    console.log(that.data.value);
-    // if (that.data.currentTab >= 2) {
-    //   wx.navigateTo({
-    //     url: '../page3/page3',
-    //   });
-    // } else {
-    //   that.setData({
-    //     currentTab: that.data.currentTab + 1
-    //   });
-    // }
-  },
-  birthInput: function (e) {
-    this.setData({
-      birth: e.detail.value
-    })
-    console.log(this.data.birth);
-  },
-  schoolInput: function (e) {
-    this.setData({
-      school: e.detail.value
-    })
-    console.log(this.data.school);
-  },
-  posInput: function (e) {
-    this.setData({
-      pos: e.detail.value
-    })
-    console.log(this.data.pos);
-  },
-  telInput: function (e) {
-    this.setData({
-      tel: e.detail.value
-    })
-    console.log(this.data.tel);
-  },
-  emailInput: function (e) {
-    this.setData({
-      email: e.detail.value
-    })
-    console.log(this.data.email);
-  },
-  basic: function () {
+  formSubmit1: function (e) {
     wx.request({
-      url: '', //仅为示例，并非真实的接口地址
+      url: 'https://zfbwoz2h.qcloud.la/user/add_cv1',
       data: {
-        name: this.data.name,
-        sex: this.data.sex,
-        birth: this.data.birth,
-        school: this.data.school,
-        pos: this.data.pos,
-        tel: this.data.tel,
-        email: this.data.email
+        name: e.detail.value.name,
+        sex: e.detail.value.sex,
+        bir: e.detail.value.birthday,
+        u_school: e.detail.value.u_school,
+        pos: e.detail.value.pos,
+        tel:e.detail.value.tel,
+        email:e.detail.value.email,
       },
       success: function (res) {
         console.log(res.data)
       }
+
     })
   },
-  
+  formSubmit2: function (e) {
+    wx.request({
+      url: 'https://zfbwoz2h.qcloud.la/user/add_cv2',
+      data: {
+        school: e.detail.value.school,
+        job: e.detail.value.job,
+        time: e.detail.value.time,
+        tallest: e.detail.value.tallest
+
+      },
+      success: function (res) {
+        console.log(res.data)
+      }
+
+    })
+  },
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    tempFilePaths: 'default.png'  
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -106,7 +59,7 @@ Page({
         })
       }
     })
-  },
+  }  ,
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,6 +1,6 @@
 <view>
   <view class="wrapper">
-    <form action="">
+    <form action="" bindsubmit="formSubmit1">
       <view class="basic">
        <text class="basic-msg">基本信息：\n</text>
         <text class="basic-left">头像：</text><text class="star">*</text>
@@ -9,34 +9,27 @@
         <image src="{{tempFilePaths}}" class="photo-img"></image>
         <text class='set'>点击图片添加</text>                
         </view>
-        <text class="basic-left">姓名：</text><text class="star">*</text><input type="text" bindinput='nameInput'/>
-        <text class="basic-left">性别：</text><text class="star">*</text>
-        <radio-group class="radio-group" bindchange="radioChange">
-          <label class="radio" wx:for="{{items}}">
-          <radio value="{{item.name}}" checked="{{item.checked}}" class="choice"/><text class="sex">{{item.value}}</text>
-          </label>
-        </radio-group>
-        <text class="basic-left">生日：</text><text class="star">*</text><input type="text" bindinput='birthInput'/>
-        <text class="basic-left">学校：</text><text class="star">*</text><input type="text" bindinput='schoolInput'/>
-       <text class="basic-left">应聘职位：</text><text class="star">*</text><input type="text" bindinput='posInput'/>
-        <text class="basic-left">电话：</text><text class="star">*</text><input type="text" bindinput='telInput'/>
-        <text class="basic-left">邮箱：</text><text class="star">*</text><input type="text" bindinput='emailInput'/>
+        <text class="basic-left">姓名：</text><text class="star">*</text><input type="text" name='name' />
+        <text class="basic-left">性别：</text><text class="star">*</text><input type="text" name='sex'/>
+        <text class="basic-left">生日：</text><text class="star">*</text><input type="text" name='birthday'/>
+        <text class="basic-left">学校：</text><text class="star">*</text><input type="text" name='u_school'/>
+       <text class="basic-left">应聘职位：</text><text class="star">*</text><input type="text" name='pos'/>
+        <text class="basic-left">电话：</text><text class="star">*</text><input type="text" name='tel'/>
+        <text class="basic-left">邮箱：</text><text class="star">*</text><input type="text" name='email'/>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>
+       <button formType="submit" class="save1" hover-class="btn-hover" bindtap="basic">保存</button>
     </form>
-
-    <form>  
+    <form  bindsubmit="formSubmit2">  
       <view class="basic">
        <text class="basic-msg">教育经历：\n</text>
-        <text class="basic-left">学校：</text><text class="star">*</text><input type="text"/>
-        <text class="basic-left">专业：</text><text class="star">*</text><input type="text"/>
-        <text class="basic-left">毕业时间：</text><text class="star">*</text><input type="text"/>
-        <text class="basic-left">最高学历：</text><text class="star">*</text><input type="text"/>
+        <text class="basic-left">学校：</text><text class="star">*</text><input type="text" name='school'/>
+        <text class="basic-left">专业：</text><text class="star">*</text><input type="text" name='job'/>
+        <text class="basic-left">毕业时间：</text><text class="star">*</text><input type="text" name='time'/>
+        <text class="basic-left">最高学历：</text><text class="star">*</text><input type="text" name='tallest'/>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
+       <button formType="submit" class="save2" hover-class="btn-hover" bindtap="basic">保存</button>      
     </form>  
-
-    <form>        
+    <form  bindsubmit="formSubmit3">        
       <view class="basic">
        <text class="basic-msg">项目经验：\n</text>
         <text class="basic-left">项目名称：</text><text class="star">*</text><input type="text"/>
@@ -45,10 +38,9 @@
         <text class="basic-left">项目描述：</text><text class="star">*</text>
         <textarea class="desc"></textarea>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
+       <button formType="submit" class="save3" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
-
-      <form>    
+      <form  bindsubmit="formSubmit4">    
      <view class="basic">
        <text class="basic-msg">实习经历：\n</text>
         <text class="basic-left">公司名称：</text><input type="text"/>
@@ -58,31 +50,28 @@
         <text class="basic-left">工作内容：</text>
         <textarea class="desc"></textarea>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
+       <button formType="submit" class="save4" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
-
-      <form>    
+      <form  bindsubmit="formSubmit5">    
       <view class="basic">
        <text class="basic-msg">校园荣誉：\n</text>
         <textarea class="desc"></textarea>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
-      </form>    
-
-      <form>    
+       <button formType="submit" class="save5" hover-class="btn-hover" bindtap="basic">保存</button>      
+      </form >    
+      <form  bindsubmit="formSubmit6">    
       <view class="basic">
        <text class="basic-msg">技能评价：<text class="star">*</text>\n</text>
         <textarea class="desc"></textarea>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>      
+       <button formType="submit" class="save6" hover-class="btn-hover" bindtap="basic">保存</button>      
       </form>    
-      
-      <form>    
+      <form  bindsubmit="formSubmit7">    
       <view class="basic">
        <text class="basic-msg">自我描述：<text class="star">*</text>\n</text>
         <textarea class="desc"></textarea>
       </view>
-       <button formType="submit" class="save" hover-class="btn-hover" bindtap="basic">保存</button>   
+       <button formType="submit" class="save7" hover-class="btn-hover" bindtap="basic">保存</button>   
     </form>
   </view>
 </view>
