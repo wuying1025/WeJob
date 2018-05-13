@@ -22,7 +22,7 @@
 </view>
     
 </view>
- <navigator url='../logined_me/logined_me'><button class='ok' bindtap='login'>登陆</button></navigator>
+ <navigator url='../logined/logined'><button class='ok' bindtap='login'>登陆</button></navigator>
 </view>
 
 </view>
