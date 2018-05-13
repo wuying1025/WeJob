@@ -7,23 +7,47 @@ Page({
     this.setData({
       tel: e.detail.value
     })
-    console.log(this.data.tel);
   },
   bindKeyInputpwd: function (e) {
     this.setData({
       pwd: e.detail.value
     })
-    console.log(this.data.pwd);
   },
   login:function(){
     wx.request({
-      url: 'user/check_login', //仅为示例，并非真实的接口地址
+      url: 'https://zfbwoz2h.qcloud.la/user/check_login', //仅为示例，并非真实的接口地址
       data: {
         tel: this.data.tel,
         pwd: this.data.pwd
       },
       success: function (res) {
-        console.log(res.data)
+        if(res.data =='pwd empty'){
+          wx.showToast({
+            title: '密码为空',
+            icon: 'none',
+            duration: 2000
+          })
+        } else if (res.data =='name not exit'){
+          wx.showToast({
+            title: '用户未注册',
+            icon: 'none',
+            duration: 2000
+          })
+        } else if (res.data =='pwd error'){
+          wx.showToast({
+            title: '密码错误',
+            icon: 'none',
+            duration: 2000
+          })
+        }else{
+          wx.setStorage({
+            key: "user",
+            data: res.data
+          })
+          wx.switchTab({    //跳转到tabBar页面，并关闭其他所有tabBar页面
+            url: "/pages/first/first"
+          })
+        }
       }
     })
   },
