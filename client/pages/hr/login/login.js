@@ -23,7 +23,10 @@ Page({
         pwd: this.data.pwd
       },
         success: function (res) {
-          console.log(res.data)
+          wx.setStorage({
+            key: "hr",
+            data: res.data
+          })
           wx.showToast({
             title: '成功',
             icon: 'success',
@@ -41,10 +44,7 @@ Page({
                   complete: function () { }
                 })
               }, 2000)
-              wx.setStorage({
-                key: "hr",
-                data: res.data
-              })
+              
             }
           })
 
