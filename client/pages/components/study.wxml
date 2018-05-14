@@ -1,13 +1,12 @@
 <view class="contain">
-  
-  <view wx:for="{{msgList}}" class="job">
+  <view wx:for="{{test}}" class="job">
   <navigator url='../user/position/position' hover-class='none'>
-  <image src="{{item.logo}}" class="job-img"></image>
+   <image src="baidu.png" class="job-img"></image> 
   <view class='job-info'>
-   <view>{{item.name}}</view>
-    {{item.city}}
-    {{item.posttime}}发布
-    <view class="salary-color">￥{{item.salary}}/天</view>
+   <view>{{item.p_company}}</view>
+     {{item.p_city}}
+     {{item.p_date_start}}发布 
+    <view class="salary-color">￥{{item.p_salary}}/天</view>
     <button class='job-apply' hover-class='none'>申请</button>
   </view>
   </navigator></view>
