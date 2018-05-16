@@ -6,6 +6,8 @@
         <view class='introduce'>
             <text>公司名称：</text> 
             <input type='text' bindinput="bindKeyInputcompany"></input>
+<text>工作地点：</text> 
+            <input type='text' bindinput="bindKeyInputp_city"></input>
 
             <text>职位名称：</text>
             <input type='text' bindinput="bindKeyInputname"></input>

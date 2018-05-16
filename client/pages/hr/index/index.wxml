@@ -1,0 +1,13 @@
+<!-- index.wxml -->
+    <view class='container'>
+      <image src="img/person.png"></image>
+      <text>用户名：</text>
+      <input></input>
+      <text>密码：</text>
+      <input></input>
+      <text>验证码：</text>
+      <input class="verify"></input>
+      <image src="img/verify.png" class="yanzheng"></image>
+      <text class="common">注册</text><text class="forget">忘记密码?</text>
+      <button>确认</button>
+    </view>

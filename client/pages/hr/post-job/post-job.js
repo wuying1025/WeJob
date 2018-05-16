@@ -10,8 +10,7 @@ Page({
   require:'',
   hr_id: '',
   p_type: '',
-  p_date_start: '',
-  p_date_end: '',
+  p_city:'',
   responsibility:'', 
   salary: '',
   p_date_start: '2016-09-01',
@@ -20,6 +19,11 @@ Page({
   bindKeyInputcompany: function (e) {
     this.setData({
       company: e.detail.value
+    })
+  },
+  bindKeyInputp_city: function (e) {
+    this.setData({
+      p_city: e.detail.value
     })
   },
 

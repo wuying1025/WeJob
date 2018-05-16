@@ -1,17 +1,39 @@
-// pages/hr/logined.js
+// pages/see-cv/see-cv.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  hr_id:'',
+    p_id:'',
+    position: []
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that=this;
+    wx.getStorage({
+      key: 'position',
+      success: function (res) {
+        var id = res.data.p_id;
+        // console.log(id);
+        wx.request({
+          url: 'https://zfbwoz2h.qcloud.la/HR/search_own_position',
+          data: {
+            p_id: id,
+          },
+          success: function (res) {
+            // console.log(res.data);
+            that.setData({
+              position: res.data
+            });
+          }
+        })
+      }
+    });
+
   },
 
   /**

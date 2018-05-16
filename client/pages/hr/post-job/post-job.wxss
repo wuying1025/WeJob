@@ -18,6 +18,7 @@ float:right;
 .introduce{
   width: 100%;
   height:6rem;
+
 }
 .introduce text{
   font-size: 0.9rem;
@@ -39,11 +40,10 @@ textarea{
   width: 16rem;
 }
 .textarea{
-  margin-top: 9rem;
+  margin-top: 11rem;
 }
 .time{
-  margin-left: 2rem;
-    /* float:left;   */
+      margin-left: 2rem;
 }
 .section{
    float: right; 

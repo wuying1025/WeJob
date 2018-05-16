@@ -1,12 +1,13 @@
-// pages/hr/logined.js
+// pages/hr/hr-login/hr-login.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  hr_id:'',
+  
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
