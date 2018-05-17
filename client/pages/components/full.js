@@ -22,15 +22,18 @@ Component({
           test: res.data
         });     
       }
-    })
+    });
   },
-
   /**
    * 组件的方法列表
    */
   methods: {
-    labeltap:function(){
-      console.log("label被点击了一下");
-    }
+    msginfo: function (event) {
+      var id = event.currentTarget.dataset['index'];
+      console.log(id);
+      wx.navigateTo({
+        url: '../user/position/position?p_id=' + id,
+      })
+    },
   }
 })
