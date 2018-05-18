@@ -20,7 +20,7 @@ Page({
         var id = res.data.p_id;
         // console.log(id);
         wx.request({
-          url: 'https://zfbwoz2h.qcloud.la/HR/search_own_position',
+          url: 'https://zfbwoz2h.qcloud.la/HR/check_resume',
           data: {
             p_id: id,
           },
