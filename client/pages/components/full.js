@@ -1,4 +1,3 @@
-// pages/first/full.js
 Component({
   /**
    * 组件的属性列表
@@ -11,58 +10,30 @@ Component({
    * 组件的初始数据
    */
   data: {
-    msgList: [
-      {
-        name: "百度",
-        city: "北京",
-        salary: "100",
-        logo: "baidu.png",
-        posttime: "2018-8-12"
-      },
-      {
-        name: "百度",
-        city: "北京",
-        salary: "100",
-        logo: "baidu.png",
-        posttime: "2018-8-12"
-      },
-      {
-        name: "百度",
-        city: "北京",
-        salary: "100",
-        logo: "baidu.png",
-        posttime: "2018-8-12"
-      },
-      {
-        name: "百度",
-        city: "北京",
-        salary: "100",
-        logo: "baidu.png",
-        posttime: "2018-8-12"
-      },
-      {
-        name: "百度",
-        city: "北京",
-        salary: "100",
-        logo: "baidu.png",
-        posttime: "2018-8-12"
-      },
-      {
-        name: "百度",
-        city: "北京",
-        salary: "100",
-        logo: "baidu.png",
-        posttime: "2018-8-12"
-      }
-    ]
+   test:[]
   },
-
+  ready:function(){
+    var that = this;
+    wx.request({
+      url: 'https://zfbwoz2h.qcloud.la/user/get_full_message', //仅为示例，并非真实的接口地址
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          test: res.data
+        });     
+      }
+    });
+  },
   /**
    * 组件的方法列表
    */
   methods: {
-    labeltap:function(){
-      console.log("label被点击了一下");
-    }
+    msginfo: function (event) {
+      var id = event.currentTarget.dataset['index'];
+      console.log(id);
+      wx.navigateTo({
+        url: '../user/position/position?p_id=' + id,
+      })
+    },
   }
 })

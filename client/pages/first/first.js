@@ -1,11 +1,13 @@
 Page({
-
+  onMyEvent: function (e) {
+    e.detail // 自定义组件触发事件时提供的detail对象
+  },
   /**
    * 页面的初始数据
    */
   data: {
-    fullHidden: "none",
-    studyHidden: "none"
+    fullHidden: "block",
+    studyHidden: "block"
   },
   full_btn:function(){
     this.setData({

@@ -1,0 +1,4 @@
+<view class='container'>
+      <view>我的公司</view>
+      <textarea>显示公司信息</textarea>
+    </view>

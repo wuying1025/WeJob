@@ -1,0 +1,30 @@
+<view >
+<view class='top'>
+<text>查看职位</text>
+</view>
+<view class='container'>
+  
+   <view wx:for="{{position}}" >
+   <navigator url='../see-detail/see-detail'>
+   <view class='job' > 
+   <view class='p_name'>
+    职位:{{item.name}}
+    </view>
+     <view class='p_salary'>
+    薪资:{{item.p_salary}}
+    </view>
+    <view class='p_type'>
+    类型:{{item.p_type}}
+    </view>  
+    
+   </view>
+  </navigator>
+ 
+   </view>
+</view>
+<ul class='footer'>
+  <li class="footer1">首页</li>
+  <li class="footer1"><navigator url="../hr-message/hr-message"hover-class='none'>消息</navigator></li>
+  <li class="footer1"><navigator url="../admin/admin" hover-class='none'>我</navigator></li>
+</ul>
+</view>

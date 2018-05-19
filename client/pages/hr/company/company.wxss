@@ -1,0 +1,9 @@
+/* pages/hr/company/company.wxss */
+.container view{
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 80px;
+}
+.container textarea {
+  border: 1px solid #ccc;
+}

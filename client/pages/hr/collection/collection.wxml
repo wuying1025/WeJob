@@ -1,0 +1,10 @@
+<view class='container'>
+  <view class="header">
+      <text>我的收藏</text>
+      <image src="../img/person.png"></image>
+  </view>
+  <textarea>显示收藏的学生信息</textarea>
+</view>     
+      
+      
+   

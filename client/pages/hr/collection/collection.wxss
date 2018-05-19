@@ -1,0 +1,38 @@
+/* pages/hr/collection/collection.wxss */
+/* pages/hr/message/message.wxss */
+.container image {
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+.header {
+  display: flex;
+  width: 100%;
+}
+.header text {
+  flex: 2;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 100px;
+}
+.header image {
+  flex: 1;
+}
+.container textarea {
+  border: 1px solid #ccc;
+  height: 370px;
+  width: 290px;
+  border-radius: 5px;
+}
+
+.common {
+  display: block;
+  margin:20px 0 10px 10px;
+}
+input{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 2rem;
+  width: 270px;
+  margin: 0 auto;
+}

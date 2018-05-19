@@ -19,17 +19,13 @@
 }
 .container textarea {
   border: 1px solid #ccc;
-  height: 370px;
-  width: 290px;
   border-radius: 5px;
+  height:500px;
 }
 .redact{
   position: absolute;
   right: 20px;
   margin: 10px;
-}
-.redact:hover {
-  color: darkturquoise;
 }
 .common {
   display: block;

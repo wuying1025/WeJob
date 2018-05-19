@@ -1,0 +1,19 @@
+
+<view class='wrapper'>
+
+<view class='nav'>
+<navigator url="../watch-hr/watch-hr" hover-class='none'><li class='watch-hr'>谁看过我</li>
+</navigator>
+<navigator url="../hr-watch/hr-watch" hover-class='none'><li class='hr-watch'>我看过谁</li>
+</navigator>
+
+</view>
+<view class='container'>
+
+</view>
+<ul class='footer'>
+  <li class="footer1">首页</li>
+  <li class="footer1"><navigator url="../hr-message/hr-message"hover-class='none'>消息</navigator></li>
+  <li class="footer1"><navigator url="../admin/admin" hover-class='none'>我</navigator></li>
+</ul>
+</view>
