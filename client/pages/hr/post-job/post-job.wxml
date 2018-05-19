@@ -25,12 +25,12 @@
           </view>
               <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange1">
                 <view class="picker">
-                  <view class='time'> 招聘信息开始时间:</view>{{ p_date_end}}
+                  <view class='time'> 招聘信息开始时间:</view>{{ p_date_start}}
                 </view>
               </picker>
               <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange2">
                 <view class="picker">
-                  <view class='time'> 招聘信息开始时间:</view>{{ p_date_end}}
+                  <view class='time'> 招聘信息结束时间:</view>{{ p_date_end}}
                 </view>
               </picker>                    
 

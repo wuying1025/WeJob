@@ -5,36 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    p_id:'',
-    test:[]
+    r_id:'',
+    test: []
   },
-  msginfo: function (event) {
-    var id = event.currentTarget.dataset['index'];
-    console.log(id);
-    wx.navigateTo({
-      url: '../see-cv/see-cv?p_id=' + id,
-    })
-  }, 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
   onLoad: function (options) {
-    var that=this;
-    var id = options.p_id;
+    var that = this;
+    var id = options.r_id;
     wx.request({
-      url: 'https://zfbwoz2h.qcloud.la/HR/get_pos_message',
+      url: 'https://zfbwoz2h.qcloud.la/HR/check_resume',
       data: {
-        p_id: id,
+        r_id: id,
       },
-      success: function (res) {
-        // console.log(res.data);
+      success: function (res) {        // console.log(res.data);
         that.setData({
           test: res.data
         });
       }
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

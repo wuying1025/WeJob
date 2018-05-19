@@ -1,43 +1,24 @@
 <view >
-<view class='top'>
-<text>查看简历</text>
-</view>
+
 <view class='container'>
   
-   <view wx:for="{{position}}" >
-   <navigator url='../see-cv/see-cv'>
+   <view wx:for="{{cv}}" >
+   <!-- <navigator url='../see-cv/see-cv'> -->
    <view class='cv' > 
-   <view id='company'>
-    公司{{item.company}}
-   </view>
+      <view class='r_name'>
+        名称{{item.r_name}}
+      </view>
 
-     <view id='p_city'>
-    城市{{item.p_city}}
-    </view>
-   <view id='p_name'>
-    职位{{item.name}}
-    </view>
-     <view id='p_salary'>
-    薪资{{item.p_salary}}
-    </view>
-    <view id='p_type'>
-    职位类型{{item.p_type}}
-    </view>
-     <view id='p_date_start'>
-    开始时间{{item.p_date_start}}
-    </view>
-     <view id='p_date_end'>
-    结束时间{{item.p_date_end}}
-    </view>
-     <view id='p_responsibility'>
-    职业描述：{{item.responsibility}}
-    </view>
-     <view id='p_require'>
-    职位需求{{item.require}}
-    </view>
-    
+        <view class='r_sex'>
+        性别{{item.r_sex}}
+        </view>
+        <view  class='in' bindtap='msginfo' data-index="{{item.r_id}}">
+        >
+        </view>
+      
    </view>
-  </navigator>
+   <!-- <button >查看简历</button> -->
+  <!-- </navigator> -->
  
    </view>
 </view>

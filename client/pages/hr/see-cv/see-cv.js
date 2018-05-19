@@ -8,33 +8,56 @@ Page({
     p_id:'',
     cv: []
   },
-
+  msginfo: function (event) {
+    var id = event.currentTarget.dataset['index'];
+    console.log(id);
+    wx.navigateTo({
+      url: '../see-ucv/see-ucv?r_id=' + id,
+    })
+  }, 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var that=this;
-    wx.getStorage({
-      key: 'position',
-      success: function (res) {
-        var id = res.data.p_id;
-        // console.log(id);
-        wx.request({
-          url: 'https://zfbwoz2h.qcloud.la/HR/check_resume',
-          data: {
-            p_id: id,
-          },
-          success: function (res) {
-            // console.log(res.data);
-            that.setData({
-              cv: res.data
-            });
-          }
-        })
-      }
-    });
+  // onLoad: function (options) {
+  //   var that=this;
+  //   wx.getStorage({
+  //     key: 'position',
+  //     success: function (res) {
+  //       var id = res.data.p_id;
+  //       // console.log(id);
+  //       wx.request({
+  //         url: 'https://zfbwoz2h.qcloud.la/HR/check_resume',
+  //         data: {
+  //           p_id: id,
+  //         },
+  //         success: function (res) {
+  //           // console.log(res.data);
+  //           that.setData({
+  //             cv: res.data
+  //           });
+  //         }
+  //       })
+  //     }
+  //   });
 
+  // },
+  onLoad: function (options) {
+    var that = this;
+    var id = options.p_id;
+    wx.request({
+      url: 'https://zfbwoz2h.qcloud.la/HR/get_resume_by_p_id',
+      data: {
+        p_id: id,
+      },
+      success: function (res) {
+        // console.log(res.data);
+        that.setData({
+          cv: res.data
+        });
+      }
+    })
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
