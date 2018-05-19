@@ -1,28 +1,57 @@
-<view >
-<view class='top'>
-<text>查看简历</text>
-</view>
 <view class='container'>
-  
-  
-   <!-- <navigator url='../see-cv/see-cv'> -->
    <view class='cv' > 
-      <view id='r_name'>
-        名称{{test.r_name}}
-      </view>
-
-        <view id='r_sex'>
-        性别{{test.r_sex}}
+    <view class='basic-info'>
+        <view class='info-title'>
+        基本信息
         </view>
-    
+        <view class='info'>
+          姓名：{{test.r_name}}
+        </view>
+        <view class='info'>
+        性别：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        出生年份：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        毕业学校：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        应聘职位：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        联系电话：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        联系邮箱：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        自我描述：{{test.r_sex}}
+        </view>
+    </view>
+     <view class='edu'>
+       <view class='info-title'>
+        教育信息        
+      </view>
+      <view class='info'>
+        学校名称：{{test.r_sex}}
+        </view>
+    </view>
+   </view>  
+
+   <view>
+   <view class='load'>
+   <button>下载简历</button>
    </view>
-  <!-- </navigator> -->
- 
-  
-</view>
-<ul class='footer'>
-  <li class="footer1">首页</li>
-  <li class="footer1"><navigator url="../hr-message/hr-message"hover-class='none'>消息</navigator></li>
-  <li class="footer1"><navigator url="../admin/admin" hover-class='none'>我</navigator></li>
-</ul>
+   <view class='chose'>
+   <button>初步审核</button>
+   <button>面试</button>
+   <button>不合适</button>
+   </view>
+   </view>
+    <ul class='footer'>
+      <li class="footer1">首页</li>
+      <li class="footer1"><navigator url="../hr-message/hr-message"hover-class='none'>消息</navigator></li>
+      <li class="footer1"><navigator url="../admin/admin" hover-class='none'>我</navigator></li>
+    </ul>
 </view>

@@ -1,20 +1,10 @@
 .container{
-  margin :0 1.5rem;
+   /* display: flex; */
+   /* flex-direction: column; */
+   align-items: center;
+   background-color: #eee;
 }
-.top{
-  width: 100%;
-  height: 4rem;
-}
-image{
-  width: 2rem;
-  height: 2rem;
-  margin-top: 0.3rem;
-}
-.top text{
-float:right;
-  margin-top: 0.6rem;  
- margin-right: 8rem; 
-}
+
  .footer{
   position: absolute;
   bottom: 0;
@@ -29,24 +19,29 @@ float:right;
   font-size: 1.3rem;
 }
 .job{
+   background-color: #fff;
+   margin: 10rpx;
   display:flex;
-  height:160rpx;  
-  border-bottom: 1px solid #ccc; 
+   height:100rpx;   
+  width: 750rpx;
+  /* border-bottom: 1px solid #ccc;  */
   position: relative;
 }
 
 .p_name{
   flex: 1;
-   margin-left:20rpx; 
+   margin:20rpx; 
   float:left;
 }
-.p_salary{
-  flex: 1;
-   margin-left:20rpx; 
-  float:left;
-}
+
 .p_type{
-  flex: 1;
-   margin-left:20rpx; 
+   flex: 1; 
+   margin:20rpx; 
   float:left;
+}
+.in{
+  /* flex: 1; */
+   /* margin-right:10rpx;  */
+  /* float:right; */
+   margin:20rpx; 
 }
