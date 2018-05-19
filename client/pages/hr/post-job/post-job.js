@@ -24,6 +24,7 @@ Page({
         name: '滴滴出行'
       }
     ],
+    company: '',
     array2: ['1000-2000', '2000-3000', '4000-5000', '5000-6000'],
     objectArray: [
       {
@@ -43,6 +44,7 @@ Page({
         name: '5000-6000'
       }
     ],
+    salary:'',
     array3: ['北京', '上海', '杭州', '深圳'],
     objectArray: [
       {
@@ -62,6 +64,7 @@ Page({
         name: '深圳'
       }
     ],
+    p_city: '',
     array4: ['实习', '全职'],
     objectArray: [
       {

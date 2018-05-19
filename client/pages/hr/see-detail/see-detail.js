@@ -15,12 +15,12 @@ Page({
   onLoad: function (options) {
     var that=this;
     wx.getStorage({
-      key: 'position',
+      key: 'hr',
       success: function (res) {
         var id = res.data.p_id;
         // console.log(id);
         wx.request({
-          url: 'https://zfbwoz2h.qcloud.la/HR/search_own_position',
+          url: 'https://zfbwoz2h.qcloud.la/HR/get_post_message',
           data: {
             p_id: id,
           },

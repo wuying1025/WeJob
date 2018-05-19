@@ -9,6 +9,13 @@ Page({
     position:[]
   },
 
+  msginfo:function(event){
+    var id = event.currentTarget.dataset['index'];
+    console.log(id);
+    wx.navigateTo({
+      url: '../see-detail/see-detail?p_id=' + id,
+    })
+  }, 
   /**
    * 生命周期函数--监听页面加载
    */

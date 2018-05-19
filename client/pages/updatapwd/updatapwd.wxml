@@ -1,13 +1,12 @@
-<view>
+<view id='body'>
    <form action="">
    <view class='content'>   
-      <text>输入新密码:</text>
-      <input></input>
+     
+      <input placeholder="请设置新密码(6-20位数字与字母组合)" placeholder-style='color:#BDBDBD;font-size:30rpx;'></input>
    </view>
    <view class='content_two'>
-     <text>确认新密码:</text>
-     <input confirm-type="done"></input>
+     <input confirm-type="done"  placeholder="再次输入新密码" placeholder-style='color:#BDBDBD;font-size:30rpx;'></input>
    </view>
-        <button bindtap='btn' class="right-btn">确认</button>
+        <button bindtap='btn' class="right-btn">完成</button>
    </form>
 </view>
