@@ -1,53 +1,46 @@
+#body{
+  background-color: #00A8FF;
+  height: 1100rpx;
+}
+.form{
+  padding-top: 200rpx;
+}
 .wrapper{
   margin:0 1.5rem;
 }
-.header{
-  height: 300rpx;
-}
 .com{
   height:600rpx;
-  margin-left: 120rpx;
+  margin-left: 90rpx;
 }
 .get{
   width: 200rpx;
-  height: 70rpx;
+  height: 60rpx;
   font-size: 25rpx;
-  line-height: 70rpx;
+  line-height: 60rpx;
   float: right;
-  margin-top: -80rpx;
+  margin-top: -430rpx;
   margin-right: 20rpx;
-}
-.header image{
-    width: 150rpx;
-    height:150rpx;
-    position:absolute;
-    left:50%;
-    margin-left:-75rpx;
-    margin-top: 90rpx;
+   border: 1rpx solid white;
+   background-color: #00A8FF;
+   color: white;
 }
 
+
 input{
-  border: 1rpx solid black;
-  width: 400rpx;
-  border-radius: 10rpx;
-  margin-top: 10rpx;
+  border-bottom: 1rpx solid white;
+  width: 500rpx;
+  height: 90rpx;
   margin-bottom: 20rpx;
+
 }
 .login{
   font-size: 30rpx;
   font-weight: bold;
   
 }
-.num{
-  width: 250rpx;
-}
+
 navigator{
   font-size: 30rpx;
-}
-.reg li{
-  float: left;
-
-  margin-right: 10rpx;
 }
 .for{
   padding-left: 10rpx;
@@ -58,4 +51,6 @@ navigator{
   height: 70rpx;
   font-size: 30rpx;
   line-height: 70rpx;
+  color: #00A8FF;
+ 
 }

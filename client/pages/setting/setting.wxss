@@ -1,32 +1,22 @@
-.setting{
-  height: 40rpx;
-  margin-top: 330rpx;
-  text-align:  center;
+#body{
+  height: 1100rpx;
+  background-color: #EEEEEE;
 }
-.myid{
-  
-  font-size:30rpx; 
+navigator{
+  font-size: 35rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: white;
+  border-bottom: 1px solid gainsboro;
 }
-#myid{
-margin-left: 140rpx;
-  width: 500rpx;
- box-shadow:10rpx 10rpx 10rpx #03a9f4;
+navigator text{
+  margin-left: 50rpx;
+
 }
-.mypwd{
-    font-size:30rpx; 
+#del{
+  color:#FE3637;
+  text-align: center;
 }
-#mypwd{
-  margin-top: 70rpx;
-  margin-left: 140rpx;
-  width: 500rpx;
- box-shadow:10rpx 10rpx 10rpx #03a9f4;
-}
-.user{
-    font-size:30rpx; 
-}
-#user{
-  margin-top: 70rpx;
-  margin-left: 140rpx;
-  width: 500rpx;
- box-shadow:10rpx 10rpx 10rpx #03a9f4;
+#del text{
+  margin: 0;
 }

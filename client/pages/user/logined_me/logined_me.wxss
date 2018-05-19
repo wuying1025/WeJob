@@ -3,19 +3,31 @@
 }
 .person{
   width:100%;
-  position:relative;
   height:8rem;
   margin-top: 0.6rem;
+
 }
-image{
-  width:8rem;
-  height:8rem;
-  margin: 0 auto;
-  position:absolute;
-  left:50%;
-  margin-left:-4rem;
-  /* margin-left:40%;  */
+.person image{
+  float: right;
+  width:5rem;
+  height:5rem;
+  margin-top: 80rpx;
+  border-radius: 50%;
 }
+#name{
+  font-size: 55rpx;
+  float: left;
+  margin-top: 100rpx;
+}
+#look{
+  color: gray;
+  font-size: 30rpx;
+  float: left;
+  margin-top: 180rpx;
+  margin-left: -100rpx;
+}
+
+
 .list{
   margin-top:1rem;
   display:flex;
@@ -25,21 +37,36 @@ image{
   height:50px;
   float:left;
   flex:1;
-  font-size: 16px;
+  width: 80rpx;
+  font-size: 20rpx;
   line-height:30px;
   text-align:center;
   color:#999;
+  margin-right: 80rpx;
+}
+.list image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.down{
+  font-size: 30rpx;
+  line-height: 110rpx;
 }
 .info{
   margin:1rem 1rem;
-  text-align: center;
+  
 }
 .info view{
-  margin-top:1.5rem;
+  border-bottom: 1rpx solid gainsboro;
+  height: 100rpx;
   font-size: 1rem;
-  color:#999;
+  color: darkslategray;
 }
-
+.info image{
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 20rpx;
+}
 .modal-box{
   position:fixed;
   width:80%;
