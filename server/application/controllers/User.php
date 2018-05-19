@@ -51,6 +51,7 @@ class User extends CI_Controller {
 		
 	}
 
+
 	public function add_user(){     //注册
 		$tel = $this->input->get('name');
 		$pwd = $this->input->get('pwd');
@@ -152,10 +153,22 @@ class User extends CI_Controller {
 					$rows = $this->User_model->add_updata($message);
 		
 				}
-		
-				
-		
 			 }
+     public function get_full_message(){
+    				$row = $this->User_model->get_full_message();
+              echo json_encode($row);
+          }
+
+          public function get_study_message(){
+          $row = $this->User_model->get_study_message();
+            echo json_encode($row);
+        }
+
+        public function get_pos_message(){
+          $id = $this->input->get('id');
+          $row = $this->User_model->get_pos_by_id($id);
+          echo json_encode($row);
+      	}
 
 
      
