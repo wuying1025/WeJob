@@ -5,10 +5,10 @@
 <view class='container'>
   
    <view wx:for="{{position}}" >
-    <!-- <navigator url='../see-detail/see-detail'>  -->
-   <view class='job' bindtap='see_detail' > 
+   <navigator url='' bindtap='msginfo' data-index="{{item.p_id}}">
+   <view class='job' > 
    <view class='p_name'>
-    职位:{{item.p_name}}
+    职位:{{item.name}}
     </view>
      <view class='p_salary'>
     薪资:{{item.p_salary}}
@@ -18,7 +18,7 @@
     </view>  
     
    </view>
-   <!-- </navigator>  -->
+  </navigator>
  
    </view>
 </view>
