@@ -56,10 +56,8 @@ class HR extends CI_Controller {
         if(count($result)==0){
             echo 'tel not exist';
         }else if($result->hr_pass == md5($pwd)) {
-//            $this->session->set_userdata(array(
-//                'user' => $result[0]
-//            ));
-            echo 'success';
+            echo json_encode($result);
+
         }else{
             echo 'password error';
         }
@@ -78,7 +76,7 @@ class HR extends CI_Controller {
         $p_date_end = $this->input->get('p_date_end');
         $salary = $this->input->get('salary');
         $row = $this->HR_model->post_job(array(
-            "company" => $company,
+            "p_company" => $company,
             "p_name" => $p_name,
             "p_require" => $p_require,
             "p_responsibility" => $p_responsibility,
@@ -96,16 +94,29 @@ class HR extends CI_Controller {
 
     }
 
+    //查看自己信息
+    public function own_mes()
+    {
+        $hr_id = $this->input->get('hr_id');
+        $row = $this->HR_model->own_mes($hr_id);
+        if(isset($row)){
+            echo $row;
+        }else{
+         echo 'fail';
+        }
+    }
+
     //hr 修改自己信息
     public function update_hr()
     {
         $tel = $this->input->get('tel');
+        $hr_id = $this->input->get('hr_id');
         $hr_name = $this->input->get('name');
         $company = $this->input->get('company');
         $email = $this->input->get('email');
         $sex = $this->input->get('sex');
         $header = $this->input->get('header');
-        $row = $this->HR_model->update_hr(array(
+        $row = $this->HR_model->update_hr($hr_id,array(
             "hr_tel" => $tel,
             "hr_name" => $hr_name,
             "hr_company" => $company,
@@ -137,11 +148,17 @@ class HR extends CI_Controller {
     {
         $hr_id = $this->input->get('hr_id');
         $result = $this->HR_model->search_own_position($hr_id);
-        if(isset($result)){
-            echo $result;
+        if(count($result)>0){
+            echo json_encode($result);
         }else{
             echo 'fail';
         }
+    }
+
+    public function get_pos_message(){
+        $id = $this->input->get('p_id');
+        $row = $this->User_model->get_pos_by_id($id);
+        echo json_encode($row);
     }
 
     //hr修改个人密码

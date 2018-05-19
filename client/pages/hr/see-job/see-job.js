@@ -6,32 +6,16 @@ Page({
    */
   data: {
     hr_id: '',
-    position:[],
-    p_id: ''
+    position:[]
   },
-  see_detail:function(){
-    var that = this;
-    wx.getStorage({
-      key: 'hr',
-      success: function (res) {
-        var id = res.data.p_id;
-        console.log(id);
-        wx.request({
-          url: 'https://zfbwoz2h.qcloud.la/HR/get_post_message',
-          data: {
-            p_id: id,
-          },
-          success: function (res) {
-            // console.log(res.data);
-            that.setData({
-              position: res.data
-            });
 
-          }
-        })
-      }
-    });
-  },
+  msginfo:function(event){
+    var id = event.currentTarget.dataset['index'];
+    console.log(id);
+    wx.navigateTo({
+      url: '../see-detail/see-detail?p_id=' + id,
+    })
+  }, 
   /**
    * 生命周期函数--监听页面加载
    */
