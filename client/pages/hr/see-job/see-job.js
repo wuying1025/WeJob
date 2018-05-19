@@ -6,9 +6,32 @@ Page({
    */
   data: {
     hr_id: '',
-    position:[]
+    position:[],
+    p_id: ''
   },
+  see_detail:function(){
+    var that = this;
+    wx.getStorage({
+      key: 'hr',
+      success: function (res) {
+        var id = res.data.p_id;
+        console.log(id);
+        wx.request({
+          url: 'https://zfbwoz2h.qcloud.la/HR/get_post_message',
+          data: {
+            p_id: id,
+          },
+          success: function (res) {
+            // console.log(res.data);
+            that.setData({
+              position: res.data
+            });
 
+          }
+        })
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
