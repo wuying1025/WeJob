@@ -7,6 +7,7 @@ class HR extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('HR_model');
+        $this->load->model('User_model');
     }
 	/**
 	 * Index Page for this controller.
@@ -155,10 +156,23 @@ class HR extends CI_Controller {
         }
     }
 
-    public function get_pos_message(){
+    public function get_pos_message()
+    {
         $id = $this->input->get('p_id');
         $row = $this->User_model->get_pos_by_id($id);
         echo json_encode($row);
+    }
+
+
+    public function get_resume_by_p_id()
+    {
+        $p_id = $this->input->get('p_id');
+        $result = $this->HR_model->get_resume_by_p_id($p_id);
+        if(count($result)>0){
+            echo json_encode($result);
+        }else{
+            echo 'fail';
+        }
     }
 
     //hr修改个人密码
@@ -186,8 +200,9 @@ class HR extends CI_Controller {
     //查看简历
     public function check_resume()
     {
-        $u_id = $this->input->get('u_id');
-        $result = $this->HR_model->check_resume($u_id);
+        $r_id = $this->input->get('r_id');
+        $result = $this->HR_model->check_resume($r_id);
+        echo $result;
         if(isset($result)){
             echo $result;
         }else{
