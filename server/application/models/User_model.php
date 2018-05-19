@@ -23,5 +23,20 @@ class User_model extends CI_Model{
        return $query;
 }
 
+public function get_full_message(){
+          $rows = DB::select('t_position', ['*'],'p_type = "全职"');
+            return $rows;
+        }
+    public function get_study_message(){
+       $rows = DB::select('t_position', ['*'],'p_type = "实习"');
+        return $rows;
+    }
+
+    public function get_pos_by_id($id){
+        $rows = DB::row('t_position', ['*'], 'p_id = "'.$id.'"');
+        return $rows;
+    }
+
+
 }
 ?>
