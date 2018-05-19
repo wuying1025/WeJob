@@ -1,27 +1,16 @@
-<view>
+<view id='body'>
 <view class='header'>
-   <image src='logo.png'></image>
 </view>
 <view class='form'>
 <view class='wrapper'>
 <view class='com'>
-    <text class='name login'>手机号码:</text>
-      <input type='text'  bindinput="bindKeyInputtel"></input>
-      <text class='pwd login'>密码:</text>
-      <input type='password' bindinput="bindKeyInputpwd"></input>
-      <text class='login'>验证码:</text>
-     <input class='num' type='text'></input>
-     <button class='get'>获取验证码</button>
-     <ul class="reg">
-     <li> <navigator class='reg' url="../reg/reg">注册</navigator></li>
-      <li> <navigator class='for'>忘记密码</navigator></li>
-     </ul>
-  
-    
+      <input type='text' placeholder="请输入手机号码" placeholder-style='color:white;font-size:30rpx;' bindinput="bindKeyInputtel"></input>
+      <input type='password' placeholder="请输入密码" placeholder-style='color:white;font-size:30rpx;' bindinput="bindKeyInputpwd"></input>
 </view>
-    
+    <text id='forget'>忘记密码</text>
+    <text id='reg'>去注册</text>
 </view>
- <navigator url='../logined_me/logined_me'><button class='ok' bindtap='login'>登陆</button></navigator>
+<button class='ok' bindtap='login'>登陆</button>
 </view>
 
 </view>

@@ -36,7 +36,7 @@ class User extends CI_Controller {
 				echo 'pwd empty';
 			}else{
 				$row = $this->User_model->get_user_by_name($tel);
-		if(isset($row)){
+		if(!isset($row)){
 			echo 'name not exist';
 		}else{
 			if($row->u_pass == $pwd){
@@ -82,11 +82,11 @@ class User extends CI_Controller {
 		$pos = $this->input->get('pos');
 		$tel = $this->input->get('tel');
 		$email = $this->input->get('email');
-		 
+		$id = $this->input->get('id');
 	//取一下ID
 
-		$row = $this->User_model->check_user($id);
-		if($row > 0){
+		$row = $this->User_model->check_pos($id);
+		if(!isset($row)){
 			$rows = $this->User_model->add_insert(array(
 			'r_name'=>$name,
 			'r_sex'=>$sex,
@@ -94,18 +94,29 @@ class User extends CI_Controller {
 			'r_school'=>$school,
 			'r_job'=>$pos,
 			'r_tel'=>$tel,
-			'r_email'=>$email
+			'r_email'=>$email,
+			'u_id'=>$id
 		));
 		}else{
-			$message = new StdClass();
-			$message->r_name=$name;
-			$message->r_sex=$sex;
-			$message->r_bir=$bir;
-			$message->r_school=$school;
-			$message->r_job=$job;
-			$message->r_tel=$tel;
-			$message->r_email=$email;
-			$rows = $this->User_model->add_updata($message);
+			// $message = new StdClass();
+			// $message->r_name=$name;
+			// $message->r_sex=$sex;
+			// $message->r_bir=$bir;
+			// $message->r_school=$school;
+			// $message->r_job=$job;
+			// $message->r_tel=$tel;
+			// $message->r_email=$email;
+			$rows = $this->User_model->add_updata(array(
+				'r_name'=>$name,
+				'r_sex'=>$sex,
+				'r_bir'=>$bir,
+				'r_school'=>$school,
+				'r_job'=>$pos,
+				'r_tel'=>$tel,
+				'r_email'=>$email,
+
+
+			),$id);
 
 		}
 
