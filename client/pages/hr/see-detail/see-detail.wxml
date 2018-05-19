@@ -1,12 +1,11 @@
 <view >
 <view class='top'>
-<text>查看简历</text>
+<text>查看详情</text>
 </view>
 <view class='container'>
   
-   <view wx:for="{{position}}" >
-   <navigator url='../see-cv/see-cv'>
-   <view class='cv' > 
+  
+   <view class='job' > 
    <view id='company'>
     公司{{item.company}}
    </view>
@@ -37,9 +36,10 @@
     </view>
     
    </view>
-  </navigator>
+ <navigator url='../see-cv/see-cv'>
+ <button>查看简历</button>
+   </navigator>
  
-   </view>
 </view>
 <ul class='footer'>
   <li class="footer1">首页</li>

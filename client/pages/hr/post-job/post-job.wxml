@@ -1,49 +1,50 @@
-<view >
-      <view class='top'>
-        <text>发送招聘信息</text>
-      </view>
-      <view class='container'>
-        <view class='introduce'>
-            <text>公司名称：</text> 
-            <input type='text' bindinput="bindKeyInputcompany"></input>
-
+      <view class='container'>       
+          <picker bindchange="bindPickerChangeCompany" value="{{company}}" range="{    {array}}">
+            <view class="picker">
+              公司名称 <view class='select'>></view>{{array[company]}}
+            </view>
+          </picker>
+          <picker bindchange="bindPickerChangeSalary" value="{{salary}}" range="{{array2}}">
+            <view class="picker">
+              薪资 <view class='select'>></view>{{array2[salary]}}
+            </view>
+          </picker>
+          <picker bindchange="bindPickerChangeCity" value="{{p_city}}" range="{{array3}}">
+            <view class="picker">
+              工作地点 <view class='select'>></view>{{array3[p_city]}}
+            </view>
+          </picker>
+          <picker bindchange="bindPickerChangeType" value="{{p_type}}" range="{{array4}}">
+            <view class="picker">
+              招聘类型 <view class='select'>></view>{{array4[p_type]}}
+            </view>
+          </picker>
+          <view class='name'>
             <text>职位名称：</text>
-            <input type='text' bindinput="bindKeyInputname"></input>
-
-            <text>薪资：</text>
-            <input type='number' bindinput="bindKeyInputsalary"></input>
-
-            <text>招聘类型：</text>
-            <input type='text' bindinput="bindKeyInputp_type"></input>
-
-            <text >招聘信息开始时间</text>
-            <!-- <input type='number' bindinput="bindKeyInputp_date_start"></input> -->
-            <view class="section">
+            <input type='text' bindinput="bindKeyInputname"></input>  
+          </view>
               <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange1">
                 <view class="picker">
-                  {{ p_date_start}}
+                  <view class='time'> 招聘信息开始时间:</view>{{ p_date_end}}
                 </view>
               </picker>
-            </view>
-
-            <text class='time'>招聘信息结束时间</text>
-            <!-- <input type='number' bindinput="bindKeyInputp_date_end"></input> -->
-            <view class="section">
               <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange2">
                 <view class="picker">
-                  {{ p_date_end}}
+                  <view class='time'> 招聘信息开始时间:</view>{{ p_date_end}}
                 </view>
-              </picker>
-            </view>
+              </picker>                    
 
-            </view>
         <view class='textarea'>
-        <textarea value='职位描述:' bindtinput="bindKeyInputrequire"></textarea>
-
-        <textarea value='工作职责:' bindtinput="bindKeyInputresponsibility"></textarea>
-
+          <text>职位描述</text>
+          <textarea  bindtinput="bindKeyInputrequire" value='请填写职位描述：'></textarea>
+        </view>
+        <view class='textarea2'>
+          <text>工作职责</text>
+          <textarea bindtinput="bindKeyInputresponsibility" value='请填写工作职责：'></textarea>
         </view>
 
-        <navigator url='../logined/logined'><button  bindtap='send'>发送</button></navigator>
+        <navigator url='../logined/logined'>
+        <view  id='send' bindtap='send'> 发布 </view>
+        </navigator>
       </view>
-</view>
+ 

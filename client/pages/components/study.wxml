@@ -1,6 +1,6 @@
 <view class="contain">
   <view wx:for="{{test}}" class="job">
-  <navigator url='../user/position/position' hover-class='none'>
+  <navigator url='' hover-class='none' bindtap='msginfo' data-index="{{item.p_id}}">
    <image src="baidu.png" class="job-img"></image> 
   <view class='job-info'>
    <view>{{item.p_company}}</view>

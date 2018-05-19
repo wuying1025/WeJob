@@ -7,7 +7,7 @@
     <view><navigator url='full-time/full-time' hover-class="none">网申信息</navigator></view>
     <view><navigator url='full-time/full-time' hover-class="none">笔/面试行程</navigator></view>
   </scroll-view>
-   <full style="display:{{fullHidden}}"></full> 
+   <full style="display:{{fullHidden}}" bind:myevent="onMyEvent"></full> 
    <study style="display:{{studyHidden}}"></study> 
 </view>
 </view>

@@ -1,4 +1,4 @@
-// pages/first/full-time/full-time.js
+// pages/hr/cv-state/cv-state.js
 Page({
 
   /**
