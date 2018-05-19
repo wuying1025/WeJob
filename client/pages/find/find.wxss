@@ -1,0 +1,25 @@
+#body{
+  height: 1200rpx;
+  background: #EEEEEE;
+}
+#find{
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 35rpx;
+    margin-left: 50rpx;
+    color: #C6C6C6;
+}
+input{
+  height: 100rpx;
+  background: white;
+  margin-bottom: 30rpx;
+}
+button{
+  height: 100rpx;
+  width: 500rpx;
+  border-radius: 10rpx;
+  background: #00A8EE;
+  color: white;
+  line-height: 100rpx;
+  font-size: 35rpx;
+}

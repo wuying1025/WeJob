@@ -1,43 +1,20 @@
-.wrapper{
-  margin:0 1.5rem;
-}
-
-.person{
-  width:100%;
-  position:relative;
-  height:8rem;
-  margin-top: 0.6rem;
-}
-
 image{
-  width:8rem;
-  height:8rem;
-  margin: 0 auto;
-  position:absolute;
-  left:50%;
-  margin-left:-4rem;
-  /* margin-left:40%;  */
+  width: 500rpx;
+  height: 400rpx;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
 }
 
-.btn1{
-  margin-top:100rpx;
-  width:500rpx;
-  height:100rpx;
-  border-radius: 5px;
-  background: #03a9f4;
-  color:white;
+button{
+  width: 500rpx;
+  height: 70rpx;
+  background-color: #00A8EE;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: white;
 }
-
-.btn2{
-  margin-top:100rpx;
-  width:500rpx;
-  height:100rpx;
-  border-radius: 5px;
-   background: #03a9f4;
-  color:white;
-}
-
-.btn-hover{
-  background: #59c0ef;
-  border-radius: 5px;  
+#or{
+  font-size: 28rpx;
+  margin-left: 45rpx;
+  color: gainsboro;
 }

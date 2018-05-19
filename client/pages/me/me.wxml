@@ -1,9 +1,9 @@
 <view class="container">
 <view class="wrapper">
-<view class="person">
-  <image src="person.jpg"></image>
-</view>
-   <navigator url='../hr/login/login' hover-class="btn-hover"><button class='btn1' hover-class="btn-hover">招聘者登陆</button></navigator>
-   <navigator url='../user/login/login' hover-class="btn-hover"><button class='btn2' hover-class="btn-hover">求职者登陆</button></navigator>
+    <image src='hr.png'></image>
+     <button>我要招人</button>
+     <view id='or'>———————或者———————</view>
+    <image src='user.png'></image>
+       <button>我要找工作</button>
 </view>
 </view>
