@@ -1,44 +1,45 @@
 <view >
-<view class='top'>
-<text>查看详情</text>
-</view>
 <view class='container'>
   
   
    <view class='job' > 
-   <view id='company'>
-    公司{{item.company}}
+   <view class='info'>
+    公司:{{test.p_company}}
    </view>
 
-     <view id='p_city'>
-    城市{{item.p_city}}
+     <view class='info'>
+    城市:{{test.p_city}}
     </view>
-   <view id='p_name'>
-    职位{{item.name}}
+   <view class='info'>
+    职位:{{test.p_name}}
     </view>
-     <view id='p_salary'>
-    薪资{{item.p_salary}}
+     <view class='info'>
+    薪资:{{test.p_salary}}
     </view>
-    <view id='p_type'>
-    职位类型{{item.p_type}}
+    <view class='info'>
+    职位类型:{{test.p_type}}
     </view>
-     <view id='p_date_start'>
-    开始时间{{item.p_date_start}}
+     <view class='info'>
+    开始时间:{{test.p_date_start}}
     </view>
-     <view id='p_date_end'>
-    结束时间{{item.p_date_end}}
+     <view class='info'>
+    结束时间:{{test.p_date_end}}
     </view>
-     <view id='p_responsibility'>
-    职业描述：{{item.responsibility}}
+     <view class='info'>
+    职业描述:{{test.p_responsibility}}
     </view>
-     <view id='p_require'>
-    职位需求{{item.require}}
+     <view class='info'>
+    职位需求:{{test.p_require}}
     </view>
     
    </view>
- <navigator url='../see-cv/see-cv'>
- <button>查看简历</button>
-   </navigator>
+ <!-- <navigator url='../see-cv/see-cv'> -->
+ <!-- <button bindtap='msginfo' data-index="{{test.p_id}}">查看简历</button> -->
+
+  <!-- <navigator url='../logined/logined'> -->
+        <view  id='send' bindtap='msginfo' data-index="{{test.p_id}}"> 查看简历 </view>
+        <!-- </navigator> -->
+   <!-- </navigator> -->
  
 </view>
 <ul class='footer'>

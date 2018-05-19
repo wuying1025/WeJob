@@ -64,7 +64,13 @@ class HR_model extends CI_Model
 //        return $query->fetchAll();
         $rows = DB::select('t_position', ['*'], "hr_id = '$hr_id'");
         return $rows;
+    }
 
+    public function get_resume_by_p_id($p_id)
+    {
+        $pdo = DB::getInstance();
+       $query = $pdo->query("select * from t_position p , t_user_position up , t_resume r where p.p_id = $p_id and p.p_id = up.p_id and up.u_id = r.u_id");
+       return $query->fetchAll();
     }
 
     public function hr_chpwd($mes)
@@ -74,9 +80,11 @@ class HR_model extends CI_Model
         return $row->fetchColumn();
     }
 
-    public function check_resume($u_id)
+    public function check_resume($r_id)
     {
-        $rows = DB::row('resume', ['*'], "u_id = '$u_id'");
+        $rows = DB::select('t_resume', ['*'], "r_id = '$r_id'");
+        var_dump($rows);
+        die();
         return $rows;
 
     }
