@@ -157,7 +157,7 @@ class HR extends CI_Controller {
 
     public function get_pos_message(){
         $id = $this->input->get('p_id');
-        $row = $this->HR_model->get_pos_by_p_id($id);
+        $row = $this->User_model->get_pos_by_id($id);
         echo json_encode($row);
     }
 
