@@ -4,22 +4,21 @@
 </view>
 <view class='container'>
   
-   <view wx:for="{{cv}}" >
+  
    <!-- <navigator url='../see-cv/see-cv'> -->
    <view class='cv' > 
       <view id='r_name'>
-        名称{{item.r_name}}
+        名称{{test.r_name}}
       </view>
 
         <view id='r_sex'>
-        性别{{item.r_sex}}
+        性别{{test.r_sex}}
         </view>
-      
+    
    </view>
-   <button bindtap='msginfo' data-index="{{item.r_id}}">查看简历</button>
   <!-- </navigator> -->
  
-   </view>
+  
 </view>
 <ul class='footer'>
   <li class="footer1">首页</li>
