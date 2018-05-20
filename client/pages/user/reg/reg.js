@@ -30,9 +30,37 @@ Page({
         pwd1: this.data.pwd1
       },
       success: function (res) {
-        console.log(res.data)
+        if (res.data == 'empty') {
+          wx.showToast({
+            title: '请输入账号',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+        else {
+          if (res.data == 'pwd empty') {
+            wx.showToast({
+              title: '密码为空',
+              icon: 'none',
+              duration: 2000
+            })
+          } else if (res.data == 'password error') {
+            wx.showToast({
+              title: '密码错误',
+              icon: 'none',
+              duration: 2000
+            })
+          } else {
+            wx.showToast({
+              title: '注册成功',
+              duration: 2000
+            });
+            wx.navigateTo({
+              url: '',
+            })
+          }
+        }
       }
-     
     })
     console.log(this.data.name)
     console.log(this.data.pwd)

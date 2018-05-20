@@ -48,12 +48,12 @@ Page({
             },
             success: function (res) {
               that.setData({
-                src: "collected.png"
+                src: "collect.png"
               });
               wx.showToast({
                 title: '取消收藏',
                 icon: 'success',
-                duration: 2000
+                duration: 1000
               })
             }
           })
