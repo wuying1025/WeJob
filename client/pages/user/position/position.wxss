@@ -1,75 +1,152 @@
-.wrapper{
-  margin:0 1.5rem;
+page{
+  height:100%;
+  position:relative;
+  width:100%;
 }
-.header{
-  height: 100rpx;
-  border-bottom: 1px solid gainsboro;
+.hole{
+  flex-direction: column;
+  background: #edece8;
+  padding:20rpx;
+  height:100%;
 }
-.return{
-  width: 100rpx;
-  float: left;
-  height: 100rpx;
-  line-height: 100rpx;
-  font-size: 18rpx;
+.first{
+  padding:20rpx;
+  background: white;
+  height:230rpx;
 }
-.message{
-  font-size: 40rpx;
-  font-weight: bold;
-  width: 100%;
-  line-height: 100rpx;
-  margin-left: 200rpx;
-  
-}
-.com_name,.com_postion,.com_price,.com_address{
-  font-size: 30rpx;
-}
-.com_price{
-  color: red;
-}
-.company{
-  margin-top: 20rpx;
-  width: 720rpx;
-  box-shadow:10rpx 10rpx 5rpx #888888;
-}
-.hr{
-   margin-top: 60rpx;
-   font-size: 30rpx;
-    width: 720rpx;
-    box-shadow:10rpx 10rpx 5rpx #888888;    
-}
-.per_head{
-  margin-top: 10rpx;
-  width: 90rpx;
-  height: 90rpx;
 
-}
 .name{
-  position: absolute;
-  margin-top: 20rpx;
-  margin-left: 24rpx;
-}
-.job{
-   position: absolute;
-   margin-top: 70rpx;
-  margin-left: 25rpx;
-}
-.des{
-   margin-top: 60rpx;
-   font-size: 30rpx;
-    width: 720rpx;
-    box-shadow:10rpx 10rpx 5rpx #888888;    
-}
-.des ul li{
-  font-size: 22rpx;
-  width: 600rpx;
-}
-.com_des{
-    margin-top: 60rpx;
-   font-size: 30rpx;
-    width: 720rpx;
-    box-shadow:10rpx 10rpx 5rpx #888888;    
-}
-.dec{
-  font-size: 22rpx;
+  font-size: 40rpx;
+  font-weight: 800;
 }
 
+.job-img{
+  width: 140rpx;
+  height:140rpx;
+  float:right;
+}
+
+.salary{
+  color:red;
+  height:100rpx;
+  line-height: 100rpx;
+  margin-top:10rpx;
+  border-bottom: 1rpx solid #e3e4d5;
+}
+.city{
+  /* height:50rpx; */
+  margin-top:30rpx;
+  height:40rpx;
+}
+
+.city-img{
+  width:30rpx;
+  height:35rpx;
+}
+
+.city-msg{
+  margin-left:40rpx;
+  font-size: 30rpx;
+  margin-top:2rpx;
+  line-height:40rpx;
+  color:#999;  
+}
+
+.enter{
+  width:20rpx;
+  height:30rpx;
+  float:right;
+}
+
+.second{
+   padding:20rpx; 
+  margin-top:30rpx;
+  background: white;
+}
+
+.detail{
+  font-size: 35rpx;
+  font-weight: 800;
+}
+
+.job{
+  font-size: 30rpx;
+  color:#999;
+  margin-bottom: 15rpx;
+  margin-top: 15rpx;
+}
+
+.require{
+  font-size: 30rpx;
+  color:#999;
+  margin-bottom: 15rpx;
+  margin-top: 15rpx;
+}
+
+.msg{
+  font-size: 30rpx;
+  color:#999;
+}
+
+.third{
+  margin-top:20rpx;
+  background: white;
+  padding:20rpx;
+}
+
+.last{
+  padding:20rpx;
+  margin-top:30rpx;
+  background: white;
+  height:150rpx;
+}
+
+.last-img{
+  width: 140rpx;
+  height:140rpx;
+  float:left;
+}
+
+.last-info{
+  float:left;
+  margin-top:30rpx;
+}
+
+.attr{
+  font-size: 35rpx;
+  margin-left:20rpx;
+}
+
+.comp{
+  margin-top:100rpx;
+  margin-left:20rpx;
+}
+
+.footer{
+  position:fixed; 
+  bottom:0;
+  width:100%;
+  height:100rpx;
+  display:flex;
+  flex-direction: row;
+}
+
+.collect{
+    width:30%;  
+  background-color: #fff;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  /* flex:1; */
+  color:#03a9f4;
+}
+.collect image{
+  width: 60rpx;
+  height: 60rpx;
+  position: relative;
+  top:18rpx;
+  right:10rpx;
+}
+.post{
+ 
+}

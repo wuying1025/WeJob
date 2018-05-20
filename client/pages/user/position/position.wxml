@@ -1,35 +1,42 @@
-<view>
-  <view class='company'>
-      <view class='wrapper'>
-            <text class='com_name'>公司名称: {{test.p_company}}\n</text>
-            <text class='com_postion'>职位名称: {{test.p_name}}\n</text>
-              <text class='com_price'>薪资: {{test.p_salary}}\n</text>
-            <text class='com_address'>公司地点: {{test.p_city}}\n</text>
+<view class="hole">
+  <view class="first">
+    <text class="name">{{test.p_name}}</text>
+    <image src="baidu.png" class="job-img"></image>
+    <view class="salary">{{test.p_salary}}元/天</view>
+      <view class="city">
+        <image src="city.png" class="city-img"></image>
+        <text class="city-msg">{{test.p_city}}</text>
+        <image src="enter.png" class="enter"></image>       
       </view>
   </view>
-     <view class='hr'>
-    <view class='wrapper'>
-     <text>职位发布者\n</text>
-     <image class='per_head' src='header.png'></image>
-     <text class='name'>zhangkun</text>
-       <text class='job'>所属部门: 电视剧部\n</text>
+
+  <view class="second">
+    <view class="detail">职位详情</view>
+    <view>
+      <view class="job">岗位职责:</view>
+      <view class="msg">{{test.p_responsibility}}</view>
     </view>
-   </view>
-    <view class='des'>
-    <view class='wrapper'>
-        <text>职位描述\n</text>
-        <view>
-        {{test.p_responsibility}}
-        </view>
+  </view>
+
+  <view class="third">
+    <text class="detail">技能要求</text>
+    <view class="msg" class="require">{{test.p_require}}</view>
+  </view>
+
+  <view class="last">
+    <image src="baidu.png" class="last-img"></image>
+    <view class="last-info">
+      <text class="comp">{{test.p_company}}</text>
+      <view class="attr">
+        <text>{{test.p_level}}</text>/
+        <text>{{test.people}}</text>/
+        <text>{{test.c_type}}</text>
+      </view>
     </view>
-    </view>
-    <view class='com_des'>
-    <view class='wrapper'>
-     <text>职位要求\n</text>
-       <text class='dec'>{{test.p_require}}</text>
-    </view>
-    </view>
-    截止时间：{{test.p_date_end}}
-    </view>
-    <button class='collect' style='width:30%; float:left; margin-top:30rpx;margin-left:30rpx;'>收藏</button>
-      <button calss="post" style='width:30%;margin-top:30rpx;margin-right:30rpx;'>投递</button>
+  </view>
+</view>
+ <view class="footer">
+    <view class='collect' bindtap='collect'>
+    <image src="{{src}}"></image><text>收藏</text></view>
+    <view calss="post" style='background:#03a9f4;flex:1;text-align:center;height:100rpx;line-height:100rpx;color:white;'>发送简历</view>
+   </view> 
