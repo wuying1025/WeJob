@@ -14,54 +14,76 @@ Page({
   collect: function (){
     var that = this;
     var id = this.data.p_id;
-    console.log(id);
+    // console.log(id);
     wx.getStorage({
       key: 'aaa',
       success: function (res) {
         var u_id = res.data.u_id;
-        console.log(u_id);
-        if (that.data.src=="collect.png"){
-          console.log(111);
-          wx.request({
-            url: 'https://zfbwoz2h.qcloud.la/User/collect_position',
-            data: {
-              u_id: u_id,
-              p_id: id
-            },
-            success: function (res) {
-              that.setData({
-                src: "collected.png"
-              });
-              wx.showToast({
-                title: '收藏成功',
-                icon: 'success',
-                duration: 2000
+        if(u_id){
+          if (that.data.src == "collect.png") {
+            wx.request({
+              url: 'https://zfbwoz2h.qcloud.la/User/collect_position',
+              data: {
+                u_id: u_id,
+                p_id: id
+              },
+              success: function (res) {
+                  that.setData({
+                    src: "collected.png"
+                  });
+                  wx.showToast({
+                    title: '收藏成功',
+                    icon: 'success',
+                    duration: 2000
+                  })
+                
+              }
+            })
+          }else{
+            if (that.data.src == "collected.png") {
+              wx.request({
+                url: 'https://zfbwoz2h.qcloud.la/User/del_collect_by_u_id_p_id',
+                data: {
+                  c_id: that.data.c_id
+                },
+                success: function (res) {
+                  that.setData({
+                    src: "collect.png"
+                  });
+                  wx.showToast({
+                    title: '取消收藏',
+                    icon: 'success',
+                    duration: 1000
+                  })
+                },
               })
             }
-          })
-        } 
-        if(that.data.src == "collected.png"){
-          wx.request({
-            url: 'https://zfbwoz2h.qcloud.la/User/del_collect_by_u_id_p_id',
-            data: {
-              c_id: that.data.c_id
-            },
-            success: function (res) {
-              that.setData({
-                src: "collect.png"
-              });
-              wx.showToast({
-                title: '取消收藏',
-                icon: 'success',
-                duration: 1000
-              })
-            }
-          })
+          } 
+          
+          }
+        else{
+          // wx.showToast({
+          //   title: '请先登录',
+          //   icon: "none",
+          //   duration: 1000
+          // });
+          
         }
        
+      },
+      fail:function(){
+        wx.showToast({
+          title: '请先登录',
+          icon: "none",
+          duration: 1000
+        });
+        that.setData({
+          src: "collect.png"
+        });
       }
-    });
-  },
+      })
+       
+    },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -69,11 +91,7 @@ Page({
     var that = this;
     var id = options.p_id;
     console.log(id);
-    wx.getStorage({
-      key: 'aaa',
-      success: function (res) {
-        var u_id = res.data.u_id;
-        console.log(u_id);
+    
         wx.request({
           url: 'https://zfbwoz2h.qcloud.la/user/get_pos_message', //仅为示例，并非真实的接口地址
           data: {
@@ -84,9 +102,14 @@ Page({
             that.setData({
               test: res.data,
               p_id: id
-            });
+            });  
           }
         });
+        wx.getStorage({
+          key: 'aaa',
+          success: function (res) {
+            var u_id = res.data.u_id;
+            console.log(u_id);
         wx.request({
           url: 'https://zfbwoz2h.qcloud.la/user/get_collect_by_u_id_p_id',
           data: {
@@ -100,10 +123,6 @@ Page({
               that.setData({
                 src:"collected.png",
                 c_id:img
-              })
-            }else{
-              that.setData({
-                src: "collect.png"
               })
             }
           

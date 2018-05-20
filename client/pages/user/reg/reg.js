@@ -32,32 +32,37 @@ Page({
       success: function (res) {
         if (res.data == 'empty') {
           wx.showToast({
-            title: '请输入账号',
+            title: '请填写完整信息',
             icon: 'none',
             duration: 2000
           })
         }
         else {
-          if (res.data == 'pwd empty') {
+          if (res.data == 'tel is exist') {
             wx.showToast({
-              title: '密码为空',
+              title: "用户已存在",
               icon: 'none',
               duration: 2000
             })
-          } else if (res.data == 'password error') {
+          } else if (res.data == 'pwd error') {
             wx.showToast({
-              title: '密码错误',
+              title: '两次输入密码不一致',
               icon: 'none',
               duration: 2000
             })
-          } else {
+          } else if(res.data == 'success'){
             wx.showToast({
               title: '注册成功',
               duration: 2000
             });
             wx.navigateTo({
-              url: '',
+              url: '../login/login',
             })
+          }else if(res.data == 'fail'){
+            wx.showToast({
+              title: '注册失败',
+              duration: 2000
+            });
           }
         }
       }
