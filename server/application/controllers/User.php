@@ -56,22 +56,26 @@ class User extends CI_Controller {
 		$tel = $this->input->get('name');
 		$pwd = $this->input->get('pwd');
 		$pwd1 = $this->input->get('pwd1');
-
-		
-		if($pwd != $pwd1){
-			echo 'pwd-error';
-			die();
-		}
-
-		$rows = $this->User_model->add(array(
-			'u_pass'=>$pwd,
-			'u_tel'=>$tel
-		));
-		if($rows >0){
-			echo 'success';
-		}else{
-			echo 'fail';
-		}
+        if($tel==''||$pwd == ''||$pwd1==''){
+            echo 'empty';
+        }else{
+            $rows = $this->User_model->get_user_by_name($tel);
+            if(isset($rows)){
+                echo 'tel is exist';
+            }elseif($pwd == $pwd1){
+                $row = $this->User_model->add(array(
+                    'u_tel' => $tel,
+                    'u_pass' => md5($pwd)
+                ));
+                if($row > 0){
+                    echo 'success';
+                }else{
+                    echo 'fail';
+                }
+            }else{
+                echo 'pwd error';
+            }
+        }
 	}
 
 	public function add_cv1(){
@@ -189,10 +193,10 @@ class User extends CI_Controller {
     {
         $c_id = $this->input->get('cid');
         $row = $this->User_model->del_collect_by_c_id($c_id);
-        if($row){
-
+        if($row>0){
+            echo 'success';
         }else{
-
+            echo 'fail';
 
         }
     }

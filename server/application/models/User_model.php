@@ -7,7 +7,7 @@ class User_model extends CI_Model{
         return $rows;
     }
     public function get_user_by_name($tel){
-        $rows = DB::row('t_user', ['*'], 'u_tel = "'.$tel.'"');
+        $rows = DB::row('t_user', ['*'], "u_tel = '$tel'");
         return $rows;
     }
     public function add($user){
@@ -57,7 +57,8 @@ class User_model extends CI_Model{
 
     public function del_collect_by_c_id($c_id)
     {
-
+        $row = DB::update('t_user_collect',['is_del' => 1], "c_id = '$c_id'");
+        return $row;
     }
 }
 ?>
