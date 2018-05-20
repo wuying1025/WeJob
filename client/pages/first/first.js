@@ -7,18 +7,55 @@ Page({
    */
   data: {
     fullHidden: "block",
-    studyHidden: "block"
+    studyHidden: "block",
+    full:'',
+    study:'',
+    all:"bold",
+    msg:''
+  },
+  all_btn: function () {
+    this.setData({
+      fullHidden: "block",
+      studyHidden: "block",
+      all: "bold",     
+      full: "",
+      study: ""
+    })
   },
   full_btn:function(){
     this.setData({
-      fullHidden: "display",
-      studyHidden: "none"
+      fullHidden: "block",
+      studyHidden: "none",
+      full:"bold",
+      study:"",
+      all:""
     })
   },
   study_btn: function () {
     this.setData({
       fullHidden: "none",
-      studyHidden: "display"
+      studyHidden: "display",
+      full: "",
+      study: "bold"
+    })
+  },
+  search:function(e){
+    var that = this;
+    that.setData({
+      msg: e.detail.value
+    });
+    wx.request({
+      url: 'https://zfbwoz2h.qcloud.la/user/search_position_or_company',
+      data: {
+        key: this.data.msg
+      },
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          fullHidden: "none",
+          studyHidden: "none"
+        });
+      }
     })
   },
   components:{

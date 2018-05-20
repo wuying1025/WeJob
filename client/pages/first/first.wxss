@@ -1,15 +1,29 @@
 /* pages/test/test.wxss */
+.blue-nav{
+  background: #03a9f4;
+  margin-top:0;
+  position: fixed;
+  top:0;
+  z-index:1;
+}
+
+.top{
+  border-top:8px solid #e3e4d5;
+  margin-top:100rpx;
+}
+
 #search{
   margin:0 auto;
   width:90%;
-  border:1px solid #999;
-  margin-top:10px;
+  border:1px solid white;
   border-radius: 0.5rem;
   text-align: center;
+  background: white;
   /* text-indent: 30px; */
 }
+
 .wrapper{
-  margin:0 10px;
+  /* margin:0 10px; */
 }
 
 .nav{
@@ -29,10 +43,11 @@
 
 .full{
   height:100rpx;
-  line-height: 100rpx;
+  line-height: 80rpx;
 }
 
 .full view{
   display:inline-block;
-  margin:20rpx 30rpx;
+  margin:20rpx 50rpx;
+  color:white;
 }

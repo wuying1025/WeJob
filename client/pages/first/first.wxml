@@ -1,13 +1,20 @@
-<view>
-<view class="wrapper">
-  <input id="search" placeholder='搜索职位' auto-focus/>
-   <scroll-view class="scroll-view_H" scroll-x='true' style="white-space:nowrap;width:100%;" class="full">
-    <view><navigator hover-class="none" bindtap="full_btn">全职</navigator></view>
-    <view><navigator hover-class="none" bindtap="study_btn">实习</navigator></view>
-    <view><navigator url='full-time/full-time' hover-class="none">网申信息</navigator></view>
-    <view><navigator url='full-time/full-time' hover-class="none">笔/面试行程</navigator></view>
-  </scroll-view>
-   <full style="display:{{fullHidden}}" bind:myevent="onMyEvent"></full> 
-   <study style="display:{{studyHidden}}"></study> 
-</view>
+m<view class="first">
+  <view class="blue-nav">
+    <input id="search" placeholder='搜索职位' auto-focus bindinput='search'/>
+      <scroll-view class="scroll-view_H" scroll-x='true' style="white-space:nowrap;width:100%;" class="full">
+      <view><navigator hover-class="none" bindtap="all_btn" style='  font-weight: {{all}};'>全部</navigator></view>
+        <view><navigator hover-class="none" bindtap="full_btn" style='  font-weight: {{full}};'>全职</navigator></view>
+        <view><navigator hover-class="none" bindtap="study_btn" style='  font-weight: {{study}};'>实习</navigator></view>
+        <!-- <view><navigator url='full-time/full-time' hover-class="none" style='  font-weight: {{bold}};'>网申信息</navigator></view> -->
+        <view><navigator url='full-time/full-time' hover-class="none" style='  font-weight: {{process}};'>面试行程</navigator></view>
+      </scroll-view>
+  </view>
+
+  <view class="top">
+    <view class="wrapper">
+    <full style="display:{{fullHidden}}"></full> 
+    <study style="display:{{studyHidden}}"></study> 
+    </view>
+  </view>
+  
 </view>
