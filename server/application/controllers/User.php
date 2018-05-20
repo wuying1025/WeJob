@@ -124,7 +124,7 @@ class User extends CI_Controller {
 		
 
 	 }
-	 public function add_cv2(){
+    public function add_cv2(){
 		
 				$tallest = $this->input->get('tallest');
 				$time = $this->input->get('time');
@@ -154,21 +154,62 @@ class User extends CI_Controller {
 		
 				}
 			 }
-     public function get_full_message(){
+    public function get_full_message(){
     				$row = $this->User_model->get_full_message();
               echo json_encode($row);
           }
 
-          public function get_study_message(){
+    public function get_study_message(){
           $row = $this->User_model->get_study_message();
             echo json_encode($row);
         }
 
-        public function get_pos_message(){
+    public function get_pos_message(){
           $id = $this->input->get('id');
+          $u_id = $this->input->get('u_id');
+          $results = $this->User_model->get_collect_by_u_id_p_id($u_id,$id);
+
           $row = $this->User_model->get_pos_by_id($id);
           echo json_encode($row);
-      	}
+    }
+
+    public function get_collect_by_u_id_p_id()
+    {
+        $id = $this->input->get('id');
+        $u_id = $this->input->get('u_id');
+        $row = $this->User_model->get_collect_by_u_id_p_id($u_id,$id);
+        if(count($row)>0 && $row->is_del == "0"){
+            echo $row->c_id;
+        }else{
+            echo 'not exist';
+        }
+    }
+
+    public function del_collect_by_u_id_p_id()
+    {
+        $c_id = $this->input->get('cid');
+        $row = $this->User_model->del_collect_by_c_id($c_id);
+        if($row){
+
+        }else{
+
+        }
+    }
+
+
+    public function collect_position(){
+        $u_id = $this->input->get('u_id');
+        $p_id = $this->input->get('p_id');
+        $row = $this->User_model->collect_position($u_id,$p_id);
+        if($row>0){
+            echo 'success';
+        }else{
+            echo 'fail';
+        }
+    }
+
+
+
 
 
      
