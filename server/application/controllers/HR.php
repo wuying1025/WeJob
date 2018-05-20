@@ -35,8 +35,10 @@ class HR extends CI_Controller {
         $tel = $this->input->get('tel');
         $pwd = $this->input->get('pwd');
         $pwd1 = $this->input->get('pwd1');
-        echo $pwd;
-        if($pwd == $pwd1){
+        $rows = $this->HR_model->check_hr_login($tel);
+        if(isset($rows)){
+            echo 'tel is exist';
+        }elseif($pwd == $pwd1){
             $row = $this->HR_model->hr_reg($tel,md5($pwd));
             if($row > 0){
                 echo 'success';

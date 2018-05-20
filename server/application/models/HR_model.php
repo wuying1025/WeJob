@@ -16,12 +16,14 @@ class HR_model extends CI_Model
 {
     public function hr_reg($tel,$pwd)
     {
+
         $row = DB::insert('t_hr', [
             'hr_tel' => $tel,
             'hr_pass' => $pwd
         ]);
         return $row;
     }
+
 
     public function check_hr_login($tel)
     {
