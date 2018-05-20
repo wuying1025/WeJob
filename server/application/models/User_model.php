@@ -36,7 +36,5 @@ public function get_full_message(){
         $rows = DB::row('t_position', ['*'], 'p_id = "'.$id.'"');
         return $rows;
     }
-
-
 }
 ?>
