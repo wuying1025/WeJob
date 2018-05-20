@@ -21,33 +21,43 @@ Page({
         pwd: this.data.pwd
       },
       success: function (res) {
-        if(res.data =='pwd empty'){
-          wx.showToast({
-            title: '密码为空',
-            icon: 'none',
-            duration: 2000
-          })
-        } else if (res.data =='name not exit'){
-          wx.showToast({
-            title: '用户未注册',
-            icon: 'none',
-            duration: 2000
-          })
-        } else if (res.data =='pwd error'){
-          wx.showToast({
-            title: '密码错误',
-            icon: 'none',
-            duration: 2000
-          })
-        }else{
-          wx.setStorage({
-            key: "aaa",
-            data: res.data
-          })
-          wx.switchTab({    //跳转到tabBar页面，并关闭其他所有tabBar页面
-            url: "/pages/first/first"
-          })
-        }
+        if (res.data =='empty') {
+            wx.showToast({
+              title: '请输入账号',
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        else{
+          if (res.data == 'pwd empty') {
+            wx.showToast({
+              title: '密码为空',
+              icon: 'none',
+              duration: 2000
+            })
+          }else if (res.data == 'name not exist') {
+            wx.showToast({
+              title: '用户未注册',
+              icon: 'none',
+              duration: 2000
+            })
+          } else if (res.data == 'password error') {
+            wx.showToast({
+              title: '密码错误',
+              icon: 'none',
+              duration: 2000
+            })
+          } else {
+            wx.setStorage({
+              key: "aaa",
+              data: res.data
+            })
+            wx.switchTab({    //跳转到tabBar页面，并关闭其他所有tabBar页面
+              url: "/pages/first/first"
+            })
+          }
+          }
+        
       }
     })
   },
