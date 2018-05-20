@@ -8,9 +8,9 @@
       <input type='password' placeholder="请输入密码" placeholder-style='color:white;font-size:30rpx;' bindinput="bindKeyInputpwd"></input>
 </view>
     <text id='forget'>忘记密码</text>
-    <text id='reg'>去注册</text>
+    <navigator url='../reg/reg' id='reg'>去注册</navigator>
 </view>
-<button class='ok' bindtap='login'>登陆</button>
+<navigator url=''><button class='ok' bindtap='login'>登陆</button></navigator>
 </view>
 
 </view>

@@ -50,9 +50,12 @@ navigator{
   font-size: 25rpx;
   color: white;
   margin-left: 120rpx;
+  float:left;
 }
 #reg{
   font-size: 25rpx;
   color: white;
   margin-left: 220rpx;
+  float:left;
+  margin-right:100rpx;
 }

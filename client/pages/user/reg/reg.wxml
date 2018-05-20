@@ -14,7 +14,7 @@
 </view>
     
 </view>
- <button class='ok' bindtap="reg">注册</button>
+ <navigator url='../login/login'><button class='ok' bindtap="reg">注册</button></navigator>
 </view>
 
 </view>
