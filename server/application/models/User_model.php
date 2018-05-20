@@ -60,5 +60,25 @@ class User_model extends CI_Model{
         $row = DB::update('t_user_collect',['is_del' => 1], "c_id = '$c_id'");
         return $row;
     }
+
+    public function search_position_or_company($key)
+    {
+
+        $pdo = DB::getInstance();
+        $query = $pdo->query("select * from Table1 where concat('p_name','p_company') like '$key'");
+        return $query->fetchAll();
+    }
+
+    public function get_collect_by_u_id($u_id)
+    {
+        $rows = DB::select('t_user_collect', ['*'], "u_id = '$u_id'");
+        return $rows;
+    }
+
+    public function get_user_position_by_u_id($u_id)
+    {
+        $rows = DB::select('t_user_position', ['*'], "u_id = '$u_id'");
+        return $rows;
+    }
 }
 ?>

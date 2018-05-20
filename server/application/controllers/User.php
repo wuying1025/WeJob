@@ -39,7 +39,7 @@ class User extends CI_Controller {
 		if(!isset($row)){
 			echo 'name not exist';
 		}else{
-			if($row->u_pass == $pwd){
+			if($row->u_pass == md5($pwd)){
 				echo json_encode($row);
 			}else{
 				echo 'password error';
@@ -170,9 +170,6 @@ class User extends CI_Controller {
 
     public function get_pos_message(){
           $id = $this->input->get('id');
-          $u_id = $this->input->get('u_id');
-          $results = $this->User_model->get_collect_by_u_id_p_id($u_id,$id);
-
           $row = $this->User_model->get_pos_by_id($id);
           echo json_encode($row);
     }
@@ -191,7 +188,7 @@ class User extends CI_Controller {
 
     public function del_collect_by_u_id_p_id()
     {
-        $c_id = $this->input->get('cid');
+        $c_id = $this->input->get('c_id');
         $row = $this->User_model->del_collect_by_c_id($c_id);
         if($row>0){
             echo 'success';
@@ -204,14 +201,57 @@ class User extends CI_Controller {
 
     public function collect_position(){
         $u_id = $this->input->get('u_id');
-        $p_id = $this->input->get('p_id');
-        $row = $this->User_model->collect_position($u_id,$p_id);
-        if($row>0){
-            echo 'success';
+        if($u_id == 'undefined'){
+            echo 'not login';
         }else{
-            echo 'fail';
+            $p_id = $this->input->get('p_id');
+            $row = $this->User_model->collect_position($u_id,$p_id);
+            if($row>0){
+                echo 'success';
+            }else{
+                echo 'fail';
+            }
         }
     }
+
+    //搜索职位公司
+    public function search_position_or_company()
+    {
+        $key = $this->input->get('key');
+        $result = $this->User_model->search_position_or_company($key);
+        if(count($result)>0){
+            echo $result;
+        }else{
+            echo 'null';
+        }
+    }
+
+    //我的收藏
+    public function get_collect_by_u_id()
+    {
+        $u_id = $this->input->get('u_id');
+        $rows = $this->User_model->get_collect_by_u_id($u_id);
+        if(count($rows)>0){
+            echo $rows;
+        }else{
+            echo "fail";
+        }
+    }
+
+    //我的投递
+    public function get_user_position_by_u_id()
+    {
+        $u_id = $this->input->get('u_id');
+        $rows = $this->User_model->get_user_position_by_u_id($u_id);
+        if(count($rows)>0){
+            echo $rows;
+        }else{
+            echo "fail";
+        }
+    }
+
+
+
 
 
 
