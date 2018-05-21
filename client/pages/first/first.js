@@ -43,14 +43,15 @@ Page({
       all: ""      
     });
   },
-  search:function(){
+  search:function(e){
     this.setData({
       fullHidden: "none",
       studyHidden: "none",
       searchHidden: "block",      
       full: "",
       study: "",
-      all: "" 
+      all: "" ,
+      msg: e.detail.value
     });
     var that = this;
     wx.request({
