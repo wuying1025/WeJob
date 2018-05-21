@@ -22,34 +22,34 @@ Page({
         tel: this.data.tel,
         pwd: this.data.pwd
       },
-        success: function (res) {
-          wx.setStorage({
-            key: "hr",
-            data: res.data
-          })
-          wx.showToast({
-            title: '成功',
-            icon: 'success',
-            duration: 2000,
-            success: function (res) {
+      success: function (res) {
+        var hr = res.data;
 
-              setTimeout(function () {
-                wx.redirectTo({
-                  url: "../logined/logined",
-                  //接口调用成功的回调方法
-                  fuccess: function () { },
+        wx.showToast({
+          title: '登录成功',
+          icon: 'success',
+          duration: 2000,
+          success: function (res) {
+            wx.setStorage({
+              key: "hr",
+              data: hr
+            })
+            setTimeout(function () {
+              wx.redirectTo({
+                url: "../logined/logined",
+                //接口调用成功的回调方法
+                fuccess: function () { },
 
-                  fail: function () { },
+                fail: function () { },
 
-                  complete: function () { }
-                })
-              }, 2000)
-              
-            }
-          })
+                complete: function () { }
+              })
+            }, 2000)
 
-        }
-      
+          }
+        })
+
+      }
     })
   },
   /**

@@ -1,0 +1,46 @@
+<view >
+<view class='container'>
+  
+  
+   <view class='job' > 
+   <view class='info'>
+    公司:{{test.p_company}}
+   </view>
+
+     <view class='info'>
+    城市:{{test.p_city}}
+    </view>
+   <view class='info'>
+    职位:{{test.p_name}}
+    </view>
+     <view class='info'>
+    薪资:{{test.p_salary}}
+    </view>
+    <view class='info'>
+    职位类型:{{test.p_type}}
+    </view>
+     <view class='info'>
+    开始时间:{{test.p_date_start}}
+    </view>
+     <view class='info'>
+    结束时间:{{test.p_date_end}}
+    </view>
+     <view class='info'>
+    职业描述:{{test.p_responsibility}}
+    </view>
+     <view class='info'>
+    职位需求:{{test.p_require}}
+    </view>
+    
+   </view>
+ <!-- <navigator url='../see-cv/see-cv'> -->
+ <!-- <button bindtap='msginfo' data-index="{{test.p_id}}">查看简历</button> -->
+
+  <!-- <navigator url='../logined/logined'> -->
+        <view  id='send' bindtap='msginfo' data-index="{{test.p_id}}"> 查看简历 </view>
+        <!-- </navigator> -->
+   <!-- </navigator> -->
+ 
+</view>
+
+</view>

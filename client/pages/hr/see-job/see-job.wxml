@@ -1,0 +1,18 @@
+<view >
+<view class='container'>  
+   <view wx:for="{{position}}" >
+   <view class='job' bindtap='msginfo' data-index="{{item.p_id}}" > 
+   <view class='p_name'>
+    职位:{{item.p_name}}
+    </view>
+    <view class='p_type'>
+    类型:{{item.p_type}}
+    </view>     
+    <view class='in'>
+    >
+    </view> 
+   </view> 
+   </view>
+</view>
+
+</view>

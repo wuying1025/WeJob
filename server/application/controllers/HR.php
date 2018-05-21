@@ -7,6 +7,7 @@ class HR extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('HR_model');
+        $this->load->model('User_model');
     }
 	/**
 	 * Index Page for this controller.
@@ -34,8 +35,10 @@ class HR extends CI_Controller {
         $tel = $this->input->get('tel');
         $pwd = $this->input->get('pwd');
         $pwd1 = $this->input->get('pwd1');
-        echo $pwd;
-        if($pwd == $pwd1){
+        $rows = $this->HR_model->check_hr_login($tel);
+        if(isset($rows)){
+            echo 'tel is exist';
+        }elseif($pwd == $pwd1){
             $row = $this->HR_model->hr_reg($tel,md5($pwd));
             if($row > 0){
                 echo 'success';
@@ -56,10 +59,8 @@ class HR extends CI_Controller {
         if(count($result)==0){
             echo 'tel not exist';
         }else if($result->hr_pass == md5($pwd)) {
-//            $this->session->set_userdata(array(
-//                'user' => $result[0]
-//            ));
-            echo 'success';
+            echo json_encode($result);
+
         }else{
             echo 'password error';
         }
@@ -78,7 +79,7 @@ class HR extends CI_Controller {
         $p_date_end = $this->input->get('p_date_end');
         $salary = $this->input->get('salary');
         $row = $this->HR_model->post_job(array(
-            "company" => $company,
+            "p_company" => $company,
             "p_name" => $p_name,
             "p_require" => $p_require,
             "p_responsibility" => $p_responsibility,
@@ -96,16 +97,29 @@ class HR extends CI_Controller {
 
     }
 
+    //查看自己信息
+    public function own_mes()
+    {
+        $hr_id = $this->input->get('hr_id');
+        $row = $this->HR_model->own_mes($hr_id);
+        if(isset($row)){
+            echo json_encode($row);
+        }else{
+         echo 'fail';
+        }
+    }
+
     //hr 修改自己信息
     public function update_hr()
     {
         $tel = $this->input->get('tel');
+        $hr_id = $this->input->get('hr_id');
         $hr_name = $this->input->get('name');
         $company = $this->input->get('company');
         $email = $this->input->get('email');
         $sex = $this->input->get('sex');
         $header = $this->input->get('header');
-        $row = $this->HR_model->update_hr(array(
+        $row = $this->HR_model->update_hr($hr_id,array(
             "hr_tel" => $tel,
             "hr_name" => $hr_name,
             "hr_company" => $company,
@@ -126,7 +140,7 @@ class HR extends CI_Controller {
         $u_name = $this->input->get('u_name');
         $result = $this->HR_model->search_student($u_name);
         if(isset($result)){
-            echo $result;
+            echo json_encode($result);
         }else{
             echo "fail";
         }
@@ -137,8 +151,27 @@ class HR extends CI_Controller {
     {
         $hr_id = $this->input->get('hr_id');
         $result = $this->HR_model->search_own_position($hr_id);
-        if(isset($result)){
-            echo $result;
+        if(count($result)>0){
+            echo json_encode($result);
+        }else{
+            echo 'fail';
+        }
+    }
+
+    public function get_pos_message()
+    {
+        $id = $this->input->get('p_id');
+        $row = $this->User_model->get_pos_by_id($id);
+        echo json_encode($row);
+    }
+
+
+    public function get_resume_by_p_id()
+    {
+        $p_id = $this->input->get('p_id');
+        $result = $this->HR_model->get_resume_by_p_id($p_id);
+        if(count($result)>0){
+            echo json_encode($result);
         }else{
             echo 'fail';
         }
@@ -169,10 +202,11 @@ class HR extends CI_Controller {
     //查看简历
     public function check_resume()
     {
-        $u_id = $this->input->get('u_id');
-        $result = $this->HR_model->check_resume($u_id);
+        $r_id = $this->input->get('r_id');
+        $result = $this->HR_model->check_resume($r_id);
+        echo $result;
         if(isset($result)){
-            echo $result;
+            echo json_encode($result);
         }else{
             echo 'fail';
         }

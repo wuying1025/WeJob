@@ -1,0 +1,53 @@
+<view class='container'>
+   <view class='cv' > 
+    <view class='basic-info'>
+        <view class='info-title'>
+        基本信息
+        </view>
+        <view class='info'>
+          姓名：{{test.r_name}}
+        </view>
+        <view class='info'>
+        性别：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        出生年份：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        毕业学校：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        应聘职位：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        联系电话：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        联系邮箱：{{test.r_sex}}
+        </view>
+        <view class='info'>
+        自我描述：{{test.r_sex}}
+        </view>
+    </view>
+     <view class='edu'>
+       <view class='info-title'>
+        教育信息        
+      </view>
+      <view class='info'>
+        学校名称：{{test.r_sex}}
+      </view>
+    </view>
+  </view>
+
+  <view class='but'>
+    <button class='load'> 下载简历</button>
+      <view class='chose' >
+        <button hover-class='button-hover1'>初步审核</button>
+        <button hover-class='button-hover2'>面试</button>
+        <button hover-class='button-hover3'>不合适</button>
+      </view>
+  </view>
+ 
+</view>
+
+

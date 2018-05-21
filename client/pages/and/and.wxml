@@ -1,0 +1,12 @@
+<view id='body'>
+    <view class='setting'>
+   
+     <view id='return'>
+       <navigator class='return' url='' hover-class='none'><text>我的反馈</text> </navigator>
+       </view> 
+       <view id='help'>
+        <navigator url='' hover-class='none' class='help'><text>帮助</text></navigator>
+       
+       </view>
+    </view>
+</view>

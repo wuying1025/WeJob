@@ -1,9 +1,11 @@
 {
-  "pages": [
-    "pages/hr-reg/hr-reg",
-    "pages/hr-message/hr-message",
-    "pages/hr/logined/logined",
-    "pages/hr-watch/hr-watch",
+  "pages": [   
+    "pages/first/first",
+    "pages/user/reply/reply",
+    "pages/hr/login/login",
+    "pages/hr/logined/logined",  
+    "pages/hr/see-job/see-job", 
+    "pages/hr/reg/reg",
     "pages/user/login/login",
     "pages/user/position/position",    
     "pages/me/me",
@@ -12,17 +14,13 @@
     "pages/user/logined_me/resume/other_resume/other_resume",
     "pages/user/logined_me/resume/line_resume/line_resume",
     "pages/index/index",
-    "pages/cv-state/cv-state",
-    "pages/post-job/post-job",
-    "pages/watch-hr/watch-hr",
-    "pages/see-cv/see-cv",
     "pages/user/logined_me/look/look",
     "pages/user/logined_me/basic/basic",
     "pages/user/logined_me/collection/collection",
     "pages/user/reg/reg",
+    "pages/hr/see-detail/see-detail",
+    "pages/message/message"
     
-    "pages/message/message",
-    "pages/first/first"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

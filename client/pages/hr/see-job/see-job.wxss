@@ -1,0 +1,33 @@
+.container{
+   /* display: flex; */
+   /* flex-direction: column; */
+   align-items: center;
+   background-color: #eee;
+}
+.job{
+   background-color: #fff;
+   margin: 10rpx;
+  display:flex;
+   height:100rpx;   
+  width: 750rpx;
+  /* border-bottom: 1px solid #ccc;  */
+  position: relative;
+}
+
+.p_name{
+  flex: 1;
+   margin:20rpx; 
+  float:left;
+}
+
+.p_type{
+   flex: 1; 
+   margin:20rpx; 
+  float:left;
+}
+.in{
+  /* flex: 1; */
+   /* margin-right:10rpx;  */
+  /* float:right; */
+   margin:20rpx; 
+}

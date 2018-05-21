@@ -1,3 +1,7 @@
+#body{
+  background: #00A8FF;
+  height: 1100rpx;
+}
 .wrapper{
   margin:0 1.5rem;
 }
@@ -5,39 +9,20 @@
   height: 300rpx;
 }
 .com{
-  height:500rpx;
+  height:200rpx;
   margin-left: 120rpx;
 }
-.get{
-  width: 200rpx;
-  height: 70rpx;
-  font-size: 25rpx;
-  line-height: 70rpx;
-  float: right;
-  margin-top: -80rpx;
-  margin-right: 20rpx;
-}
-.header image{
-    width: 150rpx;
-    height:150rpx;
-    position:absolute;
-    left:50%;
-    margin-left:-75rpx;
-    margin-top: 90rpx;
-}
+
 
 input{
-  border: 1rpx solid black;
+  padding-bottom: 15rpx;
+  border-bottom: 1rpx solid white;
   width: 400rpx;
-  border-radius: 10rpx;
+
   margin-top: 10rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 15rpx;
 }
-.login{
-  font-size: 30rpx;
-  font-weight: bold;
-  
-}
+
 .num{
   width: 250rpx;
 }
@@ -58,4 +43,19 @@ navigator{
   height: 70rpx;
   font-size: 30rpx;
   line-height: 70rpx;
+  color: #00A8FF;
+  margin-top: 200rpx;
+}
+#forget{
+  font-size: 25rpx;
+  color: white;
+  margin-left: 120rpx;
+  float:left;
+}
+#reg{
+  font-size: 25rpx;
+  color: white;
+  margin-left: 220rpx;
+  float:left;
+  margin-right:100rpx;
 }

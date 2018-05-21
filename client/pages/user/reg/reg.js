@@ -30,9 +30,42 @@ Page({
         pwd1: this.data.pwd1
       },
       success: function (res) {
-        console.log(res.data)
+        if (res.data == 'empty') {
+          wx.showToast({
+            title: '请填写完整信息',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+        else {
+          if (res.data == 'tel is exist') {
+            wx.showToast({
+              title: "用户已存在",
+              icon: 'none',
+              duration: 2000
+            })
+          } else if (res.data == 'pwd error') {
+            wx.showToast({
+              title: '两次输入密码不一致',
+              icon: 'none',
+              duration: 2000
+            })
+          } else if(res.data == 'success'){
+            wx.showToast({
+              title: '注册成功',
+              duration: 2000
+            });
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else if(res.data == 'fail'){
+            wx.showToast({
+              title: '注册失败',
+              duration: 2000
+            });
+          }
+        }
       }
-     
     })
     console.log(this.data.name)
     console.log(this.data.pwd)

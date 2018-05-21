@@ -1,40 +1,42 @@
-<view class='company'>
-    <view class='wrapper'>
-          <text class='com_name'>公司名称: 爱奇艺\n</text>
-          <text class='com_postion'>职位需求: 爱奇艺web前端H5开发\n</text>
-            <text class='com_price'>薪资: 6k-9k\n</text>
-          <text class='com_address'>公司地点: 北京-北京-海定区-中关村\n</text>
-    </view>
-   <view>
-</view>
-</view>
-     <view class='hr'>
-    <view class='wrapper'>
-     <text>职位发布者\n</text>
-     <image class='per_head' src='header.png'></image>
-     <text class='name'>zhangkun</text>
-       <text class='job'>所属部门: 电视剧部\n</text>
-    </view>
-   </view>
-    <view class='des'>
-    <view class='wrapper'>
-        <text>职位描述\n</text>
-        <ul>
-        <li>1、熟练vue或者react，至少14年及以前毕业;</li>s
-        <li>2、熟练使用各种Web技术HTML5/XHTML/CSS/JavaScript/AJAX/XML等;\n</li>
-        <li>3、熟练Vue.js,Zepto.js等移动端框架，熟悉：Webpack,Node.js,WebStom等开发工具;\n</li>
-        <li>4、熟悉前端优化，了解各主流浏览器特性使页面兼容主流浏览器;\n</li>
-        <li>5、有解决问题，钻研新技术的兴趣和能力，善于交流和表达，能够很好地与UI、产品和开发进行沟通</li>
+<view class="hole">
+  <view class="first">
+    <text class="name">{{test.p_name}}</text>
+    <image src="baidu.png" class="job-img"></image>
+    <view class="salary">{{test.p_salary}}元/天</view>
+      <view class="city">
+        <image src="city.png" class="city-img"></image>
+        <text class="city-msg">{{test.p_city}}</text>
+        <image src="enter.png" class="enter"></image>       
+      </view>
+  </view>
 
-        </ul>
+  <view class="second">
+    <view class="detail">职位详情</view>
+    <view>
+      <view class="job">岗位职责:</view>
+      <view class="msg">{{test.p_responsibility}}</view>
     </view>
+  </view>
+
+  <view class="third">
+    <text class="detail">技能要求</text>
+    <view class="msg" class="require">{{test.p_require}}</view>
+  </view>
+
+  <view class="last">
+    <image src="baidu.png" class="last-img"></image>
+    <view class="last-info">
+      <text class="comp">{{test.p_company}}</text>
+      <view class="attr">
+        <text>{{test.p_level}}</text>/
+        <text>{{test.people}}</text>/
+        <text>{{test.c_type}}</text>
+      </view>
     </view>
-    <view class='com_des'>
-    <view class='wrapper'>
-     <text>公司介绍\n</text>
-       <text class='dec'>爱奇艺，原名奇艺，于2010年4月22日正式上线 [1]  ，2011年11月26日品牌升级，启动“爱奇艺”品牌并推出全新标志。爱奇艺创始人龚宇博士担任CEO。自成立伊始，爱奇艺坚持“悦享品质”的公司理念，以“用户体验”为生命，通过持续不断的技术投入、产品创新，为用户提供清晰、流畅、界面友好的观映体验。</text>
-    </view>
-    
-    </view>
-    <button class='collect' style='width:30%; float:left; margin-top:30rpx;margin-left:30rpx;'>收藏</button>
-      <button calss="post" style='width:30%;margin-top:30rpx;margin-right:30rpx;'>投递</button>
+  </view>
+</view>
+ <view class="footer">
+    <view class='collect' bindtap='collect'>
+    <image src="{{src}}"></image><text>收藏</text></view>
+    <view calss="post" style='background:#03a9f4;flex:1;text-align:center;height:100rpx;line-height:100rpx;color:white;'>发送简历</view>
+   </view> 

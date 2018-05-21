@@ -1,4 +1,4 @@
-// pages/first/full-time/full-time.js
+// pages/user/reply/reply.js
 Page({
 
   /**

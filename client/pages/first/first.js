@@ -1,23 +1,71 @@
 Page({
-
+  onMyEvent: function (e) {
+    e.detail // 自定义组件触发事件时提供的detail对象
+  },
   /**
    * 页面的初始数据
    */
   data: {
-    fullHidden: "none",
-    studyHidden: "none"
+    fullHidden: "block",
+    studyHidden: "block",
+    full:'',
+    study:'',
+    all:"bold",
+    msg:''
+  },
+  all_btn: function () {
+    this.setData({
+      fullHidden: "block",
+      studyHidden: "block",
+      searchHidden: "none",      
+      all: "bold",     
+      full: "",
+      study: ""
+    })
   },
   full_btn:function(){
     this.setData({
-      fullHidden: "display",
-      studyHidden: "none"
+      fullHidden: "block",
+      studyHidden: "none",
+      searchHidden: "none",            
+      full:"bold",
+      study:"",
+      all:""
     })
   },
   study_btn: function () {
     this.setData({
       fullHidden: "none",
-      studyHidden: "display"
-    })
+      studyHidden: "display",
+      searchHidden: "none",            
+      full: "",
+      study: "bold",
+      all: ""      
+    });
+  },
+  search:function(e){
+    this.setData({
+      fullHidden: "none",
+      studyHidden: "none",
+      searchHidden: "block",      
+      full: "",
+      study: "",
+      all: "" ,
+      msg: e.detail.value
+    });
+    var that = this;
+    wx.request({
+      url: 'https://zfbwoz2h.qcloud.la/user/search_position_or_company',
+      data: {
+        key: that.data.msg
+      },
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          test: res.data
+        });
+      }
+    });
   },
   components:{
    

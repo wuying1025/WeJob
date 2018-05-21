@@ -1,0 +1,41 @@
+<view class='wrapper'>
+  <view class='back'>
+    <view class='top'>
+      <view class='content'>
+        <view class='type'>
+          <text>反馈类型</text>
+        </view>
+        <view class='check'>
+          <ul>
+            <li>bug</li>
+            <li>产品建议</li>
+            <li>吐槽</li>
+            <li>其他</li>
+          </ul>
+        </view>
+      </view>
+      <view class='content'>
+        <view class='type'>
+          <text>反馈意见</text>
+        </view>
+        <textarea placeholder='您的反馈对我们很重要，请在此输入' class='advive'> 
+        <text class='num'>0 <text>/200</text></text>
+        </textarea>
+        
+        
+      </view>
+      <view class='content'>
+        <view class='tel type'>
+          <text>联系电话</text>
+        </view>
+        <input placeholder='留下你的电话，方便我们联系你哦~'></input>
+      </view>
+    </view>
+  </view>
+
+  <navigator>
+  <view class='submit'>
+    提交反馈
+  </view>
+  </navigator>
+</view>

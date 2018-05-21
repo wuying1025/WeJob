@@ -1,41 +1,59 @@
-.contain{
-  padding: 10rpx;
+/* .contain{
+  padding: 7rpx;
+} */
+
+.p_name{
+  font-size:35rpx;
+  font-weight: 800;
 }
 
 .job{
-  display:flex;
-  height:160rpx;  
-  border-bottom: 1px solid #ccc; 
+  /* display:flex; */
+  height:260rpx;  
+  border-bottom:8px solid #e3e4d5;
   position: relative;
+  padding: 20rpx;
 }
 
 .job-img{
   width: 140rpx;
   height:140rpx;
   float:left;
+  margin-top:15rpx;
 }
 
 .job-info{
   flex: 1;
-   margin-left:20rpx; 
+  margin-left:20rpx; 
   float:left;
 }
 
-.job-apply{
-  /* width: 100rpx; */
-  height: 60rpx;
-  font-size: 30rpx;
+.salary-color{
+  color:red;
   float:right;
-  background-color: #03a9f4;
-  /* margin-top: 30rpx; */
-  margin: auto 0;
-  line-height: 60rpx;
-  color:white;
-  position: absolute;
-  right:20rpx;
-  top:20rpx;
 }
 
-.salary-color{
-  color:#03a9f4;
+.city{
+  font-size: 35rpx;
+  margin-top:100rpx;
+}
+
+.time{
+  float: right;
+  font-size: 35rpx;  
+  position:absolute;
+  right:20rpx;
+  top:20;
+}
+
+.top-msg{
+  height:100rpx;
+}
+
+.comp{
+  margin-top:40rpx;
+}
+
+.attr{
+  font-size: 35rpx;
 }

@@ -1,0 +1,12 @@
+<view id='body'>
+    <view class='setting'>
+   
+     <view id='return'>
+       <navigator class='return' url='' hover-class='none'> <image src='图片.png'></image> <text>图片</text> </navigator>
+       </view> 
+       <view id='help'>
+        <navigator url='' hover-class='none' class='help'> <image src='视频.png'></image> <text>视频</text></navigator>
+       
+       </view>
+    </view>
+</view>

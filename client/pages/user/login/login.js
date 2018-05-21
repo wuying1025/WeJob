@@ -7,44 +7,57 @@ Page({
     this.setData({
       tel: e.detail.value
     })
-    console.log(this.data.tel);
   },
   bindKeyInputpwd: function (e) {
     this.setData({
       pwd: e.detail.value
     })
-    console.log(this.data.pwd);
   },
   login:function(){
     wx.request({
-      url: 'https://zfbwoz2h.qcloud.la/HR/check_hr_login',
+      url: 'https://zfbwoz2h.qcloud.la/user/check_login', //仅为示例，并非真实的接口地址
       data: {
         tel: this.data.tel,
         pwd: this.data.pwd
       },
       success: function (res) {
-        console.log(res.data)
-        wx.showToast({
-          title: '登录成功',
-          icon: 'success',
-          duration: 2000,
-          success: function (res) {
-
-            setTimeout(function () {
-              wx.redirectTo({
-                url: "../logined/logined",
-                //接口调用成功的回调方法
-                fuccess: function () { },
-
-                fail: function () { },
-
-                complete: function () { }
-              })
-            }, 2000)
-
+        if (res.data =='empty') {
+            wx.showToast({
+              title: '请输入账号',
+              icon: 'none',
+              duration: 2000
+            })
           }
-        })
-
+        else{
+          if (res.data == 'pwd empty') {
+            wx.showToast({
+              title: '密码为空',
+              icon: 'none',
+              duration: 2000
+            })
+          }else if (res.data == 'name not exist') {
+            wx.showToast({
+              title: '用户未注册',
+              icon: 'none',
+              duration: 2000
+            })
+          } else if (res.data == 'password error') {
+            wx.showToast({
+              title: '密码错误',
+              icon: 'none',
+              duration: 2000
+            })
+          } else {
+            wx.setStorage({
+              key: "aaa",
+              data: res.data
+            })
+            wx.switchTab({    //跳转到tabBar页面，并关闭其他所有tabBar页面
+              url: "/pages/first/first"
+            })
+          }
+          }
+        
       }
     })
   },
