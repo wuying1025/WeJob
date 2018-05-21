@@ -56,7 +56,7 @@ Page({
     wx.request({
       url: 'https://zfbwoz2h.qcloud.la/user/search_position_or_company',
       data: {
-        msg: that.data.msg
+        key: that.data.msg
       },
       success: function (res) {
         console.log(res.data);
