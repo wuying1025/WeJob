@@ -1,30 +1,21 @@
 Page({
   formSubmit1: function (e) {
-   var id;
-    wx.getStorage({
-      key: 'user',
+    wx.request({
+      url: 'https://zfbwoz2h.qcloud.la/user/add_cv1',
+      data: {
+        name: e.detail.value.name,
+        sex: e.detail.value.sex,
+        bir: e.detail.value.birthday,
+        u_school: e.detail.value.u_school,
+        pos: e.detail.value.pos,
+        tel:e.detail.value.tel,
+        email:e.detail.value.email,
+      },
       success: function (res) {
-         id = res.data.u_id;
-         wx.request({
-           url: 'https://zfbwoz2h.qcloud.la/user/add_cv1',
-           data: {
-             name: e.detail.value.name,
-             sex: e.detail.value.sex,
-             bir: e.detail.value.birthday,
-             u_school: e.detail.value.u_school,
-             pos: e.detail.value.pos,
-             tel: e.detail.value.tel,
-             email: e.detail.value.email,
-             id: id
-           },
-           success: function (res) {
-             console.log(res.data)
-           }
-
-         })
+        console.log(res.data)
       }
+
     })
-    
   },
   formSubmit2: function (e) {
     wx.request({

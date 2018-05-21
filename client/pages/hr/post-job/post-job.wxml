@@ -1,12 +1,12 @@
       <view class='container'>       
-         <picker bindchange="bindPickerChangeCompany" value="{{company}}" range="{{array}}">
-    <view class="picker">
-      公司名称 <view class='select'>></view>{{array[company]}}
-    </view>
-  </picker>
+          <picker bindchange="bindPickerChangeCompany" value="{{company}}" range="{    {array}}">
+            <view class="picker">
+              公司名称 <view class='select'>></view>{{array[company]}}
+            </view>
+          </picker>
           <picker bindchange="bindPickerChangeSalary" value="{{salary}}" range="{{array2}}">
             <view class="picker">
-              薪资范围 <view class='select'>></view>{{array2[salary]}}
+              薪资 <view class='select'>></view>{{array2[salary]}}
             </view>
           </picker>
           <picker bindchange="bindPickerChangeCity" value="{{p_city}}" range="{{array3}}">

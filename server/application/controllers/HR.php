@@ -103,7 +103,7 @@ class HR extends CI_Controller {
         $hr_id = $this->input->get('hr_id');
         $row = $this->HR_model->own_mes($hr_id);
         if(isset($row)){
-            echo $row;
+            echo json_encode($row);
         }else{
          echo 'fail';
         }
@@ -140,7 +140,7 @@ class HR extends CI_Controller {
         $u_name = $this->input->get('u_name');
         $result = $this->HR_model->search_student($u_name);
         if(isset($result)){
-            echo $result;
+            echo json_encode($result);
         }else{
             echo "fail";
         }
@@ -206,7 +206,7 @@ class HR extends CI_Controller {
         $result = $this->HR_model->check_resume($r_id);
         echo $result;
         if(isset($result)){
-            echo $result;
+            echo json_encode($result);
         }else{
             echo 'fail';
         }
