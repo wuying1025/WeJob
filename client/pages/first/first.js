@@ -17,6 +17,7 @@ Page({
     this.setData({
       fullHidden: "block",
       studyHidden: "block",
+      searchHidden: "none",      
       all: "bold",     
       full: "",
       study: ""
@@ -26,6 +27,7 @@ Page({
     this.setData({
       fullHidden: "block",
       studyHidden: "none",
+      searchHidden: "none",            
       full:"bold",
       study:"",
       all:""
@@ -35,28 +37,34 @@ Page({
     this.setData({
       fullHidden: "none",
       studyHidden: "display",
+      searchHidden: "none",            
       full: "",
-      study: "bold"
-    })
-  },
-  search:function(e){
-    var that = this;
-    that.setData({
-      msg: e.detail.value
+      study: "bold",
+      all: ""      
     });
+  },
+  search:function(){
+    this.setData({
+      fullHidden: "none",
+      studyHidden: "none",
+      searchHidden: "block",      
+      full: "",
+      study: "",
+      all: "" 
+    });
+    var that = this;
     wx.request({
       url: 'https://zfbwoz2h.qcloud.la/user/search_position_or_company',
       data: {
-        key: this.data.msg
+        msg: that.data.msg
       },
       success: function (res) {
         console.log(res.data);
         that.setData({
-          fullHidden: "none",
-          studyHidden: "none"
+          test: res.data
         });
       }
-    })
+    });
   },
   components:{
    
