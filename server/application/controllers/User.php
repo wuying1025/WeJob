@@ -174,6 +174,7 @@ class User extends CI_Controller {
           echo json_encode($row);
     }
 
+    //检查是否收藏职位
     public function get_collect_by_u_id_p_id()
     {
         $id = $this->input->get('id');
@@ -186,6 +187,7 @@ class User extends CI_Controller {
         }
     }
 
+    //删除收藏
     public function del_collect_by_u_id_p_id()
     {
         $c_id = $this->input->get('c_id');
@@ -199,6 +201,7 @@ class User extends CI_Controller {
     }
 
 
+    //收藏职位
     public function collect_position(){
         $u_id = $this->input->get('u_id');
         if($u_id == 'undefined'){
@@ -220,7 +223,7 @@ class User extends CI_Controller {
         $key = $this->input->get('key');
         $result = $this->User_model->search_position_or_company($key);
         if(count($result)>0){
-            echo $result;
+            echo json_encode($result);
         }else{
             echo 'null';
         }

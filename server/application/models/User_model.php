@@ -63,10 +63,8 @@ class User_model extends CI_Model{
 
     public function search_position_or_company($key)
     {
-
-        $pdo = DB::getInstance();
-        $query = $pdo->query("select * from Table1 where concat('p_name','p_company') like '$key'");
-        return $query->fetchAll();
+        $rows = DB::select('t_position', ['*'], "p_company like '%".$key."%' or p_name like '%".$key."%'");
+        return $rows;
     }
 
     public function get_collect_by_u_id($u_id)

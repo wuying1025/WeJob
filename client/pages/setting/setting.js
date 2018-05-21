@@ -14,15 +14,9 @@ Page({
     
   },
   change:function(){
-    wx.showModal({
-      content: '是否确定退出',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
+    wx.switchTab({
+      url: '/pages/me/me',
+    
     })
   },
   /**
