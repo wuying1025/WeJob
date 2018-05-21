@@ -29,16 +29,3 @@
 .in{
    margin:20rpx; 
 }
- .footer{
-  position: absolute;
-  bottom: 0;
-  width:100%;
-  float: left;
-  display: flex;
-}
- .footer1{
-  flex: 1;
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.3rem;
-}
