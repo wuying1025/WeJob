@@ -48,6 +48,10 @@
   width:18rem;
   border-top: 0.02rem solid #000;
 }
+.textarea input{
+  width: 500rpx;
+  height: 500rpx;
+}
 #send{
   background-color: #03A9F4;
   flex:1;

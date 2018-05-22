@@ -36,12 +36,17 @@
               </picker>                    
 
         <view class='textarea'>
-          <text>职位描述</text>
-          <textarea  bindtinput="bindKeyInputrequire" value='请填写职位描述：'></textarea>
-        </view>
-        <view class='textarea2'>
+           <text>职位描述</text>
+          <input  bindtinput="bindKeyInputrequire" placeholder='请填写职位描述：'></input>
+        </view> 
+
+        <!-- <view class='textarea2'>
           <text>工作职责</text>
           <textarea bindtinput="bindKeyInputresponsibility" value='请填写工作职责：'></textarea>
+        </view> -->
+        <view class='textarea'>
+          <text>工作职责</text>
+          <input bindtinput="bindKeyInputresponsibility" placeholder='请填写工作职责：'></input>
         </view>
 
         <navigator url='../logined/logined'>

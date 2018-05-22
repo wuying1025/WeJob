@@ -1,6 +1,6 @@
 #body{
   background: #00A8FF;
-  height: 1100rpx;
+  height: 2100rpx;
 }
 .wrapper{
   margin:0 1.5rem;

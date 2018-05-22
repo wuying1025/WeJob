@@ -5,23 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array: ['美国', '中国', '巴西', '日本'],
+    array: ['百度', '腾讯', '滴滴出行', '字节跳动'],
     objectArray: [
       {
         id: 0,
-        name: '美国'
+        name: '百度'
       },
       {
         id: 1,
-        name: '中国'
+        name: '腾讯'
       },
       {
         id: 2,
-        name: '巴西'
+        name: '滴滴出行'
       },
       {
         id: 3,
-        name: '日本'
+        name: '字节跳动'
       }
     ],
   index:'',
@@ -111,18 +111,29 @@ Page({
   bindKeyInputname: function (e) {
     this.setData({
       name: e.detail.value
-    })
+    }),
+      console.log(e.detail.value);
   },
   bindKeyInputrequire: function (e) {
     this.setData({
-      require: e.detail.value    
-    })
+      require: e.detail.value
+    }),
+      console.log(e.detail.value);
   },
+  // bindKeyInputrequire: function (e) {
+  //   this.setData({
+  //     require: e.detail.value    
+  //   }),
+  //     console.log(2);
+  // },
   bindKeyInputresponsibility: function (e) {
+    console.log(1);
     this.setData({
       responsibility: e.detail.value
+    
     })
   },
+  
   bindDateChange1: function (e) {
     this.setData({
       p_date_start: e.detail.value,
