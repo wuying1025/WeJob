@@ -5,28 +5,28 @@
         基本信息
         </view>
         <view class='info'>
-          姓名：{{test.r_name}}
+          姓名：{{test[0].r_name}}
         </view>
         <view class='info'>
-        性别：{{test.r_sex}}
+        性别：{{test[0].r_sex}}
         </view>
         <view class='info'>
-        出生年份：{{test.r_sex}}
+        出生年份：{{test[0].r_bir}}
         </view>
         <view class='info'>
-        毕业学校：{{test.r_sex}}
+        毕业学校：{{test[0].r_school}}
         </view>
         <view class='info'>
-        应聘职位：{{test.r_sex}}
+        应聘职位：{{test[0].r_job}}
         </view>
         <view class='info'>
-        联系电话：{{test.r_sex}}
+        联系电话：{{test[0].r_tel}}
         </view>
         <view class='info'>
-        联系邮箱：{{test.r_sex}}
+        联系邮箱：{{test[0].r_email}}
         </view>
         <view class='info'>
-        自我描述：{{test.r_sex}}
+        自我描述：{{test[0].r_sex}}
         </view>
     </view>
      <view class='edu'>
@@ -34,7 +34,15 @@
         教育信息        
       </view>
       <view class='info'>
-        学校名称：{{test.r_sex}}
+        学校名称：{{test[0].r_school}}
+      </view>
+        <view class='info'>
+        获得荣誉：{{test[0].r_honor}}
+      </view>
+    </view>
+    <view class='pro'>
+        <view class='info'>
+      项目经验：{{test[0].r_project}}
       </view>
     </view>
   </view>

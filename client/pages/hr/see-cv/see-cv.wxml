@@ -1,26 +1,13 @@
-<view >
-
-<view class='container'>
-  
-   <view wx:for="{{cv}}" >
-   <!-- <navigator url='../see-cv/see-cv'> -->
-   <view class='cv' > 
-      <view class='r_name'>
-        名称{{item.r_name}}
-      </view>
-
+<view class='container'>  
+    <view wx:for="{{cv}}" class='cv' bindtap='msginfo' data-index="{{item.r_id}}"> 
+        <view class='r_name'>
+          名称{{item.r_name}}
+        </view>
         <view class='r_sex'>
-        性别{{item.r_sex}}
+          性别{{item.r_sex}}
         </view>
-        <view  class='in' bindtap='msginfo' data-index="{{item.r_id}}">
-        >
-        </view>
-      
+        <view  class='in' >
+          >
+        </view>      
    </view>
-   <!-- <button >查看简历</button> -->
-  <!-- </navigator> -->
- 
-   </view>
-</view>
-
 </view>

@@ -1,22 +1,23 @@
-      <view class='container'>       
-         <picker bindchange="bindPickerChangeCompany" value="{{company}}" range="{{array}}">
+ <view class='container'>       
+         <picker bindchange="bindPickerChangeCompany" value="{{index}}" range="{{array}}">
     <view class="picker">
-      公司名称 <view class='select'>></view>{{array[company]}}
+     公司 <view class='select'>></view>{{array[index]}}
     </view>
   </picker>
-          <picker bindchange="bindPickerChangeSalary" value="{{salary}}" range="{{array2}}">
+  
+          <picker bindchange="bindPickerChangeSalary" value="{{index2}}" range="{{array2}}">
             <view class="picker">
-              薪资范围 <view class='select'>></view>{{array2[salary]}}
+              薪资范围 <view class='select'>></view>{{array2[index2]}}
             </view>
           </picker>
-          <picker bindchange="bindPickerChangeCity" value="{{p_city}}" range="{{array3}}">
+          <picker bindchange="bindPickerChangeCity" value="{{index3}}" range="{{array3}}">
             <view class="picker">
-              工作地点 <view class='select'>></view>{{array3[p_city]}}
+              工作地点 <view class='select'>></view>{{array3[index3]}}
             </view>
           </picker>
-          <picker bindchange="bindPickerChangeType" value="{{p_type}}" range="{{array4}}">
+          <picker bindchange="bindPickerChangeType" value="{{index4}}" range="{{array4}}">
             <view class="picker">
-              招聘类型 <view class='select'>></view>{{array4[p_type]}}
+              招聘类型 <view class='select'>></view>{{array4[index4]}}
             </view>
           </picker>
           <view class='name'>
@@ -47,4 +48,4 @@
         <view  id='send' bindtap='send'> 发布 </view>
         </navigator>
       </view>
- 
+  
