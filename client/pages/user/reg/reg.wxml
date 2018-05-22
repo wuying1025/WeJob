@@ -1,12 +1,18 @@
-<view id='body'>
-
+<view>
+<view class='header'>
+   <image src='logo.png'></image>
+</view>
 <view class='form'>
 <view class='wrapper'>
 <view class='com'>
-      <input type='text' placeholder="请输入手机号码" bindinput="bindKeyInputname" placeholder-style='font-size:30rpx;color:white'></input>
-      <input type='password' placeholder="请输入密码" placeholder-style='font-size:30rpx;color:white'  bindinput="bindKeyInputpwd"></input>
-      <input type='password' placeholder="请再次输入密码"   placeholder-style='font-size:30rpx;color:white'bindinput="bindKeyInputpwd1"></input>
-     <input class='num' type='text' placeholder="请输入验证码"placeholder-style='font-size:30rpx;color:white' ></input>
+    <text class='name login' >用户名:</text>
+      <input type='text' placeholder='手机号/邮箱'  bindinput="bindKeyInputname" placeholder-style='font-size:30rpx;'></input>
+      <text class='pwd login'>密码:</text>
+      <input type='password'  bindinput="bindKeyInputpwd"></input>
+      <text class='pwd login'>确认密码:</text>
+      <input type='password'  bindinput="bindKeyInputpwd1"></input>
+      <text class='login'>验证码:</text>
+     <input class='num' type='text'></input>
      <button class='get'>获取验证码</button>
 </view>
     

@@ -1,0 +1,17 @@
+<view id='body'>
+
+<view class='form'>
+<view class='wrapper'>
+<view class='com'>
+      <input type='text' placeholder="请输入手机号码" bindinput="bindKeyInputname" placeholder-style='font-size:30rpx;color:white'></input>
+      <input type='password' placeholder="请输入密码" placeholder-style='font-size:30rpx;color:white'  bindinput="bindKeyInputpwd"></input>
+      <input type='password' placeholder="请再次输入密码"   placeholder-style='font-size:30rpx;color:white'bindinput="bindKeyInputpwd1"></input>
+     <input class='num' type='text' placeholder="请输入验证码"placeholder-style='font-size:30rpx;color:white' ></input>
+     <button class='get'>获取验证码</button>
+</view>
+    
+</view>
+ <navigator url='' hover-class="none"><button class='ok' bindtap="reg" hover-class="none">注册</button></navigator>
+</view>
+
+</view>

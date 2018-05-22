@@ -14,6 +14,34 @@ m<view class="first">
     <view class="wrapper">
     <full style="display:{{fullHidden}}"></full> 
     <study style="display:{{studyHidden}}"></study> 
+    
+    <!-- //搜索职位详情 -->
+    <view>
+      <view class="contain">
+  <view wx:for="{{test}}" class="job">
+<navigator url='' hover-class='none' bindtap='msginfo' data-index="{{item.p_id}}" class="each-msg">
+  <view class="top-msg">
+  <text class="p_name">{{item.p_name}}</text>
+    <view class="salary-color">￥{{item.p_salary}}/天</view>
+    <view>
+      <text class="city">{{item.p_city}}</text>
+      <text class="time">{{item.p_date_start}}发布</text>
+    </view>
+  </view>
+   <image src="baidu.png" class="job-img"></image>
+  <view class='job-info'>
+   <view class="comp">{{item.p_company}}</view>
+   <view class="attr">
+   <text>{{item.p_level}}</text>/
+   <text>{{item.people}}</text>/
+   <text>{{item.c_type}}</text>
+   </view>
+  </view>
+  </navigator>
+  </view>
+</view>
+    </view>
+    
     </view>
   </view>
   

@@ -5,16 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    p_id:'',
-    test:[]
+    id:''
   },
-  msginfo: function (event) {
-    var id = event.currentTarget.dataset['index'];
-    console.log(id);
-    wx.navigateTo({
-      url: '../see-cv/see-cv?p_id=' + id,
-    })
-  }, 
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -29,7 +22,7 @@ Page({
       success: function (res) {
         // console.log(res.data);
         that.setData({
-          test: res.data
+          position: res.data
         });
       }
     })

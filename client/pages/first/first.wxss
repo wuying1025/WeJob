@@ -51,3 +51,71 @@
   margin:20rpx 50rpx;
   color:white;
 }
+/*搜索样式*/
+/* .contain{
+  padding: 7rpx;
+} */
+
+.p_name{
+  font-size:35rpx;
+  font-weight: 800;
+}
+
+.job{
+  /* display:flex; */
+  height:260rpx;  
+  border-bottom:8px solid #e3e4d5;
+  position: relative;
+  padding: 20rpx;
+}
+
+.job-img{
+  width: 140rpx;
+  height:140rpx;
+  float:left;
+  margin-top:15rpx;
+}
+
+.job-info{
+  flex: 1;
+   margin-left:20rpx; 
+  float:left;
+}
+
+.salary-color{
+  color:red;
+  float:right;
+}
+
+.city{
+  font-size: 35rpx;
+  margin-top:100rpx;
+}
+
+.time{
+  float: right;
+  font-size: 35rpx;  
+  position:absolute;
+  right:20rpx;
+  top:20;
+}
+
+.top-msg{
+  height:100rpx;
+}
+
+.comp{
+  margin-top:40rpx;
+}
+
+.attr{
+  font-size: 35rpx;
+}
+
+.each-msg{
+  padding:7rpx;
+}
+
+.top-msg{
+
+}
