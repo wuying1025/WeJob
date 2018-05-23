@@ -1,0 +1,22 @@
+.header{
+  text-align: center;
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid gray;
+}
+.content{
+  margin-top: 15rpx;
+  height: 70rpx;
+}
+.content ul li{
+  width: 100rpx;
+  padding-left: 45rpx;
+  float: left;
+  font-size: 25rpx;
+  text-align: center;
+}
+.context textarea{
+  border: 1px solid gray;
+  margin: 0 auto;
+  height: 1000rpx;
+}

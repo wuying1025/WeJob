@@ -1,0 +1,14 @@
+{
+  
+    "list": [
+      {
+        "selectedIconPath": "images/first1.png",
+        "pagePath": "pages/user/logined_me",
+        "text": "首页"
+      }
+    ],
+    "selectedColor": "#03a9f4",
+    "backgroundColor": "white",
+    "color": "#03a9f4"
+  
+}
