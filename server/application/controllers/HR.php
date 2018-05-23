@@ -30,23 +30,29 @@ class HR extends CI_Controller {
 	}
 
 	//hr注册
-	public function hr_reg()
-    {
-        $tel = $this->input->get('tel');
+    public function hr_reg(){
+        $tel = $this->input->get('name');
         $pwd = $this->input->get('pwd');
         $pwd1 = $this->input->get('pwd1');
-        $rows = $this->HR_model->check_hr_login($tel);
-        if(isset($rows)){
-            echo 'tel is exist';
-        }elseif($pwd == $pwd1){
-            $row = $this->HR_model->hr_reg($tel,md5($pwd));
-            if($row > 0){
-                echo 'success';
-            }else{
-                echo 'fail';
-            }
+        if($tel==''||$pwd == ''||$pwd1==''){
+            echo 'empty';
         }else{
-            echo 'pwd error';
+            $rows = $this->HR_model->check_hr_login($tel);
+            if(isset($rows)){
+                echo 'tel is exist';
+            }elseif($pwd == $pwd1){
+                $row = $this->HR_model->hr_reg(array(
+                    'hr_tel' => $tel,
+                    'hr_pass' => md5($pwd)
+                ));
+                if($row > 0){
+                    echo 'success';
+                }else{
+                    echo 'fail';
+                }
+            }else{
+                echo 'pwd error';
+            }
         }
     }
 

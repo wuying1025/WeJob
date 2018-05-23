@@ -207,12 +207,23 @@ class User extends CI_Controller {
         if($u_id == 'undefined'){
             echo 'not login';
         }else{
-            $p_id = $this->input->get('p_id');
-            $row = $this->User_model->collect_position($u_id,$p_id);
-            if($row>0){
-                echo 'success';
+            $id = $this->input->get('id');
+            $query = $this->User_model->get_collect_by_u_id_p_id($u_id,$id);
+            if(count($query)>0 && $query->is_del == "0"){
+                $c_id = $query->c_id;
+                $res = $this->User_model->update_collect($c_id);
+                if($res>0){
+                    echo 'success';
+                }else{
+                    echo 'fail';
+                }
             }else{
-                echo 'fail';
+                $row = $this->User_model->collect_position($u_id,$id);
+                if($row>0){
+                    echo 'success';
+                }else{
+                    echo 'fail';
+                }
             }
         }
     }

@@ -61,6 +61,12 @@ class User_model extends CI_Model{
         return $row;
     }
 
+    public function update_collect($c_id)
+    {
+        $row = DB::update('t_user_collect',['is_del' => 0], "c_id = '$c_id'");
+        return $row;
+    }
+
     public function search_position_or_company($key)
     {
         $rows = DB::select('t_position', ['*'], "p_company like '%".$key."%' or p_name like '%".$key."%'");
