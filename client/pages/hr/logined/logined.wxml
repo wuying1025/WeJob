@@ -14,6 +14,6 @@
 <ul class='footer'>
   <li class="footer1">首页</li>
   <li class="footer1"><navigator url="../hr-message/hr-message"hover-class='none'>消息</navigator></li>
-  <li class="footer1"><navigator url="../admin/admin" hover-class='none'>我</navigator></li>
+  <li class="footer1"><navigator url="../admin/logined_me" hover-class='none'>我</navigator></li>
 </ul>
 </view>
