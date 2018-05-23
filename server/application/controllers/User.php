@@ -207,7 +207,7 @@ class User extends CI_Controller {
         if($u_id == 'undefined'){
             echo 'not login';
         }else{
-            $id = $this->input->get('id');
+            $id = $this->input->get('p_id');
             $query = $this->User_model->get_collect_by_u_id_p_id($u_id,$id);
             if(count($query)>0 && $query->is_del == "0"){
                 $c_id = $query->c_id;
