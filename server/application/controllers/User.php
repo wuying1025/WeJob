@@ -86,7 +86,8 @@ class User extends CI_Controller {
 		$school = $this->input->get('u_school');
 		$pos = $this->input->get('pos');
 		$tel = $this->input->get('tel');
-		$email = $this->input->get('email');
+        $email = $this->input->get('email');
+        $des = $this->input->get('des');
 		$id = $this->input->get('id');
 	//取一下ID
 
@@ -99,18 +100,11 @@ class User extends CI_Controller {
 			'r_school'=>$school,
 			'r_job'=>$pos,
 			'r_tel'=>$tel,
-			'r_email'=>$email,
+            'r_email'=>$email,
+            'r_evaluate'=>$des,
 			'u_id'=>$id
 		));
 		}else{
-			// $message = new StdClass();
-			// $message->r_name=$name;
-			// $message->r_sex=$sex;
-			// $message->r_bir=$bir;
-			// $message->r_school=$school;
-			// $message->r_job=$job;
-			// $message->r_tel=$tel;
-			// $message->r_email=$email;
 			$rows = $this->User_model->add_updata(array(
 				'r_name'=>$name,
 				'r_sex'=>$sex,
@@ -118,7 +112,8 @@ class User extends CI_Controller {
 				'r_school'=>$school,
 				'r_job'=>$pos,
 				'r_tel'=>$tel,
-				'r_email'=>$email,
+                'r_email'=>$email,
+                'r_evaluate'=>$des
 
 
 			),$id);
@@ -130,34 +125,114 @@ class User extends CI_Controller {
 	 }
     public function add_cv2(){
 		
-				$tallest = $this->input->get('tallest');
-				$time = $this->input->get('time');
-				$job = $this->input->get('job');
-				$school = $this->input->get('school');
-				 
-			//取一下ID
-	            
-				$row = $this->User_model->check_user($id);
-				if($row > 0){
-					$rows = $this->User_model->add_insert(array(
-					'r_name'=>$name,
-					'r_sex'=>$sex,
-					'r_bir'=>$bir,
-					'r_school'=>$school
-				));
-				}else{
-					$message = new StdClass();
-					$message->r_name=$name;
-					$message->r_sex=$sex;
-					$message->r_bir=$bir;
-					$message->r_school=$school;
-					$message->r_job=$job;
-					$message->r_tel=$tel;
-					$message->r_email=$email;
-					$rows = $this->User_model->add_updata($message);
-		
-				}
-			 }
+        $job = $this->input->get('add_job');
+		$id = $this->input->get('id');
+	//取一下ID
+
+		$row = $this->User_model->check_pos($id);
+		if(!isset($row)){
+			$rows = $this->User_model->add_insert(array(
+            'r_work'=>$job,
+			'u_id'=>$id
+		));
+		}else{
+			$rows = $this->User_model->add_updata(array(
+                'r_work'=>$job
+
+
+			),$id);
+
+		}
+
+             }
+             public function add_cv3(){
+                
+                $exp = $this->input->get('add_exp');
+                $id = $this->input->get('id');
+            //取一下ID
+        
+                $row = $this->User_model->check_pos($id);
+                if(!isset($row)){
+                    $rows = $this->User_model->add_insert(array(
+                    'r_project'=>$exp,
+                    'u_id'=>$id
+                ));
+                }else{
+                    $rows = $this->User_model->add_updata(array(
+                        'r_project'=>$exp,
+        
+        
+                    ),$id);
+        
+                }
+        
+                     }
+                     public function add_cv4(){
+                        
+                        $skill = $this->input->get('add_skill');
+                        $id = $this->input->get('id');
+                    //取一下ID
+                
+                        $row = $this->User_model->check_pos($id);
+                        if(!isset($row)){
+                            $rows = $this->User_model->add_insert(array(
+                            'r_skill'=>$skill,
+                            'u_id'=>$id
+                        ));
+                        }else{
+                            $rows = $this->User_model->add_updata(array(
+                                'r_skill'=>$skill,
+                
+                
+                            ),$id);
+                
+                        }
+                
+                             }
+                             public function add_cv5(){
+                                
+                                $edu = $this->input->get('add_edu');
+                                $id = $this->input->get('id');
+                            //取一下ID
+                        
+                                $row = $this->User_model->check_pos($id);
+                                if(!isset($row)){
+                                    $rows = $this->User_model->add_insert(array(
+                                    'r_edu'=>$edu,
+                                    'u_id'=>$id
+                                ));
+                                }else{
+                                    $rows = $this->User_model->add_updata(array(
+                                        'r_edu'=>$edu,
+                        
+                        
+                                    ),$id);
+                        
+                                }
+                        
+             }
+             public function add_cv6(){
+                
+                $price = $this->input->get('add_price');
+                $id = $this->input->get('id');
+            //取一下ID
+        
+                $row = $this->User_model->check_pos($id);
+                if(!isset($row)){
+                    $rows = $this->User_model->add_insert(array(
+                    'r_honor'=>$price,
+                    'u_id'=>$id
+                ));
+                }else{
+                    $rows = $this->User_model->add_updata(array(
+                        'r_honor'=>$price,
+        
+        
+                    ),$id);
+        
+                }
+        
+}
     public function get_full_message(){
     				$row = $this->User_model->get_full_message();
               echo json_encode($row);
@@ -180,6 +255,7 @@ class User extends CI_Controller {
         $id = $this->input->get('id');
         $u_id = $this->input->get('u_id');
         $row = $this->User_model->get_collect_by_u_id_p_id($u_id,$id);
+        $rows = $this->User_model->get_me_look($u_id,$id);
         if(count($row)>0 && $row->is_del == "0"){
             echo $row->c_id;
         }else{
@@ -207,12 +283,23 @@ class User extends CI_Controller {
         if($u_id == 'undefined'){
             echo 'not login';
         }else{
-            $p_id = $this->input->get('p_id');
-            $row = $this->User_model->collect_position($u_id,$p_id);
-            if($row>0){
-                echo 'success';
+            $id = $this->input->get('p_id');
+            $query = $this->User_model->get_collect_by_u_id_p_id($u_id,$id);
+            if(count($query)>0 && $query->is_del == "1"){
+                $c_id = $query->c_id;
+                $res = $this->User_model->update_collect($c_id);
+                if($res>0){
+                    echo 'success';
+                }else{
+                    echo 'fail';
+                }
             }else{
-                echo 'fail';
+                $row = $this->User_model->collect_position($u_id,$id);
+                if($row>0){
+                    echo 'success';
+                }else{
+                    echo 'fail';
+                }
             }
         }
     }
@@ -234,11 +321,23 @@ class User extends CI_Controller {
     {
         $u_id = $this->input->get('u_id');
         $rows = $this->User_model->get_collect_by_u_id($u_id);
-        if(count($rows)>0){
-            echo $rows;
-        }else{
-            echo "fail";
+        $arr =[];
+        for($i=0;$i<count($rows);$i++){
+            $arr[] = $rows[$i]->p_id;
         }
+        $str = implode(',',$arr);
+
+        $result = $this->User_model->get_collect_by_p_id($str);
+            echo json_encode($result);
+
+    }
+    public function get_collect_c_id_by_u_id()
+    {
+        $u_id = $this->input->get('u_id');
+        $p_id= $this->input->get('p_id');
+        $rows = $this->User_model->get_collect_c_id_by_u_id($u_id,$p_id);
+         echo json_encode($rows);
+
     }
 
     //我的投递
@@ -247,14 +346,45 @@ class User extends CI_Controller {
         $u_id = $this->input->get('u_id');
         $rows = $this->User_model->get_user_position_by_u_id($u_id);
         if(count($rows)>0){
-            echo $rows;
+            echo json_encode($rows);
         }else{
             echo "fail";
         }
     }
+    //我看过谁
+   public function me_look(){
+         $u_id = $this->input->get('u_id');
+         $rows = $this->User_model->get_p_id($u_id);
+         $arr =[];
+         for($i=0;$i<count($rows);$i++){
+             $arr[] = $rows[$i]->p_id;
+         }
+         $str = implode(',',$arr);
+         $result = $this->User_model->get_collect_by_p_id($str);
+         echo json_encode($result);
+     }
 
-
-
+     public function send()
+     {
+         $u_id = $this->input->get('u_id');
+         $p_id= $this->input->get('p_id');
+         $rows = $this->User_model->send($u_id,$p_id);
+          echo json_encode($rows);
+ 
+     }
+     public function get_position()
+     {
+         $u_id = $this->input->get('u_id');
+         $rows = $this->User_model->get_user_position_p_id($u_id);
+         $arr =[];
+         for($i=0;$i<count($rows);$i++){
+             $arr[] = $rows[$i]->p_id;
+         }
+         $str = implode(',',$arr);
+         $result = $this->User_model->get_collect_by_p_id($str);
+         echo json_encode($result);
+ 
+     }
 
 
 

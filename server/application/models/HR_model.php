@@ -14,14 +14,11 @@
 use QCloud_WeApp_SDK\Mysql\Mysql as DB;
 class HR_model extends CI_Model
 {
-    public function hr_reg($tel,$pwd)
+    public function hr_reg($hr)
     {
 
-        $row = DB::insert('t_hr', [
-            'hr_tel' => $tel,
-            'hr_pass' => $pwd
-        ]);
-        return $row;
+        $query = DB::insert('t_hr', $hr);
+        return $query;
     }
 
 
@@ -85,10 +82,44 @@ class HR_model extends CI_Model
     public function check_resume($r_id)
     {
         $rows = DB::select('t_resume', ['*'], "r_id = '$r_id'");
-        var_dump($rows);
-        die();
         return $rows;
 
     }
+
+    public function my_company($company_id)
+    {
+        $row = DB::select('t_company', ['*'], "company_id = '$company_id'");
+        return $row;
+    }
+
+    public function get_hr_collect_by_hr_id($hr_id)
+    {
+        $pdo = DB::getInstance();
+        $query = $pdo->query("select * from t_hr_collect c , t_user u where c.hr_id = $hr_id and c.u_id = u.u_id");
+        return $query->fetchAll();
+    }
+
+    public function get_collect_by_hr_id_r_id($hr_id,$id)
+        {
+            $rows = DB::row('t_hr_collect', ['*'], ['hr_id' => "$hr_id",'r_id' => "$id"]);
+            return $rows;
+        }
+//.......................
+        public function collect_position($hr_id,$r_id)
+            {
+                date_default_timezone_set('Asia/Shanghai');//设置时区
+                $time=date("Y-m-d H:i:s");
+                $row = DB::insert('t_user_collect', [
+                    'hr_id' => $hr_id,
+                    'r_id' => $r_id,
+                    'c_date' => $time
+                ]);
+                return $row;
+            }
+            //...........
+            public function get_company(){
+                    $rows = DB::row('t_company', ['company_id','company_name']);
+                    return $rows;
+                }
 
 }

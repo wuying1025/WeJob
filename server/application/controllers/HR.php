@@ -30,23 +30,29 @@ class HR extends CI_Controller {
 	}
 
 	//hr注册
-	public function hr_reg()
-    {
-        $tel = $this->input->get('tel');
+    public function hr_reg(){
+        $tel = $this->input->get('name');
         $pwd = $this->input->get('pwd');
         $pwd1 = $this->input->get('pwd1');
-        $rows = $this->HR_model->check_hr_login($tel);
-        if(isset($rows)){
-            echo 'tel is exist';
-        }elseif($pwd == $pwd1){
-            $row = $this->HR_model->hr_reg($tel,md5($pwd));
-            if($row > 0){
-                echo 'success';
-            }else{
-                echo 'fail';
-            }
+        if($tel==''||$pwd == ''||$pwd1==''){
+            echo 'empty';
         }else{
-            echo 'pwd error';
+            $rows = $this->HR_model->check_hr_login($tel);
+            if(isset($rows)){
+                echo 'tel is exist';
+            }elseif($pwd == $pwd1){
+                $row = $this->HR_model->hr_reg(array(
+                    'hr_tel' => $tel,
+                    'hr_pass' => md5($pwd)
+                ));
+                if($row > 0){
+                    echo 'success';
+                }else{
+                    echo 'fail';
+                }
+            }else{
+                echo 'pwd error';
+            }
         }
     }
 
@@ -122,7 +128,7 @@ class HR extends CI_Controller {
         $row = $this->HR_model->update_hr($hr_id,array(
             "hr_tel" => $tel,
             "hr_name" => $hr_name,
-            "hr_company" => $company,
+            "company_id" => $company,
             "hr_email" => $email,
             "hr_sex" => $sex,
             "hr_header" => $header
@@ -204,12 +210,70 @@ class HR extends CI_Controller {
     {
         $r_id = $this->input->get('r_id');
         $result = $this->HR_model->check_resume($r_id);
-        echo $result;
         if(isset($result)){
             echo json_encode($result);
         }else{
             echo 'fail';
         }
     }
+
+    //我的公司
+    public function my_company()
+    {
+        $company_id = $this->input->get('company_id');
+        $row = $this->HR_model->my_company($company_id);
+        if(count($row)>0){
+            echo json_encode($row);
+        }else{
+            echo "fail";
+        }
+    }
+
+
+    //我的收藏
+    public function get_collect_by_hr_id()
+    {
+        $hr_id = $this->input->get('hr_id');
+        $rows = $this->HR_model->get_hr_collect_by_hr_id($hr_id);
+        if(count($rows)>0){
+            echo json_encode($rows);
+        }else{
+            echo "fail";
+        }
+    }
+
+     //收藏职位.....................
+        public function collect_position(){
+                $hr_id = $this->input->get('hr_id');
+                if($hr_id == 'undefined'){
+                    echo 'not login';
+                }else{
+                    $id = $this->input->get('r_id');
+                    $query = $this->User_model->get_collect_by_hr_id_r_id($hr_id,$id);
+                    if(count($query)>0 && $query->is_del == "1"){
+                        $c_id = $query->c_id;
+                        $res = $this->User_model->update_collect($c_id);
+                        if($res>0){
+                            echo 'success';
+                        }else{
+                            echo 'fail';
+                        }
+                    }else{
+                        $row = $this->User_model->collect_position($hr_id,$id);
+                        if($row>0){
+                            echo 'success';
+                        }else{
+                            echo 'fail';
+                        }
+                    }
+                }
+            }
+
+            //获取公司
+            public function get_company(){
+                   $row = $this->HR_model->get_company();
+                      echo json_encode($row);
+                }
+
 
 }

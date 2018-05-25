@@ -62,21 +62,64 @@ class User_model extends CI_Model{
     }
 
     public function search_position_or_company($key)
-    {
+    {   
         $rows = DB::select('t_position', ['*'], "p_company like '%".$key."%' or p_name like '%".$key."%'");
         return $rows;
     }
 
+
     public function get_collect_by_u_id($u_id)
     {
-        $rows = DB::select('t_user_collect', ['*'], "u_id = '$u_id'");
+        $rows = DB::select('t_user_collect', ['p_id'],['u_id' => "$u_id",'is_del' => 0]);
         return $rows;
     }
+    public function get_collect_c_id_by_u_id($u_id,$p_id)
+    {
+        $rows = DB::row('t_user_collect', ['c_id'], ['u_id' => "$u_id",'p_id' => "$p_id"]);
+        return $rows;
+    }
+
 
     public function get_user_position_by_u_id($u_id)
     {
         $rows = DB::select('t_user_position', ['*'], "u_id = '$u_id'");
         return $rows;
     }
+
+    public function get_collect_by_p_id($str)
+    {
+        $pdo = DB::getInstance();
+       $query = $pdo->query("select * from t_position where p_id in ($str)");
+       return $query->fetchAll();
+    }
+    public function get_me_look($u_id,$p_id){
+        $row = DB::insert('t_me_look', [
+            'u_id' => $u_id,
+            'p_id' => $p_id
+        ]);
+      //  return $query;
+   }
+   public function send($u_id,$p_id){
+    date_default_timezone_set('Asia/Shanghai');//设置时区
+    $time=date("Y-m-d H:i:s");
+    $row = DB::insert('t_user_position', [
+        'u_id' => $u_id,
+        'p_id' => $p_id,
+        'send_time' =>$time
+    ]);
+
+    return $row;
+}
+   public function get_p_id($u_id)
+   {
+       $rows = DB::select('t_me_look', ['p_id'],['u_id' => "$u_id",'is_del' => 0]);
+       return $rows;
+   }
+   public function get_user_position_p_id($u_id)
+   {
+       $rows = DB::select('t_user_position', ['p_id'],['u_id' => "$u_id"]);
+       return $rows;
+   }
+   
 }
 ?>
