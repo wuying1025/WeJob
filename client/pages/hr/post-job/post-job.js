@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array: ['百度', '腾讯', '字节跳动', '滴滴出行'],
+    array: ['百度', '腾讯', '滴滴出行', '字节跳动'],
     objectArray: [
       {
         id: 0,
@@ -17,62 +17,66 @@ Page({
       },
       {
         id: 2,
-        name: '字节跳动'
-      },
-      {
-        id: 3,
         name: '滴滴出行'
-      }
-    ],
-    array2: ['1000-2000', '2000-3000', '4000-5000', '5000-6000'],
-    objectArray: [
-      {
-        id: 0,
-        name: '1000-2000'
-      },
-      {
-        id: 1,
-        name: '2000-3000'
-      },
-      {
-        id: 2,
-        name: '4000-5000'
       },
       {
         id: 3,
-        name: '5000-6000'
+        name: '字节跳动'
       }
     ],
-    array3: ['北京', '上海', '杭州', '深圳'],
-    objectArray: [
-      {
-        id: 0,
-        name: '北京'
-      },
-      {
-        id: 1,
-        name: '上海'
-      },
-      {
-        id: 2,
-        name: '杭州'
-      },
-      {
-        id: 3,
-        name: '深圳'
-      }
-    ],
-    array4: ['实习', '全职'],
-    objectArray: [
-      {
-        id: 0,
-        name: '实习'
-      },
-      {
-        id: 1,
-        name: '全职'
-      },
-    ],
+  index:'',
+  array2: ['1000', '2000', '3000', '4000'],
+  objectArray: [
+    {
+      id: 0,
+      name: '1000'
+    },
+    {
+      id: 1,
+      name: '2000'
+    },
+    {
+      id: 2,
+      name: '3000'
+    },
+    {
+      id: 3,
+      name: '4000'
+    }
+  ],
+  index2: '',
+  array3: ['上海', '北京', '武汉', '成都'],
+  objectArray: [
+    {
+      id: 0,
+      name: '上海'
+    },
+    {
+      id: 1,
+      name: '北京'
+    },
+    {
+      id: 2,
+      name: '武汉'
+    },
+    {
+      id: 3,
+      name: '成都'
+    }
+  ],
+  index3: '',
+  array4: ['实习', '全职'],
+  objectArray: [
+    {
+      id: 0,
+      name: '实习'
+    },
+    {
+      id: 1,
+      name: '全职'
+    }
+  ],
+  index4: '',
   name:'',
   require:'',
   hr_id: '',
@@ -81,45 +85,55 @@ Page({
   p_date_end: '2016-09-01',
   },
   bindPickerChangeCompany: function (e) {
-    // console.log('picker发送选择改变，携带值为', e.detail.value)
+    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      company: e.detail.value
+      index: e.detail.value
     })
   },
   bindPickerChangeSalary: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      salary: e.detail.value
+      index2: e.detail.value
     })
   },
-
   bindPickerChangeCity: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      p_city: e.detail.value
+      index3: e.detail.value
     })
   },
   bindPickerChangeType: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      p_type: e.detail.value
+      index4: e.detail.value
     })
   },
   bindKeyInputname: function (e) {
     this.setData({
       name: e.detail.value
-    })
+    }),
+      console.log(e.detail.value);
   },
-
   bindKeyInputrequire: function (e) {
     this.setData({
-      require: e.detail.value    
-    })
+      require: e.detail.value
+    }),
+      console.log(e.detail.value);
   },
-
-  bindKeyInputrearesponsibility: function (e) {
+  // bindKeyInputrequire: function (e) {
+  //   this.setData({
+  //     require: e.detail.value    
+  //   }),
+  //     console.log(2);
+  // },
+  bindKeyInputresponsibility: function (e) {
+    console.log(1);
     this.setData({
       responsibility: e.detail.value
+    
     })
   },
-
+  
   bindDateChange1: function (e) {
     this.setData({
       p_date_start: e.detail.value,
@@ -139,16 +153,16 @@ Page({
         wx.request({
           url: 'https://zfbwoz2h.qcloud.la/HR/post_job',
           data: {  
-            company: that.data.company,
+            company: that.data.index,
+            salary: that.data.index2,
+            city: that.data.index3,
+            p_type: that.data.index4,
             name: that.data.name,
             require: that.data.require,
             hr_id: id,
-            p_type: that.data.p_type,
-            p_city: that.data.p_city,
             p_date_start: that.data.p_date_start,
             p_date_end: that.data.p_date_end,
             responsibility: that.data.responsibility,
-            salary: that.data.salary,
           },
           success: function (res) {
             wx.showToast({

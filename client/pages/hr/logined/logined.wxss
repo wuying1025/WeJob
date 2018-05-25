@@ -4,11 +4,6 @@
   height: 300rpx;
   width: 300rpx;
 }
-.container .function {
-  width: 200px;
-  background-color: white;
-  margin: 10px;
-}
 .container .footer{
   position: absolute;
   bottom: 0;
@@ -21,4 +16,20 @@
   text-align: center;
   margin-bottom: 25px;
   font-size: 1.3rem;
+}
+
+.container .header{
+  position: absolute; 
+  width:100%;
+  float: left;
+  display: flex;
+  margin-top: 150px;
+}
+.container .header1{
+  flex: 1;
+  text-align: center;
+}
+.container .img{
+  width: 50px;
+  height: 50px;
 }

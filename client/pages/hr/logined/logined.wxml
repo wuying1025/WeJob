@@ -1,11 +1,19 @@
 <view class="container">
-  <image src="../img/person.png"></image>
-  <navigator url="../post-job/post-job" hover-class='none'><button class="function">发送信息</button></navigator>
- <navigator url="../see-job/see-job" hover-class='none'><button class="function" >查看职位</button></navigator>
-  <navigator url="../communicate/communicate" hover-class='none'><button class="function">主动沟通</button></navigator>
+  <ul class="header">
+    <li class="header1">
+    <image src="01.png" class="img"></image>
+    <navigator url="../post-job/post-job" hover-class='none'>发布职位</navigator></li>
+    <li class="header1">
+    <image src="02.png" class="img"></image>
+    <navigator url="../see-job/see-job" hover-class='none'>查看简历</navigator></li>
+    <li class="header1">
+    <image src="03.png" class="img"></image>
+    <navigator url="../communicate/communicate" hover-class='none'>主动沟通</navigator></li>
+  </ul>
+  
 <ul class='footer'>
   <li class="footer1">首页</li>
   <li class="footer1"><navigator url="../hr-message/hr-message"hover-class='none'>消息</navigator></li>
-  <li class="footer1"><navigator url="../admin/admin" hover-class='none'>我</navigator></li>
+  <li class="footer1"><navigator url="../admin/logined_me" hover-class='none'>我</navigator></li>
 </ul>
 </view>

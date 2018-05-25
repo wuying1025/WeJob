@@ -18,6 +18,7 @@ Page({
         r_id: id,
       },
       success: function (res) {        // console.log(res.data);
+      console.log(res.data);
         that.setData({
           test: res.data
         });

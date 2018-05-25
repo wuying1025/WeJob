@@ -23,6 +23,11 @@ page{
   background-color: #fff;
   width: 750rpx;
 }
+.pro{
+  margin: 20rpx;
+  background-color: #fff;
+  width: 750rpx;
+}
 .container .info-title{
   border-bottom: 1rpx solid #eee;
 }

@@ -1,66 +1,82 @@
 Page({
   data: {
-    tel: '',
-    pwd: ''
+    name: '',
+    pwd: '',
+    pwd1:''
   },
-  bindKeyInputtel: function (e) {
+  bindKeyInputname: function (e) {
     this.setData({
-      tel: e.detail.value
+      name: e.detail.value
     })
+
   },
   bindKeyInputpwd: function (e) {
     this.setData({
       pwd: e.detail.value
     })
   },
-  login: function () {
+  bindKeyInputpwd1: function (e) {
+    this.setData({
+      pwd1: e.detail.value
+     
+    })
+  },
+  reg: function (e) {
     wx.request({
-      url: 'https://zfbwoz2h.qcloud.la/HR/check_hr_login', //仅为示例，并非真实的接口地址
-      data: {
-        tel: this.data.tel,
-        pwd: this.data.pwd
+      url: 'https://zfbwoz2h.qcloud.la/HR/hr_reg',
+      data:{
+        name: this.data.name,
+        pwd: this.data.pwd,
+        pwd1: this.data.pwd1
       },
       success: function (res) {
         if (res.data == 'empty') {
           wx.showToast({
-            title: '请输入账号',
+            title: '请填写完整信息',
             icon: 'none',
             duration: 2000
           })
         }
         else {
-          if (res.data == 'pwd empty') {
+          if (res.data == 'tel is exist') {
             wx.showToast({
-              title: '密码为空',
+              title: "用户已存在",
               icon: 'none',
               duration: 2000
             })
-          } else if (res.data == 'name not exist') {
+          } else if (res.data == 'pwd error') {
             wx.showToast({
-              title: '用户未注册',
+              title: '两次输入密码不一致',
               icon: 'none',
               duration: 2000
             })
-          } else if (res.data == 'password error') {
+          } else if(res.data == 'success'){
             wx.showToast({
-              title: '密码错误',
-              icon: 'none',
+              title: '注册成功',
               duration: 2000
+            });
+            wx.navigateTo({
+              url: '',
             })
-          } else {
-            wx.setStorage({
-              key: "hr",
-              data: res.data
-            })
-            wx.switchTab({    //跳转到tabBar页面，并关闭其他所有tabBar页面
-              url: "/pages/first/first"
-            })
+          }else if(res.data == 'fail'){
+            wx.showToast({
+              title: '注册失败',
+              duration: 2000
+            });
           }
         }
-
       }
     })
+    console.log(this.data.name)
+    console.log(this.data.pwd)
   },
+  /**
+   * 页面的初始数据
+   */
+  data: {
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

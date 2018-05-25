@@ -1,0 +1,27 @@
+<view>
+<view class="wrapper">
+<view class="person">
+  <text id='name'>名字</text>
+  <text id='look'>查看并修改个人信息 ></text>
+  <image src="{{img}}"></image>
+</view>
+  <ul class="list">
+    <navigator url='basic/basic' hover-class="none"><li> <image src='我的简历.png'></image>
+    基本信息</li></navigator>
+    <navigator url='collection/collection' hover-class="none"><li><image src='我的收藏.png'></image> 我的收藏</li></navigator>
+    <navigator url='../company/company' hover-class="none"><li> <image src='我的公司.png'></image> 我的公司</li></navigator> 
+  </ul>
+  <view class="info">
+    <view><navigator url='../../advice/advice' class='down' hover-class="none"> <image src='修改.png'></image>意见反馈与帮助</navigator></view>
+    <view><navigator url='../../setting/setting'  class='down' hover-class="none"> <image src='设置.png'></image>设置</navigator></view>
+    <view><navigator url='../../about/about'  class='down' hover-class="none"> <image src='关于我们.png'></image>关于我们</navigator></view>
+    <view class="modal-box" hidden="{{flag}}" bindtap="hide">
+      <view class="modal-body">
+        <view class="modal-content">
+          <button class="knowBtn" bindtap="hide">确定退出？</button>
+        </view>
+      </view>
+  </view>
+  </view>
+</view>
+</view>

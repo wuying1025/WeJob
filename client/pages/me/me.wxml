@@ -1,7 +1,7 @@
 <view class="container">
 <view class="wrapper">
     <image src='hr.png'></image>
-     <button>我要招人</button>
+       <navigator url='../hr/login/login'><button>我要招人</button></navigator>
      <view id='or'>———————或者———————</view>
     <image src='user.png'></image>
        <navigator url='../user/login/login'><button>我要找工作</button></navigator>
