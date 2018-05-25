@@ -126,6 +126,5 @@ class User_model extends CI_Model{
        $rows = DB::select('t_user_position', ['p_id'],['u_id' => "$u_id"]);
        return $rows;
    }
-   
 }
 ?>

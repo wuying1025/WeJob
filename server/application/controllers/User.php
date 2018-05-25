@@ -383,7 +383,6 @@ class User extends CI_Controller {
          $str = implode(',',$arr);
          $result = $this->User_model->get_collect_by_p_id($str);
          echo json_encode($result);
- 
      }
 
 
