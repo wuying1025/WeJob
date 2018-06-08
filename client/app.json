@@ -1,7 +1,8 @@
 {
   "pages": [   
-    "pages/first/first",
     "pages/user/reply/reply",
+    "pages/first/first",
+    
     "pages/hr/login/login",
     "pages/hr/logined/logined",  
     "pages/hr/see-job/see-job", 
@@ -19,7 +20,8 @@
     "pages/user/logined_me/collection/collection",
     "pages/user/reg/reg",
     "pages/hr/see-detail/see-detail",
-    "pages/message/message"
+    "pages/message/message",
+    "pages/hr/newreg/reg"
     
   ],
   "window": {

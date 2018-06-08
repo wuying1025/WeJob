@@ -14,11 +14,14 @@
 use QCloud_WeApp_SDK\Mysql\Mysql as DB;
 class HR_model extends CI_Model
 {
-    public function hr_reg($hr)
+    public function hr_reg($tel,$pwd)
     {
 
-        $query = DB::insert('t_hr', $hr);
-        return $query;
+        $row = DB::insert('t_hr', [
+            'hr_tel' => $tel,
+            'hr_pass' => $pwd
+        ]);
+        return $row;
     }
 
 
@@ -99,27 +102,51 @@ class HR_model extends CI_Model
         return $query->fetchAll();
     }
 
-    public function get_collect_by_hr_id_r_id($hr_id,$id)
-        {
-            $rows = DB::row('t_hr_collect', ['*'], ['hr_id' => "$hr_id",'r_id' => "$id"]);
-            return $rows;
-        }
-//.......................
-        public function collect_position($hr_id,$r_id)
-            {
-                date_default_timezone_set('Asia/Shanghai');//设置时区
-                $time=date("Y-m-d H:i:s");
-                $row = DB::insert('t_user_collect', [
-                    'hr_id' => $hr_id,
-                    'r_id' => $r_id,
-                    'c_date' => $time
-                ]);
-                return $row;
-            }
-            //...........
-            public function get_company(){
-                    $rows = DB::row('t_company', ['company_id','company_name']);
-                    return $rows;
-                }
+    public function all_company()
+    {
+        $rows = DB::select('t_company', ['*']);
+        return $rows;
+    }
+
+    public function update_state($u_p_id,$state)
+    {
+        $row = DB::update('t_', $state, "hr_id = '$u_p_id'");
+        return $row;
+    }
+
+    public function collect_resume($hr_id,$r_id)
+    {
+        date_default_timezone_set('Asia/Shanghai');//设置时区
+        $time=date("Y-m-d H:i:s");
+        $row = DB::insert('t_hr_collect', [
+            'hr_id' => $hr_id,
+            'r_id' => $r_id,
+            'c_date' => $time
+        ]);
+        return $row;
+    }
+
+    public function get_collect_by_hr_id_r_id($hr_id,$r_id)
+    {
+        $row = DB::row('t_hr_collect', ['*'], ['hr_id' => "$hr_id",'r_id' => "$r_id"]);
+        return $row;
+    }
+
+    public function del_collect_by_c_id($c_id)
+    {
+        $row = DB::update('t_hr_collect',['is_del' => 1], "c_id = '$c_id'");
+        return $row;
+    }
+
+    public function update_collect($c_id)
+    {
+        $row = DB::update('t_hr_collect',['is_del' => 0], "c_id = '$c_id'");
+        return $row;
+    }
+
+    public function get_collect_resume_by_hr_id_r_id()
+    {
+
+    }
 
 }

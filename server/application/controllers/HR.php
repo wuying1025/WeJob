@@ -229,7 +229,6 @@ class HR extends CI_Controller {
         }
     }
 
-
     //我的收藏
     public function get_collect_by_hr_id()
     {
@@ -242,38 +241,82 @@ class HR extends CI_Controller {
         }
     }
 
-     //收藏职位.....................
-        public function collect_position(){
-                $hr_id = $this->input->get('hr_id');
-                if($hr_id == 'undefined'){
-                    echo 'not login';
-                }else{
-                    $id = $this->input->get('r_id');
-                    $query = $this->User_model->get_collect_by_hr_id_r_id($hr_id,$id);
-                    if(count($query)>0 && $query->is_del == "1"){
-                        $c_id = $query->c_id;
-                        $res = $this->User_model->update_collect($c_id);
-                        if($res>0){
-                            echo 'success';
-                        }else{
-                            echo 'fail';
-                        }
-                    }else{
-                        $row = $this->User_model->collect_position($hr_id,$id);
-                        if($row>0){
-                            echo 'success';
-                        }else{
-                            echo 'fail';
-                        }
-                    }
-                }
+    //查看是否收藏
+    public function get_collect_by_hr_id_r_id()
+    {
+        $r_id = $this->input->get('id');
+        $hr_id = $this->input->get('hr_id');
+        $row = $this->HR_model->get_collect_by_hr_id_r_id($hr_id,$r_id);
+//        var_dump($row);die();
+        if(count($row)>0 && $row->is_del == "0"){
+            echo $row->c_id;
+        }else{
+            echo 'not exist';
+        }
+    }
+
+    //收藏简历
+    public function collect_resume()
+    {
+        $hr_id = $this->input->get('hr_id');
+        $r_id = $this->input->get('r_id');
+        $query = $this->HR_model->get_collect_resume_by_hr_id_r_id($hr_id,$r_id);
+        if(count($query)>0 && $query->is_del == "1"){
+            $c_id = $query->c_id;
+            $res = $this->HR_model->update_collect($c_id);
+            if($res>0){
+                echo 'success';
+            }else{
+                echo 'fail';
             }
+        }else{
+            $row = $this->HR_model->collect_resume($hr_id,$r_id);
+            if($row>0){
+                echo 'success';
+            }else{
+                echo 'fail';
+            }
+        }
+    }
 
-            //获取公司
-            public function get_company(){
-                   $row = $this->HR_model->get_company();
-                      echo json_encode($row);
-                }
+    //删除收藏
+    public function del_collect_by_c_id()
+    {
+        $c_id = $this->input->get('c_id');
+        $row = $this->HR_model->del_collect_by_c_id($c_id);
+        if($row>0){
+            echo 'success';
+        }else{
+            echo 'fail';
 
+        }
+    }
+
+    //所有公司
+    public function all_company()
+    {
+        $rows = $this->HR_model->all_company();
+        if(count($rows)>0){
+            echo json_encode($rows);
+        }else{
+            echo "fail";
+        }
+    }
+
+    //修改简历状态
+    public function update_state()
+    {
+        $u_p_id = $this->input->get('u_p_id');
+        $state = $this->input->get('state');
+        $row = $this->HR_model->update_state($u_p_id,array(
+            'schedule' => $state
+        ));
+        if($row>0){
+            echo 'state';
+        }else{
+            echo 'fail';
+        }
+
+    }
 
 }
