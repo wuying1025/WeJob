@@ -321,9 +321,7 @@ class HR extends CI_Controller {
     {
         $u_p_id = $this->input->get('u_p_id');
         $state = $this->input->get('state');
-        $row = $this->HR_model->update_state($u_p_id,array(
-            'schedule' => $state
-        ));
+        $row = $this->HR_model->update_state($u_p_id, $state);
         if($row>0){
             echo 'state';
         }else{

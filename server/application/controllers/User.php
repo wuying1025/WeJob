@@ -362,16 +362,35 @@ class User extends CI_Controller {
          $str = implode(',',$arr);
          $result = $this->User_model->get_collect_by_p_id($str);
          echo json_encode($result);
-    }
+     }
 
-   public function send()
-    {
-        $u_id = $this->input->get('u_id');
-        $p_id= $this->input->get('p_id');
-        $rows = $this->User_model->send($u_id,$p_id);
-        echo json_encode($rows);
+     public function send()
+     {
+         $u_id = $this->input->get('u_id');
+         $p_id= $this->input->get('p_id');
+         $rows = $this->User_model->send($u_id,$p_id);
+         if($rows = -1){
+             echo 'fail';
+         }else{
+              echo json_encode($rows);
+         }
+         
+ 
+     }
 
-    }
+     //获取简历状态
+     public function get_resume_state_by_u_id()
+     {
+         $u_id = $this->input->get('u_id');
+         $row = $this->User_model->get_resume_state_by_u_id($u_id);
+         if(count($row)>0){
+             echo json_encode($row);
+         }else{
+             echo "fail";
+         }
+     }
+     
+
      public function get_position()
      {
          $u_id = $this->input->get('u_id');
@@ -384,16 +403,7 @@ class User extends CI_Controller {
          $result = $this->User_model->get_collect_by_p_id($str);
          echo json_encode($result);
      }
-    public function get_resume_by_u_id()
-    {
-        $u_id = $this->input->get('u_id');
-        $row = $this->User_model->get_resume_by_u_id($u_id);
-        if(count($row)>0){
-            echo json_encode($row);
-        }else{
-            echo "fail";
-        }
-    }
+
 
 
 

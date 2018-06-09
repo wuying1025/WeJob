@@ -114,7 +114,7 @@ class HR_model extends CI_Model
 
     public function update_state($u_p_id,$state)
     {
-        $row = DB::update('t_', $state, "hr_id = '$u_p_id'");
+        $row = DB::update('t_user_position', ['schedule' => $state], "u_p_id = '$u_p_id'");
         return $row;
     }
 

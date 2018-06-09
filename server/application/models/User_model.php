@@ -108,12 +108,24 @@ class User_model extends CI_Model{
    public function send($u_id,$p_id){
     date_default_timezone_set('Asia/Shanghai');//设置时区
     $time=date("Y-m-d H:i:s");
-    $row = DB::insert('t_user_position', [
-        'u_id' => $u_id,
-        'p_id' => $p_id,
-        'send_time' =>$time
-    ]);
+    $rows = DB::select('t_user_position', ['p_id'], "u_id = '$u_id'");
+    if($rows->p_id == $p_id){
+         return 0;
+    }else{
+        $row = DB::insert('t_user_position', [
+                'u_id' => $u_id,
+                'p_id' => $p_id,
+                'send_time' =>$time
+            ]);
 
+        return $row;
+    }
+   
+  
+}
+public function get_resume_by_u_id($u_id)
+{
+    $row = DB::select('t_resume', ['*'], "u_id = '$u_id'");
     return $row;
 }
    public function get_p_id($u_id)
@@ -126,11 +138,5 @@ class User_model extends CI_Model{
        $rows = DB::select('t_user_position', ['p_id'],['u_id' => "$u_id"]);
        return $rows;
    }
-
-    public function get_resume_by_u_id($u_id)
-    {
-        $row = DB::select('t_resume', ['*'], "u_id = '$u_id'");
-        return $row;
-    }
 }
 ?>
