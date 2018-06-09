@@ -217,6 +217,19 @@ class HR extends CI_Controller {
         }
     }
 
+    //下载简历
+    public function download_resume()
+    {
+        $r_id = $this->input->get('r_id');
+        $result = $this->HR_model->check_resume($r_id);
+        if(isset($result)){
+//            var_dump($result) ;
+            echo $result[0]->r_affix;
+        }else{
+            echo 'fail';
+        }
+    }
+
     //我的公司
     public function my_company()
     {
