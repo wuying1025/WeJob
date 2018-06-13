@@ -1,18 +1,38 @@
-<view>
 
-<view class='content'>
-    <ul>
-        <li><navigator>全部</navigator></li>
-         <li> <navigator>待查看</navigator> </li>
-          <li> <navigator>待沟通</navigator>  </li>
-           <li> <navigator>面试</navigator> </li>
-            <li> <navigator>不合适</navigator>  </li>
-    </ul>
-
+<view class='container'>
+  
+  
+   <view class='job' > 
+   <view class='info'>
+    公司:{{test.company_name}}
+   </view>
+  <view class='info'>
+   {{test.company_logo}}
+    </view>
+     <view class='info'>
+    公司类型:{{test.company_type}}
+    </view>
+   <view class='info'>
+    公司规模:{{test.company_scale}}
+    </view>
+     <view class='info'>
+    CEO:{{test.company_CEO}}
+    </view>
+    <view class='info'>
+    公司地址:{{test.company_address}}
+    </view>
+     <view class='info'>
+    公司地址:{{test.company_tel}}
+    </view>
+     <view class='info'>
+    公司简介:{{test.company_intro}}
+    </view>
+     <view class='info'>
+    城市:{{test.company_city}}
+    </view>
+   
+    
+   </view>
 </view>
-<view class='context'>
-    <textarea></textarea>
 
-</view>
 
-</view>

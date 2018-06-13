@@ -1,0 +1,32 @@
+ <view class='container'>     
+  <view class="basic">
+          
+                <text class="basic-left">头像：</text><text class="star">*</text>
+                <view class="basic-photo">
+                <image src="{{tempFilePaths}}" bindtap="chooseimage" class="photo-img"></image>
+        </view>
+             </view>
+          <view class='name'>
+            <text>姓名：</text>
+            <input type='text' bindinput="bindKeyInputname" value='{{test.hr_name}}'></input>  
+          </view>  
+           <picker bindchange="bindPickerChangeCompany" value="{{index}}" range="{{array}}" range-key="company_name">
+    <view class="picker">
+     公司 <view class='select'>></view>{{array[index].company_name}}
+    </view>
+  </picker> 
+          <view class='name'>
+            <text>邮箱：</text>
+            <input type='text' bindinput="bindKeyInputemail" value='{{test.hr_email}}'></input>  
+          </view>          
+      <view class='name'>
+            <text>联系电话：</text>
+            <input type='text' bindinput="bindKeyInputtel" value='{{test.hr_tel}}'></input>  
+          </view>  
+
+        <navigator url='../admin/logined_me'>
+        <view  id='send' bindtap='send'> 修改</view>
+        </navigator>
+
+</view>
+  

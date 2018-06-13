@@ -1,4 +1,4 @@
-.header{
+/* .header{
   text-align: center;
   margin-top: 20rpx;
   padding-bottom: 20rpx;
@@ -19,4 +19,20 @@
   border: 1px solid gray;
   margin: 0 auto;
   height: 1000rpx;
+} */
+.container{
+  margin :0 1.5rem; 
+  align-items: center;
+}
+.info{
+  margin: 35rpx;
+}
+#send{
+  background-color: #03A9F4;
+  width:20rem; 
+  text-align: center;
+  color: #fff;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 0;
 }

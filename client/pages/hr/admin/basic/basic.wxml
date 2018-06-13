@@ -1,43 +1,30 @@
-<view class="comtainer">
-<view class="wrapper">
-<navigator url="../resume/line_resume/line_resume"><button class="edit">编辑</button></navigator>
-<view class="basic-msg" wx:for="{{msgList}}">
-  <view class="row">
-    <view class="word">头像：</view>
-    <image src="{{item.image}}"></image>
-  </view>
-   <view class="bas-row">
-    <text>姓名：</text>
-    <text class="right">{{item.name}}</text>
-  </view>
-  <view class="bas-row">
-    <text>性别：</text>
-    <text class="right">{{item.sex}}</text>    
-  </view>
-  <view class="bas-row">
-    <text>生日：</text>
-    <text class="right">{{item.birth}}</text>    
-  </view>
-  <view class="bas-row">
-    <text>学校：</text>
-    <text class="right">{{item.school}}</text>    
-  </view>
-  <view class="bas-row">
-    <text>最高学历：</text>
-    <text class="right">{{item.education}}</text>    
-  </view>
-  <view class="bas-row">
-    <text>应聘职位：</text>
-    <text class="right">{{item.position}}</text>    
-  </view>
-  <view class="bas-row">
-    <text>电话：</text>
-    <text class="right">{{item.tel}}</text>    
-  </view>
-  <view class="bas-row">
-    <text>邮箱：</text>
-    <text class="right">{{item.email}}</text>    
-  </view>
+<view class='container'> 
+           <view class="basic">
+                <!-- <view class="basic-photo">
+                <image src="{{tempFilePaths}}" class="photo-img"></image>
+                </view> -->
+             </view>
+          <view class='name'>
+            <text>邮箱：</text>
+    <text class="right">{{test.hr_email}}</text>  
+          </view>
+            <view class='name'>
+            <text>电话：</text>
+    <text class="right">{{test.hr_tel}}</text> 
+          </view>      
+            <view class='name'>
+             <text>性别：</text>
+    <text class="right">{{test.hr_sex}}</text>    
+          </view>      
+           <view class='name'>
+              <text>姓名：</text>
+    <text class="right">{{test.hr_name}}</text>  
+          </view>      
+        
+
+
+        <navigator url='../../edit/edit'>
+        <view  id='send' bindtap='send'> 编辑 </view>
+        </navigator>
 </view>
-</view>
-</view>
+  

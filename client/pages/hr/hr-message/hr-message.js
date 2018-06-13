@@ -1,18 +1,26 @@
 // pages/hr-message/hr-message.js
+var app = getApp();  
+// var util = require('../../utils/util.js')  
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+
+    logs: []  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    app.editTabBar2();
+    this.setData({
+      logs: (wx.getStorageSync('logs') || []).map(function (log) {
+        // return util.formatTime(new Date(log))
+      })
+    })  
   },
 
   /**

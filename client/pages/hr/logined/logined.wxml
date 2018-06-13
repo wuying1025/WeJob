@@ -1,3 +1,4 @@
+ <import src="../../tabBar.wxml"/> <template is="tabBar" data="{{tabBar}}"/>
 <view class="container">
   <ul class="header">
     <li class="header1">
@@ -5,15 +6,47 @@
     <navigator url="../post-job/post-job" hover-class='none'>发布职位</navigator></li>
     <li class="header1">
     <image src="02.png" class="img"></image>
-    <navigator url="../see-job/see-job" hover-class='none'>查看简历</navigator></li>
+    <navigator url="../see-job/see-job" hover-class='none'>查看职位</navigator></li>
     <li class="header1">
     <image src="03.png" class="img"></image>
     <navigator url="../communicate/communicate" hover-class='none'>主动沟通</navigator></li>
   </ul>
   
-<ul class='footer'>
-  <li class="footer1">首页</li>
-  <li class="footer1"><navigator url="../hr-message/hr-message"hover-class='none'>消息</navigator></li>
-  <li class="footer1"><navigator url="../admin/logined_me" hover-class='none'>我</navigator></li>
-</ul>
+
+  <!-- <ul class="footer">
+    <li class="footer1">
+    <image src="../../../images/首页未选中.png" class="fimg"></image>
+    <text> 首页</text>
+    </li>
+    <li class="footer1">
+    <navigator url="../hr-message/hr-message" hover-class='none'>
+     <image src="../../../images/消息未选中.png" class="fimg"></image>
+     <text>消息</text>
+    </navigator>
+    </li>
+    <li class="footer1">
+    <navigator url="../admin/logined_me" hover-class='none'>
+     <image src="../../../images/我的未选中.png" class="fimg"></image>
+    <text>我的</text>
+    </navigator>
+    </li>
+  </ul> -->
+<!-- <view class='footer'>
+ <view class='footer1'>
+    <image src="../../../images/首页未选中.png" class="fimg"></image>
+    <text  class='text1'  > 首页</text>
+ </view>
+  <view class='footer1' >
+    <navigator url="../hr-message/hr-message" hover-class='none'>
+     <image src="../../../images/消息未选中.png" class="fimg"></image>
+     <text class='text2'>信息</text>
+    </navigator>
+ </view>
+  <view class='footer1' >
+     <navigator url="../admin/logined_me" hover-class='none'>
+     <image src="../../../images/我的未选中.png" class="fimg"></image>
+    <text class='text3'>我的</text>
+    </navigator>
+ </view>
+</view> -->
 </view>

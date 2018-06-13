@@ -5,28 +5,28 @@
         基本信息
         </view>
         <view class='info'>
-          姓名：{{test[0].r_name}}
+          姓名：{{test.r_name}}
         </view>
         <view class='info'>
-        性别：{{test[0].r_sex}}
+        性别：{{test.r_sex}}
         </view>
         <view class='info'>
-        出生年份：{{test[0].r_bir}}
+        出生年份：{{test.r_bir}}
         </view>
         <view class='info'>
-        毕业学校：{{test[0].r_school}}
+        毕业学校：{{test.r_school}}
         </view>
         <view class='info'>
-        应聘职位：{{test[0].r_job}}
+        应聘职位：{{test.r_job}}
         </view>
         <view class='info'>
-        联系电话：{{test[0].r_tel}}
+        联系电话：{{test.r_tel}}
         </view>
         <view class='info'>
-        联系邮箱：{{test[0].r_email}}
+        联系邮箱：{{test.r_email}}
         </view>
         <view class='info'>
-        自我描述：{{test[0].r_sex}}
+        自我描述：{{test.r_sex}}
         </view>
     </view>
      <view class='edu'>
@@ -34,25 +34,28 @@
         教育信息        
       </view>
       <view class='info'>
-        学校名称：{{test[0].r_school}}
+        学校名称：{{test.r_school}}
       </view>
         <view class='info'>
-        获得荣誉：{{test[0].r_honor}}
+        获得荣誉：{{test.r_honor}}
       </view>
     </view>
     <view class='pro'>
         <view class='info'>
-      项目经验：{{test[0].r_project}}
+      项目经验：{{test.r_project}}
       </view>
     </view>
   </view>
 
   <view class='but'>
-    <button class='load'> 下载简历</button>
+    <button class='load' bindtap='down' data-index="{{test.r_id}}"> 查看附件简历</button>
+        <!-- <button class='collect' bindtap='collect'><image src="{{src}}"></image> 收藏简历</button> -->
+         <view class='collect' bindtap='collect'  data-index="{{test.r_id}}" >
+    <image src="{{src}}"></image><text >收藏</text></view>
       <view class='chose' >
-        <button hover-class='button-hover1'>初步审核</button>
-        <button hover-class='button-hover2'>面试</button>
-        <button hover-class='button-hover3'>不合适</button>
+        <button hover-class='button-hover1' bindtap='ok' >初步审核</button>
+        <button hover-class='button-hover2' bindtap='review'>面试</button>
+        <button hover-class='button-hover3' bindtap='pass'>不合适</button>
       </view>
   </view>
  

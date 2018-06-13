@@ -1,41 +1,72 @@
-.contain{
-  padding: 10rpx;
+page{
+  height:100%;
+  position:relative;
+  width:100%;
+}
+.hole{
+  background: #eee;
+  height:100%;
 }
 
-.job{
-  display:flex;
-  height:160rpx;  
-  border-bottom: 1px solid #ccc; 
-  position: relative;
+.first{
+  padding:20rpx;
+  margin-top:30rpx;
+  background: white;
+}
+
+.name{
+  font-size: 40rpx;
+  font-weight: 800;
 }
 
 .job-img{
   width: 140rpx;
   height:140rpx;
-  float:left;
-}
-
-.job-info{
-  flex: 1;
-   margin-left:20rpx; 
-  float:left;
-}
-
-.job-apply{
-  /* width: 100rpx; */
-  height: 60rpx;
-  font-size: 30rpx;
   float:right;
-  background-color: #03a9f4;
-  /* margin-top: 30rpx; */
-  margin: auto 0;
-  line-height: 60rpx;
-  color:white;
-  position: absolute;
-  right:20rpx;
-  top:20rpx;
 }
 
-.salary-color{
-  color:#03a9f4;
+.salary{
+  /* color:red; */
+  height:50rpx;
+  line-height: 100rpx;
+  margin-top:10rpx;
+}
+
+
+.enter{
+  width:20rpx;
+  height:30rpx;
+  float:right;
+}
+
+.btn{
+  /* height:50rpx; */
+  /* padding:30rpx; */
+  display:flex;
+  flex-direction: row;
+  /* border-bottom:1rpx solid #ccc; */
+  
+}
+
+.cancel{
+  /* height:50rpx;   */
+  /* border-right:1rpx solid #ccc; */
+  flex:1;
+  text-align: center;
+  color: #999;
+}
+
+.post{
+  height:50rpx;
+  flex:1;
+  text-align: center;  
+  color: #999;
+}
+.null{
+  text-align: center;
+}
+.null image{
+  margin-top:200rpx;
+  width:300rpx;
+  height:250rpx;
 }

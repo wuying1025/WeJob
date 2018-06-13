@@ -1,3 +1,4 @@
+ <import src="../../../tabBar.wxml"/> <template is="tabBar" data="{{tabBar}}"/>
 <view>
 <view class="wrapper">
 <view class="person">

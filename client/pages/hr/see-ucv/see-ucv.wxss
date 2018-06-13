@@ -7,6 +7,9 @@ page{
    display: flex;
    flex-direction: column;
 }
+.cv{
+  margin-bottom: 500rpx;
+}
 .basic-info{
   background-color: #fff;
   width: 750rpx;
@@ -58,4 +61,23 @@ page{
 .load{
   color: #fff;
   background-color: #03A9F4;  
+}
+/* .collect{
+  color: #fff;
+  background-color: #03A9F4;  
+} */
+.collect{
+   /* width:100%;    */
+  background-color: #fff;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color:#03a9f4;
+}
+.collect image{
+  width: 60rpx;
+  height: 60rpx;
+  position: relative;
+  top:18rpx;
+  right:150rpx;
 }

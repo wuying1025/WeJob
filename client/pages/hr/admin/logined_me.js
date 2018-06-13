@@ -1,58 +1,15 @@
+var app = getApp();  
 Page({
-  collection: function () {
-    wx.request({
-      url: 'https://zfbwoz2h.qcloud.la/HR/my_collection', //仅为示例，并非真实的接口地址
-      data: {
-        tel: this.data.tel,
-        pwd: this.data.pwd
-      },
-      success: function (res) {
-        if (res.data == 'empty') {
-          wx.showToast({
-            title: '请输入账号',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-        else {
-          if (res.data == 'pwd empty') {
-            wx.showToast({
-              title: '密码为空',
-              icon: 'none',
-              duration: 2000
-            })
-          } else if (res.data == 'name not exist') {
-            wx.showToast({
-              title: '用户未注册',
-              icon: 'none',
-              duration: 2000
-            })
-          } else if (res.data == 'password error') {
-            wx.showToast({
-              title: '密码错误',
-              icon: 'none',
-              duration: 2000
-            })
-          } else {
-            wx.setStorage({
-              key: "hr",
-              data: res.data
-            })
-            wx.switchTab({    //跳转到tabBar页面，并关闭其他所有tabBar页面
-              url: "/pages/first/first"
-            })
-          }
-        }
 
-      }
-    })
-  },
   /**
    * 页面的初始数据
    */
   data: {
+    hr_id: '',
+    test:[],
     flag: true,
-    img: "../../me/person.jpg"
+    img: "../../me/person.jpg",
+      logs: [] 
   },
 
   /**
@@ -92,6 +49,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.editTabBar3();
+    var that = this;
+    wx.getStorage({
+      key: 'hr',
+      success: function (res) {
+        var id = res.data.hr_id;
+        console.log(id);
+        wx.request({
+          url: 'https://zfbwoz2h.qcloud.la/HR/own_mes',
+          data: {
+            hr_id: id,
+          },
+          success: function (res) {
+            // console.log(res.data);
+            that.setData({
+              test: res.data[0]
+            });
+          }
+        })
+      }
+    });
 
   },
 

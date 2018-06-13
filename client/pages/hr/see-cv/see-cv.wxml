@@ -1,10 +1,10 @@
 <view class='container'>  
-    <view wx:for="{{cv}}" class='cv' bindtap='msginfo' data-index="{{item.r_id}}"> 
+    <view wx:for="{{cv}}" class='cv' bindtap='msginfo' data-index="{{item.r_id}}" data-ind="{{item.u_p_id}}"> 
         <view class='r_name'>
-          名称{{item.r_name}}
+          名称:{{item.r_name}}
         </view>
         <view class='r_sex'>
-          性别{{item.r_sex}}
+          性别：{{item.r_sex}}
         </view>
         <view  class='in' >
           >

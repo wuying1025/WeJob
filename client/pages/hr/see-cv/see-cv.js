@@ -9,9 +9,11 @@ Page({
   },
   msginfo: function (event) {
     var id = event.currentTarget.dataset['index'];
+    var id2 = event.currentTarget.dataset['ind'];
     console.log(id);
+    console.log(id2);
     wx.navigateTo({
-      url: '../see-ucv/see-ucv?r_id=' + id,
+      url: '../see-ucv/see-ucv?r_id=' + id+'&u_p_id='+id2,
     })
   }, 
   onLoad: function (options) {

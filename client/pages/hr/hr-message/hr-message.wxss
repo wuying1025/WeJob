@@ -1,5 +1,5 @@
 .wrapper{
-  margin: 0 0.6rem;
+  /* margin: 0 0.6rem; */
 }
 .nav{
    width: 100%;
@@ -14,16 +14,4 @@
 .hr-watch{
   margin-left: 10rem;
 }
- .footer{
-  position: absolute;
-  bottom: 0;
-  width:100%;
-  float: left;
-  display: flex;
-}
- .footer1{
-  flex: 1;
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.3rem;
-}
+ 

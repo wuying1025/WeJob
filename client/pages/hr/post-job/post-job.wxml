@@ -1,23 +1,24 @@
  <view class='container'>       
-         <picker bindchange="bindPickerChangeCompany" value="{{index}}" range="{{array}}">
+          <picker bindchange="bindPickerChangeCompany" value="{{index}}" range="{{array}}" range-key="company_name">
     <view class="picker">
-     公司 <view class='select'>></view>{{array[index]}}
+     公司 <view class='select'>></view>{{array[index].company_name}}
     </view>
-  </picker>
-  
-          <picker bindchange="bindPickerChangeSalary" value="{{index2}}" range="{{array2}}">
+  </picker> 
+          <picker bindchange="bindPickerChangeSalary" value="{{index2}}" range="{{array2}}" range-key="salary_name">
             <view class="picker">
-              薪资范围 <view class='select'>></view>{{array2[index2]}}
+              薪资范围 <view class='select'>></view>{{array2[index2].salary_name}}
             </view>
           </picker>
-          <picker bindchange="bindPickerChangeCity" value="{{index3}}" range="{{array3}}">
+          <picker bindchange="bindPickerChangeCity" value="{{index3}}" range="{{array3}}"
+          range-key="city_name">
             <view class="picker">
-              工作地点 <view class='select'>></view>{{array3[index3]}}
+              工作地点 <view class='select'>></view>{{array3[index3].city_name}}
             </view>
           </picker>
-          <picker bindchange="bindPickerChangeType" value="{{index4}}" range="{{array4}}">
+          <picker bindchange="bindPickerChangeType" value="{{index4}}" range="{{array4}}"
+          range-key="type_name">          
             <view class="picker">
-              招聘类型 <view class='select'>></view>{{array4[index4]}}
+              招聘类型 <view class='select'>></view>{{array4[index4].type_name}}
             </view>
           </picker>
           <view class='name'>
@@ -37,16 +38,11 @@
 
         <view class='textarea'>
            <text>职位描述</text>
-          <input  bindtinput="bindKeyInputrequire" placeholder='请填写职位描述：'></input>
+          <input type='text' bindinput="bindKeyInputrequire" placeholder='请填写职位描述：'></input>
         </view> 
-
-        <!-- <view class='textarea2'>
-          <text>工作职责</text>
-          <textarea bindtinput="bindKeyInputresponsibility" value='请填写工作职责：'></textarea>
-        </view> -->
         <view class='textarea'>
           <text>工作职责</text>
-          <input bindtinput="bindKeyInputresponsibility" placeholder='请填写工作职责：'></input>
+          <input type='text' bindinput="bindKeyInputresponsibility" placeholder='请填写工作职责：'></input>
         </view>
 
         <navigator url='../logined/logined'>

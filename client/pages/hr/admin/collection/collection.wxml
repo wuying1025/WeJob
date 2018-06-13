@@ -1,15 +1,18 @@
-<view>
-   <view class="contain">
-  <view wx:for="{{msgList}}" class="job">
-    <navigator url='../../position/position' hover-class='none'>
-    <image src="{{item.logo}}" class="job-img"></image>
-  <view class='job-info'>
-   <view>{{item.name}}</view>
-    {{item.city}}
-    {{item.posttime}}发布
-    <view class="salary-color">￥{{item.salary}}/天</view>
+<view class="hole">
+<view class="first" wx:for="{{test}}" style="display:{{collect}};">
+<navigator url='' hover-class='none' bindtap='msginfo' data-index="{{item.r_id}}">
+<text class="name">{{item.u_name}}</text>
+    <image src="baidu.png" class="job-img"></image>
+    
+    <view class="salary">姓名：{{item.r_name}}</view>
+    <view class="salary">邮箱：{{item.r_email}}</view>
+      </navigator>
+      <view class="btn">
+        <view class="cancel" bindtap='cancel' data-index="{{item.r_id}}"> </view>
+        <view class="post" bindtap='msginfo' data-index="{{item.r_id}}"></view>        
+      </view>
   </view>
-  <button class='job-apply'>申请</button>
-  </navigator></view>
-</view>
+  <view class="null" style="display:{{show}};">
+      <image src="null.png"></image>  
+  </view>
 </view>
