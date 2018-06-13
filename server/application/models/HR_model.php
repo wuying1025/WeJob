@@ -75,6 +75,9 @@ class HR_model extends CI_Model
        return $query->fetchAll();
     }
 
+
+
+
     public function hr_chpwd($mes)
     {
         $pdo = DB::getInstance();
@@ -89,6 +92,7 @@ class HR_model extends CI_Model
 
     }
 
+
     public function my_company($company_id)
     {
         $row = DB::select('t_company', ['*'], "company_id = '$company_id'");
@@ -98,7 +102,7 @@ class HR_model extends CI_Model
     public function get_hr_collect_by_hr_id($hr_id)
     {
         $pdo = DB::getInstance();
-        $query = $pdo->query("select * from t_hr_collect c , t_user u where c.hr_id = $hr_id and c.u_id = u.u_id");
+        $query = $pdo->query("select * from t_hr_collect c , t_resume r where c.hr_id = $hr_id and c.r_id = r.r_id and c.is_del = 0");
         return $query->fetchAll();
     }
 
@@ -110,7 +114,7 @@ class HR_model extends CI_Model
 
     public function update_state($u_p_id,$state)
     {
-        $row = DB::update('t_', $state, "hr_id = '$u_p_id'");
+        $row = DB::update('t_user_position', ['schedule' => $state], "u_p_id = '$u_p_id'");
         return $row;
     }
 
@@ -142,11 +146,13 @@ class HR_model extends CI_Model
     {
         $row = DB::update('t_hr_collect',['is_del' => 0], "c_id = '$c_id'");
         return $row;
+
     }
 
-    public function get_collect_resume_by_hr_id_r_id()
+    public function get_collect_resume_by_hr_id_r_id($hr_id,$r_id)
     {
-
+        $rows = DB::row('t_hr_collect', ['*'], ['hr_id' => "$hr_id",'r_id' => "$r_id"]);
+        return $rows;
     }
 
 }
